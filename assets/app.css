@@ -3282,3 +3282,21 @@ h2.lab{font-weight:400;margin:0;line-height:inherit}
 @keyframes rwLdDot{0%{transform:translateY(0) scale(1)}30%{transform:translateY(-26px) scale(.9)}55%{transform:translateY(0) scale(1.25,.75)}70%{transform:scale(1)}100%{transform:scale(1)}}
 @keyframes rwLdBar{0%{left:-40%}100%{left:100%}}
 @media (prefers-reduced-motion:reduce){.rw-ld-tile,.rw-ld-tile i{animation:none}.rw-ld-bar i{animation:none;left:30%}}
+
+/* X: horizontal strip driven by vertical scroll */
+.xh{position:relative}
+.xh-stick{position:sticky;top:64px}
+.xh-view{overflow:hidden;width:100vw;margin-left:calc(50% - 50vw);padding:8px 0;box-sizing:border-box}
+.xh-track{display:flex;gap:16px;align-items:flex-start;will-change:transform}
+.xh-track .xpost{flex:0 0 clamp(268px,78vw,380px);width:auto;animation:none}
+.xh-track .xmedia img,.xh-track .xmedia video{max-height:240px;object-fit:cover}
+.xh-prog{height:2px;background:var(--line);border-radius:2px;margin-top:20px;overflow:hidden}
+.xh-prog i{display:block;height:100%;background:var(--ink);transform:scaleX(0);transform-origin:left}
+.xh.free{height:auto!important}.xh.free .xh-stick{position:static}.xh.free .xh-view{overflow-x:auto;scroll-snap-type:x mandatory;scroll-padding-left:var(--xp,16px)}.xh.free .xh-prog{display:none}
+.onx .xhd{display:flex;align-items:baseline;justify-content:space-between;gap:16px;flex-wrap:wrap;margin-bottom:24px}
+.onx .xhd h2{margin:0}
+@media (max-width:620px){.onx .xhd h2{font-size:40px}.xh-track{gap:12px}}
+/* smaller project labels on phones */
+@media (max-width:620px){.tlabel{font-size:12.5px;padding:5px 11px;left:12px;bottom:12px}}
+/* then/now: drag anywhere on the image */
+.tn-cmp{cursor:ew-resize;-webkit-user-select:none}.tn-cmp img{-webkit-user-drag:none;user-drag:none;pointer-events:none}.tn-cmp .tn-range{pointer-events:none}.tn-cmp.drag .tn-handle i{transform:scale(1.08)}

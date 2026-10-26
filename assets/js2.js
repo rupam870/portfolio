@@ -155,11 +155,11 @@ const xPost = t => `<a class="xpost" href="${t.url}" target="_blank" rel="noopen
   <div class="xfoot"><span>View on X</span>${t.date?`<time>${t.date}</time>`:''}</div>
 </a>`;
 const onX = () => `<section class="onx">
-  <div class="xhd"><h2>Latest posts on X</h2><a href="https://x.com/rupam_gumber" target="_blank" rel="noopener">Follow @rupam_gumber</a></div>
-  <div class="xf" data-xf>
-   <div class="xfeat">${TWEETS.map((t,i)=>`<div class="xfp" data-xfp="${i}"${i?' hidden':''}>${xPost(t)}</div>`).join('')}</div>
-   <ol class="xlist" aria-label="Latest posts on X">${TWEETS.map((t,i)=>{const th=['xp1','xp2','xp3','xp4','xp5','xp6'][i]; const txt=t.text.replace(/<br>/g,' ').replace(/<[^>]+>/g,''); return `<li><button type="button" data-xsel="${i}" aria-pressed="${i===0}"><span class="xth">${th?`<img src="${IMG[th].src}" alt="" loading="lazy">`:`<span class="xthx">${XLOGO}</span>`}</span><span class="xtx"><span class="xtt">${txt}</span><time>${t.date}</time></span></button></li>`;}).join('')}</ol>
-  </div>
+  <div class="xh" data-xh><div class="xh-stick" data-xhstick>
+   <div class="xhd"><h2>Latest posts on X</h2><a href="https://x.com/rupam_gumber" target="_blank" rel="noopener">Follow @rupam_gumber</a></div>
+   <div class="xh-view" data-xhview><div class="xh-track" data-xhtrack>${TWEETS.map(xPost).join('')}</div></div>
+   <div class="xh-prog" aria-hidden="true"><i data-xhbar></i></div>
+  </div></div>
 </section>`;
 
 /* ---------- On GitHub: weekly activity since July (levels 0-4, Sun..Sat), transcribed from GitHub ---------- */
@@ -311,6 +311,16 @@ function wireThenNow(){
   const setP=(i,v)=>{ cmps[i].style.setProperty('--p',v+'%'); rngs[i].value=v; };
   const mark=i=>{ if(i===cur) return; cur=i; tabs.forEach((t,k)=>{t.setAttribute('aria-selected',String(k===i)); t.tabIndex=k===i?0:-1;}); slides.forEach((sl,k)=>sl.setAttribute('aria-hidden',String(k!==i))); };
   rngs.forEach((r,i)=>r.addEventListener('input',()=>{ manual.add(i); setP(i,r.value); }));
+  cmps.forEach((c,i)=>{ let id=null, sx=0, sy=0, on=false, raf=0, last=0;
+    const at=x=>{ const b=c.getBoundingClientRect(); return Math.min(100,Math.max(0,(x-b.left)/b.width*100)); };
+    const apply=()=>{ raf=0; setP(i,last.toFixed(2)); };
+    c.addEventListener('pointerdown',e=>{ if(e.button) return; id=e.pointerId; sx=e.clientX; sy=e.clientY; on=e.pointerType==='mouse'; if(on){ e.preventDefault(); c.setPointerCapture(id); c.classList.add('drag'); manual.add(i); last=at(e.clientX); apply(); } });
+    c.addEventListener('pointermove',e=>{ if(e.pointerId!==id) return; if(!on){ const dx=Math.abs(e.clientX-sx), dy=Math.abs(e.clientY-sy); if(dx<6&&dy<6) return; if(dy>dx){ id=null; return; } on=true; try{c.setPointerCapture(id);}catch(_){} c.classList.add('drag'); manual.add(i); }
+      last=at(e.clientX); if(!raf) raf=requestAnimationFrame(apply); });
+    const end=e=>{ if(e.pointerId!==id) return; id=null; on=false; c.classList.remove('drag'); };
+    c.addEventListener('pointerup',end); c.addEventListener('pointercancel',end); c.addEventListener('dragstart',e=>e.preventDefault());
+    c.addEventListener('click',e=>{ if(Math.abs(e.clientX-sx)<6){ manual.add(i); setP(i,at(e.clientX).toFixed(2)); } });
+  });
   root.classList.toggle('pinned',pinned);
   if(!pinned){ // fallback: tabs switch slides
     root.classList.add('free'); slides.forEach((_,i)=>setP(i,50));
@@ -1515,11 +1525,20 @@ function wireView(){
   let sraf=0; addEventListener('scroll',()=>{ if(!el.classList.contains('on')&&sraf) return; cancelAnimationFrame(sraf); sraf=requestAnimationFrame(()=>{ sraf=0; at(document.elementFromPoint(tx,ty)); }); },{passive:true});
   addEventListener('hashchange',hide); addEventListener('pointerdown',()=>{ if(!document.elementFromPoint(tx,ty)?.closest('[data-label]')) hide(); });
 })();
+let xhOff=null;
 function wireX(){
-  const f=document.querySelector('[data-xf]'); if(!f) return;
-  const ps=[...f.querySelectorAll('[data-xfp]')], bs=[...f.querySelectorAll('[data-xsel]')];
-  const sel=i=>{ ps.forEach((p,k)=>p.hidden=k!==i); bs.forEach((b,k)=>b.setAttribute('aria-pressed',String(k===i))); };
-  bs.forEach((b,i)=>{ b.addEventListener('click',()=>sel(i)); b.addEventListener('mouseenter',()=>{ if(matchMedia('(hover:hover)').matches) sel(i); }); });
+  if(xhOff){xhOff();xhOff=null;}
+  const h=document.querySelector('[data-xh]'); if(!h) return;
+  const st=h.querySelector('[data-xhstick]'), vw=h.querySelector('[data-xhview]'), tr=h.querySelector('[data-xhtrack]'), bar=h.querySelector('[data-xhbar]');
+  if(matchMedia('(prefers-reduced-motion: reduce)').matches){ h.classList.add('free'); const pad=Math.max(16,Math.round(h.querySelector('.xhd').getBoundingClientRect().left)); vw.style.marginLeft=(-Math.round(st.getBoundingClientRect().left))+'px'; vw.style.paddingLeft=vw.style.paddingRight=pad+'px'; vw.style.setProperty('--xp',pad+'px'); return; }
+  let dist=0;
+  const size=()=>{ const pad=Math.max(16,Math.round(h.querySelector('.xhd').getBoundingClientRect().left)); vw.style.marginLeft=(-Math.round(st.getBoundingClientRect().left))+'px'; vw.style.paddingLeft=vw.style.paddingRight=pad+'px'; vw.style.setProperty('--xp',pad+'px'); dist=Math.max(0,tr.scrollWidth-(vw.clientWidth-2*pad)); const sh=st.offsetHeight; st.style.top=Math.max(64,(innerHeight-sh)/2)+'px'; h.style.height=(sh+dist)+'px'; upd(); };
+  const upd=()=>{ const r=h.getBoundingClientRect(); const top=parseFloat(st.style.top)||64; const prog=dist?Math.min(1,Math.max(0,(top-r.top)/dist)):0; tr.style.transform=`translate3d(${-prog*dist}px,0,0)`; bar.style.transform=`scaleX(${prog})`; };
+  let raf=0; const on=()=>{ if(!raf) raf=requestAnimationFrame(()=>{raf=0;upd();}); };
+  addEventListener('scroll',on,{passive:true}); addEventListener('resize',size);
+  tr.querySelectorAll('img').forEach(im=>{ if(!im.complete) im.addEventListener('load',size,{once:true}); });
+  size(); setTimeout(size,400);
+  xhOff=()=>{ removeEventListener('scroll',on); removeEventListener('resize',size); };
 }
 function wireGH(){
   const g=document.getElementById('gh'), r=document.getElementById('gh-read'); if(!g) return;
