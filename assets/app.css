@@ -3300,3 +3300,16 @@ h2.lab{font-weight:400;margin:0;line-height:inherit}
 @media (max-width:620px){.tlabel{font-size:12.5px;padding:5px 11px;left:12px;bottom:12px}}
 /* then/now: drag anywhere on the image */
 .tn-cmp{cursor:ew-resize;-webkit-user-select:none}.tn-cmp img{-webkit-user-drag:none;user-drag:none;pointer-events:none}.tn-cmp .tn-range{pointer-events:none}.tn-cmp.drag .tn-handle i{transform:scale(1.08)}
+
+/* motto ring: let the ellipse be wider than the words */
+.ab-motto .ring>svg{max-width:none}
+@media (max-width:620px){
+ .ab-strip{display:grid!important;grid-template-columns:1fr 1fr;gap:18px 12px;overflow:visible;padding:8px 4px 8px!important;margin:0!important;scroll-snap-type:none}
+ .ab-strip .snap{flex:none;margin:0;width:auto}
+ .ab-strip .snap:nth-child(even){transform:rotate(var(--r)) translateY(18px)}
+ .ab-strip .snap figcaption{font-size:17px;padding:6px 2px 8px}
+ .ab-strip .snap .zoom{padding:7px 7px 0}
+ .vt-goal{flex-direction:column;gap:6px;padding:16px 18px}
+ .vt-goal p{font-size:21px!important}
+ .ci-saw2 .row{flex-direction:column;gap:4px}
+}
