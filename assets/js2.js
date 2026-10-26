@@ -495,7 +495,7 @@ whiteboarding: () => `
 <section class="foot text"><p class="big">Got a problem you'd like me to whiteboard?</p><p>Send it to <a href="mailto:rupamuxdesign@gmail.com">rupamuxdesign@gmail.com</a> or reply on <a href="https://x.com/rupam_gumber">X</a>. The best ones become episodes.</p></section>`,
 
 alphy: () => `
-<section class="ph text"><a class="back" href="#/">Back to home</a><h1>Alphy, a plant that gets me to drink water</h1><p>A desk plant that lives at the top of my screen. He gets me to drink water by asking me to water him.</p></section>
+<section class="ph text"><a class="back" href="#/work/side/alphy">Back to home</a><h1>Alphy, a plant that gets me to drink water</h1><p>A desk plant that lives at the top of my screen. He gets me to drink water by asking me to water him.</p></section>
 <div class="facts"><div><span>Role</span>Design and build, solo</div><div><span>For</span>Me, all day at my laptop</div><div><span>Surface</span>macOS, from the menu bar</div><div><span>Year</span>2026</div></div>
 <figure class="al-hero"><div class="mac"><div class="bar" aria-hidden="true"><i></i><i></i><i></i></div><video data-vsrc="alv_desk" muted loop playsinline autoplay poster="${IMG.alv_desk.src}" aria-label="Alphy on the desktop: slides in, perks up, swings, stretches, gets watered, says thank you, and leaves"></video></div><figcaption>15 seconds of him: slide in, perk up, swing, stretch, pour, thank you, leave</figcaption></figure>
 <section class="sec"><h2 class="lab">The problem</h2><div class="text"><p class="quote">Every hydration app is a notification machine.</p><p>I know I should drink more water. Knowing was never the problem; the reminders were. Alarms and notifications demand attention at a moment they choose, not one I choose, and after a week I dismiss them without reading. I work on this laptop most of the day, and anything that interrupts that gets uninstalled.</p></div></section>
@@ -521,7 +521,7 @@ alphy: () => `
 ${caseNav('alphy')}`,
 
 'night-schedule': () => `
-<section class="ph text"><a class="back" href="#/">Back to home</a><h1>Night Schedule, and the feature I cut</h1><p>A four-part night routine that lives on my phone, and the story of cutting the best-looking feature in it.</p></section>
+<section class="ph text"><a class="back" href="#/work/side/night-schedule">Back to home</a><h1>Night Schedule, and the feature I cut</h1><p>A four-part night routine that lives on my phone, and the story of cutting the best-looking feature in it.</p></section>
 <div class="facts"><div><span>Role</span>Design and build, solo</div><div><span>For</span>Me, nightly</div><div><span>Surface</span>Mobile web, on the home screen</div><div><span>Built with</span>One HTML file, Cloudflare Pages</div></div>
 <figure class="ns-stage"><button class="zoom ns-phone" type="button" data-zoom="ns_tonight" aria-label="Enlarge Tonight, two of four done"><img loading="lazy" decoding="async" src="${IMG.ns_tonight.src}" width="${IMG.ns_tonight.w}" height="${IMG.ns_tonight.h}" alt=""></button><button class="zoom ns-phone" type="button" data-zoom="ns_story" aria-label="Enlarge Storytelling timer running"><img loading="lazy" decoding="async" src="${IMG.ns_story.src}" width="${IMG.ns_story.w}" height="${IMG.ns_story.h}" alt=""></button></figure>
 <section class="sec"><h2 class="lab">The problem</h2><div class="text"><p class="quote">The plan only existed in my head.</p><p>Every night I wanted to do the same four things: practise communication and storytelling, read, meditate, journal. Ninety minutes, give or take. But the plan lived nowhere, so each evening opened with the same negotiation: which one, for how long, and am I actually doing this tonight? The negotiation usually won.</p><p>Habit apps were the wrong size for the problem. I didn't need help building a habit. I needed the four things already decided, and something to tell me when to stop.</p></div></section>
@@ -617,7 +617,7 @@ const chartB=`<figure class="ci-chart ci-anim ci-wide" role="img" aria-label="Sh
 
 return `<div id="ci-root">
 <nav class="ci-rail" aria-label="On this page"><p>On this page</p><ol></ol></nav>
-<section class="ph text" id="ci-top" data-rail="Overview"><a class="back" href="#/work/atlabs">All Atlabs work</a><p class="ci-eye">Atlabs AI · Case study 01</p><h1>Create Image</h1><p>Designing one calm surface for 24 fast-moving AI models. As of October 2026, ~6,800 creators have used it to make ~55,000 images.</p>
+<section class="ph text" id="ci-top" data-rail="Overview"><a class="back" href="#/work/atlabs/create-image">All Atlabs work</a><p class="ci-eye">Atlabs AI · Case study 01</p><h1>Create Image</h1><p>Designing one calm surface for 24 fast-moving AI models. As of October 2026, ~6,800 creators have used it to make ~55,000 images.</p>
 <div class="ci-skimrow"><button type="button" class="ci-skim" data-skim aria-pressed="false"><span class="sw" aria-hidden="true"></span><span>2-minute version</span></button><span class="ci-skimhint">Headlines, pictures and numbers only</span></div></section>
 <div class="facts ci-facts"><div><span>Role</span>Founding Designer, sole designer. End-to-end: research, flows, UI, design system, copy.</div><div><span>Scope</span>Create Image + the shared "mini app" shell later reused across Edit, Inpaint, Reframe, Upscale, Image to Video, Lip Sync and Motion Control.</div></div>
 ${fr('ci_hero','The image detail view: an illustrated hiker on a forest trail, and beside it the prompt, model, dimension, format, resolution and credits, with Reuse Inputs and six next-step actions below','One image, its full recipe, and six ways to keep going.',{cls:'ci-full'})}
@@ -806,7 +806,7 @@ ${range.map((r,i)=>`<ul class="dq-lines" role="tabpanel" id="dq-p${i}" aria-labe
 return `<div id="dp-root" class="dq">
 <nav class="ci-rail" aria-label="On this page"><p>On this page</p><ol></ol></nav>
 <section class="dq-hero" id="dp-top" data-rail="Overview">
- <div class="dq-hero-t"><a class="back" href="#/work/atlabs">All Atlabs work</a><p class="dq-k">atlabs · case study 02</p><h1>Designing in production</h1>
+ <div class="dq-hero-t"><a class="back" href="#/work/atlabs/designing-in-production">All Atlabs work</a><p class="dq-k">atlabs · case study 02</p><h1>Designing in production</h1>
  <p class="dq-sub">I ship my own designs into Atlabs' production code: 68 merged pull requests, written with Claude Code and held to the repo's rules, reviews and CI.</p>
  <div class="ci-skimrow"><button type="button" class="ci-skim" data-skim aria-pressed="false"><span class="sw" aria-hidden="true"></span><span>2-minute version</span></button></div></div>
  <div class="dq-hero-m">${replay}<p class="dq-cap">A replay of how one change ships. Illustration, condensed.</p></div>
@@ -936,7 +936,7 @@ const dec=(n,o)=>`<section class="ci-dec2 ci-l-${o.layout}" id="vt-d${n}" data-r
 
 return `<div id="ci-root" class="vt">
 <nav class="ci-rail" aria-label="On this page"><p>On this page</p><ol></ol></nav>
-<section class="ph text" id="vt-top" data-rail="Overview"><a class="back" href="#/work/atlabs">All Atlabs work</a><p class="ci-eye">Atlabs AI · Hero case study</p><h1>Video teaser</h1><p>Free users watch the first 25 seconds of their own video. The rest stays blurred until they upgrade. It became <b class="vt-arr">the main place people decide to pay</b>.</p>
+<section class="ph text" id="vt-top" data-rail="Overview"><a class="back" href="#/work/atlabs/video-teaser">All Atlabs work</a><p class="ci-eye">Atlabs AI · Hero case study</p><h1>Video teaser</h1><p>Free users watch the first 25 seconds of their own video. The rest stays blurred until they upgrade. It became <b class="vt-arr">the main place people decide to pay</b>.</p>
 <div class="ci-skimrow"><button type="button" class="ci-skim" data-skim aria-pressed="false"><span class="sw" aria-hidden="true"></span><span>2-minute version</span></button></div></section>
 <div class="facts ci-facts"><div><span>My role</span>Product and design, end to end.</div><div><span>Team</span>Tushar and Yash (engineering), Archit (CEO).</div><div><span>Timeline</span>Sep 2025 – Jun 2026</div><div><span>Where</span>The story page, the video player and the start screen.</div></div>
 ${demo}
@@ -1133,7 +1133,7 @@ const timeline=`<ol class="vt-tl ed-tl">${tl.map(t=>`<li><b>${t[0]}</b><p>${t[1]
 
 return `<div id="ci-root" class="ed">
 <nav class="ci-rail" aria-label="On this page"><p>On this page</p><ol></ol></nav>
-<section class="ph text" id="ed-top" data-rail="Overview"><a class="back" href="#/work/atlabs">All Atlabs work</a><p class="ci-eye">Atlabs AI · Case study</p><h1>Editing experience</h1><p>Every Atlabs video is finished in one editor: scenes, motion, voice, B-roll, captions, credits, export and publishing. I designed all of it, one tool at a time, without letting it turn into a cockpit.</p>
+<section class="ph text" id="ed-top" data-rail="Overview"><a class="back" href="#/work/atlabs/editing-experience">All Atlabs work</a><p class="ci-eye">Atlabs AI · Case study</p><h1>Editing experience</h1><p>Every Atlabs video is finished in one editor: scenes, motion, voice, B-roll, captions, credits, export and publishing. I designed all of it, one tool at a time, without letting it turn into a cockpit.</p>
 <div class="ci-skimrow"><button type="button" class="ci-skim" data-skim aria-pressed="false"><span class="sw" aria-hidden="true"></span><span>2-minute version</span></button></div></section>
 <div class="facts ci-facts"><div><span>My role</span>Product and design for the whole editor.</div><div><span>Timeline</span>Dec 2024 – today</div><div><span>Where</span>Story page, scene editor, timeline, export.</div></div>
 ${tourA}
@@ -1197,7 +1197,7 @@ ${caseNav('editing-experience')}`; },
 curelink: () => {
 const pic=(k,alt,cap)=>`<figure class="cs-mock cl bare"><button class="zoom" type="button" data-zoom="${k}" aria-label="Enlarge ${alt}"><img loading="lazy" decoding="async" src="${IMG[k].src}" width="${IMG[k].w}" height="${IMG[k].h}" alt=""></button>${cap?`<figcaption>${cap}</figcaption>`:''}</figure>`;
 return `
-<section class="ph text"><a class="back" href="#/">Back to home</a><h1>Scratch cards that made enrolling worth it</h1><p>Curelink needed more patients in its care programmes. The data said the enrolment flow was fine; the people doing the enrolling just had no reason to. I designed a cash reward system for clinic coordinators, in two weeks.</p></section>
+<section class="ph text"><a class="back" href="#/work/previous/curelink">Back to home</a><h1>Scratch cards that made enrolling worth it</h1><p>Curelink needed more patients in its care programmes. The data said the enrolment flow was fine; the people doing the enrolling just had no reason to. I designed a cash reward system for clinic coordinators, in two weeks.</p></section>
 <div class="facts"><div><span>Role</span>Product Designer, freelance</div><div><span>Team</span>1 PM, 1 researcher, developers</div><div><span>Timeline</span>2 weeks, Dec '22–Jan '23</div><div><span>Platform</span>iOS and Android</div></div>
 <section class="sec"><h2 class="lab">A 30-second primer</h2><div class="text"><p>Curelink helps doctors offer holistic, AI-assisted care under their own brand. Patients join a care plan in the app, and get live sessions and WhatsApp support between visits.</p></div></section>
 <div class="cl-care">
@@ -1272,7 +1272,7 @@ const ui=(k,alt,cap)=>`<figure class="cs-mock"><div class="cs-win"><div class="b
 const pic=(k,alt,cap)=>`<figure class="cs-mock bare"><button class="zoom" type="button" data-zoom="${k}" aria-label="Enlarge ${alt}"><img loading="lazy" decoding="async" src="${IMG[k].src}" width="${IMG[k].w}" height="${IMG[k].h}" alt=""></button>${cap?`<figcaption>${cap}</figcaption>`:''}</figure>`;
 const im=(k,alt,cap)=>`<figure class="cs-img"><button class="zoom" type="button" data-zoom="${k}" aria-label="Enlarge ${alt}"><img loading="lazy" decoding="async" src="${IMG[k].src}" width="${IMG[k].w}" height="${IMG[k].h}" alt=""></button>${cap?`<figcaption>${cap}</figcaption>`:''}</figure>`;
 return `
-<section class="ph text"><a class="back" href="#/">Back to home</a><h1>Answering the same Slack question only once</h1><p>ClearFeed's customers run support inside Slack, and the same questions kept coming back. I designed how a support head plugs their docs into GPT, checks the answers, and switches automated replies on.</p></section>
+<section class="ph text"><a class="back" href="#/work/previous/clearfeed">Back to home</a><h1>Answering the same Slack question only once</h1><p>ClearFeed's customers run support inside Slack, and the same questions kept coming back. I designed how a support head plugs their docs into GPT, checks the answers, and switches automated replies on.</p></section>
 <div class="facts"><div><span>Role</span>Product Design Intern</div><div><span>Team</span>1 PM, 4 developers, 2 data scientists, 1 researcher</div><div><span>Timeline</span>2.5 months, Jan–Sep '23 internship</div><div><span>Platform</span>Web</div></div>
 <section class="sec"><h2 class="lab">A 30-second primer</h2><div class="text"><p>Lots of B2B companies, especially in the US, support their customers in shared Slack channels. It's fast and people love it, until there are hundreds of channels and nobody knows which question is open, who owns it, or which ones are about to breach an SLA.</p><p>ClearFeed sits on top of Slack and turns those channels into a proper support queue, with a dashboard for response insights.</p></div></section>
 <section class="sec"><h2 class="lab">The problem</h2><div class="text"><p class="quote">Support teams were answering the same questions again and again, by digging through docs and old replies each time.</p><p>It slowed every agent down. And after ChatGPT, every support leader was asking some version of this:</p></div></section>
@@ -1361,7 +1361,7 @@ xalts: () => {
 const ui=(k,alt,cap)=>`<figure class="cs-mock xa"><div class="cs-win"><div class="bar" aria-hidden="true"><i></i><i></i><i></i><span>app.xalts.io</span></div><button class="zoom" type="button" data-zoom="${k}" aria-label="Enlarge ${alt}"><img loading="lazy" decoding="async" src="${IMG[k].src}" width="${IMG[k].w}" height="${IMG[k].h}" alt=""></button></div>${cap?`<figcaption>${cap}</figcaption>`:''}</figure>`;
 const pic=(k,alt,cap)=>`<figure class="cs-mock xa bare"><button class="zoom" type="button" data-zoom="${k}" aria-label="Enlarge ${alt}"><img loading="lazy" decoding="async" src="${IMG[k].src}" width="${IMG[k].w}" height="${IMG[k].h}" alt=""></button>${cap?`<figcaption>${cap}</figcaption>`:''}</figure>`;
 return `
-<section class="ph text"><a class="back" href="#/">Back to home</a><h1>Letting banks bring their own vault</h1><p>Xalts was holding the keys to its clients' digital assets, and banks didn't love that. I designed how an institution connects its own Fireblocks custody instead, and how it sees every wallet once it does.</p></section>
+<section class="ph text"><a class="back" href="#/work/previous/xalts">Back to home</a><h1>Letting banks bring their own vault</h1><p>Xalts was holding the keys to its clients' digital assets, and banks didn't love that. I designed how an institution connects its own Fireblocks custody instead, and how it sees every wallet once it does.</p></section>
 <div class="facts"><div><span>Role</span>Product Design Intern</div><div><span>Team</span>1 PM, 2 designers, 1 researcher, developers</div><div><span>Timeline</span>3 weeks, May–Jul '24</div><div><span>Platform</span>Web</div></div>
 
 <section class="sec"><h2 class="lab">A 30-second primer</h2><div class="text"><p>Xalts, backed by Accel and Citi Ventures, helps banks tokenise real assets like bonds, bank guarantees and treasury bills. Those assets live on blockchains like Polygon and Avalanche, inside wallets.</p><p>Whoever holds the keys to those wallets is the custodian. That one word is what this project is about.</p></div></section>
@@ -1833,7 +1833,9 @@ function render(){
   wireTabs();
   wireThenNow();
   wireCat();
-  if(toWork){ const w=document.getElementById('panel-'+currentTab)||document.querySelector('.work'); if(w) w.scrollIntoView({block:'start'}); }
+  if(toWork){ const w=document.getElementById('panel-'+currentTab)||document.querySelector('.work'); const card=parts[0]==='work'&&parts[2]&&w?w.querySelector('a[href="#/'+parts[2]+'"]'):null; const tgt=card?(card.closest('figure,article,.wcard,.tile')||card):w;
+    const go=()=>{ if(!tgt) return; if(card){ const y=tgt.getBoundingClientRect().top+scrollY-110; window.scrollTo(0,Math.max(0,y)); } else tgt.scrollIntoView({block:'start'}); };
+    go(); if(card){ setTimeout(go,250); setTimeout(go,700); } }
   if(jump){ const j=document.getElementById(jump); if(j) j.scrollIntoView({block:'start'}); }
   wireGH();
   wireVids();
@@ -2328,6 +2330,8 @@ function wireCI(){
     playB.addEventListener('click',()=>{ vid.paused?play(vid.ended?0:null):vid.pause(); });
     vd.querySelector('[data-vtreplay]').addEventListener('click',()=>play(0));
     scs.forEach((s,i)=>s.addEventListener('click',()=>play(STARTS[i])));
+    const toEnd=()=>{ vid.pause(); try{ vid.currentTime=vid.duration||DUR; }catch(e){} setPlaying(false); cur=5; scs.forEach(x=>x.classList.remove('cur')); vd.classList.add('in-lock'); prog.style.width='47%'; time.textContent='0:25 / 0:53'; end.hidden=false; note.textContent='Scenes 6–11 unlock after upgrading. This is the third place to upgrade.'; };
+    vd.querySelectorAll('.vt-sc.lock').forEach(l=>{ l.setAttribute('role','button'); l.tabIndex=0; l.addEventListener('click',toEnd); l.addEventListener('keydown',e=>{ if(e.key==='Enter'||e.key===' '){ e.preventDefault(); toEnd(); } }); });
     const snd=vd.querySelector('[data-vtsnd]'); snd.addEventListener('click',()=>{ vid.muted=!vid.muted; snd.textContent=vid.muted?'🔇':'🔊'; snd.setAttribute('aria-label',vid.muted?'Turn sound on':'Turn sound off'); if(vid.paused) play(); });
     vd.querySelectorAll('[data-vm]').forEach(b=>b.addEventListener('click',()=>{ vd.dataset.mode=b.dataset.vm; vd.querySelectorAll('[data-vm]').forEach(x=>x.setAttribute('aria-checked',String(x===b))); }));
     const open=(k,cap)=>{ vid.pause(); mimg.src=IMG[k].src; mimg.alt=cap; mcap.textContent=cap; modal.hidden=false; modal.querySelector('[data-vtclose]').focus(); };
