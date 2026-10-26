@@ -1,0 +1,400 @@
+<!doctype html>
+<html lang="en" data-theme="light">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Geist:wght@400;500;600&family=Caveat:wght@500;700&family=Geist+Mono:wght@400;500&display=swap">
+<title>Designing in Production with Claude Code — Rupam Gumber</title>
+<meta name="description" content="A designer who ships code: 68 merged pull requests into a production React and TypeScript app with Claude Code.">
+<meta name="author" content="Rupam Gumber">
+<meta name="robots" content="index,follow,max-image-preview:large">
+<link rel="canonical" href="https://rupam.work/work/designing-in-production/">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Rupam Gumber">
+<meta property="og:title" content="Designing in Production with Claude Code — Rupam Gumber">
+<meta property="og:description" content="A designer who ships code: 68 merged pull requests into a production React and TypeScript app with Claude Code.">
+<meta property="og:url" content="https://rupam.work/work/designing-in-production/">
+<meta property="og:image" content="https://rupam.work/og/designing-in-production.jpg">
+<meta property="og:image:width" content="1200"><meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Designing in production with Claude Code">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:site" content="@rupam_gumber"><meta name="twitter:creator" content="@rupam_gumber">
+<meta name="twitter:title" content="Designing in Production with Claude Code — Rupam Gumber">
+<meta name="twitter:description" content="A designer who ships code: 68 merged pull requests into a production React and TypeScript app with Claude Code.">
+<meta name="twitter:image" content="https://rupam.work/og/designing-in-production.jpg">
+<meta name="theme-color" content="#FAFAF8">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='16' fill='%2317171A'/%3E%3Ctext x='32' y='45' font-family='Georgia,serif' font-size='40' text-anchor='middle' fill='%23FAFAF8'%3Er%3C/text%3E%3C/svg%3E">
+<link rel="stylesheet" href="/assets/app.css">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebPage", "name": "Designing in Production with Claude Code \u2014 Rupam Gumber", "url": "https://rupam.work/work/designing-in-production/", "description": "A designer who ships code: 68 merged pull requests into a production React and TypeScript app with Claude Code.", "author": {"@type": "Person", "name": "Rupam Gumber", "url": "https://rupam.work/"}}</script>
+<script src="/assets/router.js"></script>
+</head>
+<body>
+
+<div class="wrap">
+  <header class="top">
+    <a class="name" href="#/">Rupam Gumber</a>
+    <nav aria-label="Main">
+      <a href="#/about" data-r="about">About</a>
+      <a href="#/resume" data-resume>Resume</a>
+      <button class="theme-btn" type="button" id="theme-btn" aria-label="Switch to dark mode">
+        <svg viewBox="0 0 24 24" aria-hidden="true">
+          <mask id="bite-mask"><rect x="-6" y="-6" width="36" height="36" fill="#fff"/><circle class="bite" cx="25" cy="-1" r="6" fill="#000"/></mask>
+          <circle class="core" cx="12" cy="12" r="5" fill="currentColor" mask="url(#bite-mask)"/>
+          <g class="rays" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M12 1.5v2.2M12 20.3v2.2M1.5 12h2.2M20.3 12h2.2M4.6 4.6l1.5 1.5M17.9 17.9l1.5 1.5M4.6 19.4l1.5-1.5M17.9 6.1l1.5-1.5"/></g>
+        </svg>
+      </button>
+    </nav>
+  </header>
+  <div id="app"><main><div id="dp-root" class="dq">
+<nav class="ci-rail" aria-label="On this page"><p>On this page</p><ol><li><button type="button" data-i="0" aria-current="true">Overview</button></li><li><button type="button" data-i="1" aria-current="false">Numbers</button></li><li><button type="button" data-i="2" aria-current="false">The loop</button></li><li><button type="button" data-i="3" aria-current="false">Four stories</button></li><li><button type="button" data-i="4" aria-current="false">01 Never disable a button</button></li><li><button type="button" data-i="5" aria-current="false">02 AI Edit panel</button></li><li><button type="button" data-i="6" aria-current="false">03 What's generating</button></li><li><button type="button" data-i="7" aria-current="false">04 The revert</button></li><li><button type="button" data-i="8" aria-current="false">What I'm learning</button></li><li><button type="button" data-i="9" aria-current="false">The range</button></li></ol></nav>
+<section class="dq-hero" id="dp-top" data-rail="Overview">
+ <div class="dq-hero-t"><a class="back" href="#/work/atlabs">All Atlabs work</a><p class="dq-k">atlabs · case study 02</p><h1>Designing in production</h1>
+ <p class="dq-sub">I ship my own designs into Atlabs' production code: 68 merged pull requests, written with Claude Code and held to the repo's rules, reviews and CI.</p>
+ <div class="ci-skimrow"><button type="button" class="ci-skim" data-skim="" aria-pressed="false"><span class="sw" aria-hidden="true"></span><span>2-minute version</span></button></div></div>
+ <div class="dq-hero-m"><div class="tw tw-term" data-replay=""><div class="tw-bar"><i></i><i></i><i></i><span>replay · how a change ships</span><button type="button" class="tw-btn" data-replay-go="" aria-label="Replay">↻ replay</button></div>
+<div class="tw-body"><ol class="term" aria-label="Illustration of the workflow, step by step">
+ <li class="u on"><span class="p">you</span>Empty submits shouldn't hit a disabled button. Keep it active and explain what's missing, inline.</li>
+ <li class="on typing"><span class="d">●</span>Reading the repo's CLAUDE.md conventions</li>
+ <li><span class="d">●</span>Editing the prompt form · inline error · <span class="m">role="alert"</span> · tracking invalid submits</li>
+ <li><span class="d">●</span>Preview ready. I check it against the design and iterate</li>
+ <li class="ok"><span class="d">✓</span>Claude review</li>
+ <li class="ok"><span class="d">✓</span>check-quality</li>
+ <li class="ok"><span class="d">✓</span>ultra-review</li>
+ <li class="ok"><span class="d">✓</span>CI · lint · tests</li>
+ <li class="mg"><span class="d">⮑</span>Merged</li>
+</ol></div></div><p class="dq-cap">A replay of how one change ships. Illustration, condensed.</p></div>
+</section>
+<section class="dq-stats" data-rail="Numbers">
+ <div class="dq-nums">
+  <div><b class="ci-cnt" data-count="68">68</b><span>PRs merged</span></div>
+  <div><b class="ci-cnt" data-count="52">52</b><span>in Aug–Oct</span></div>
+  <div><b class="ci-cnt" data-count="23">23</b><span>touched the backend</span></div>
+  <div><b class="ci-cnt" data-count="15">15</b><span>shipped tracking</span></div>
+ </div>
+ <div class="dq-heat" role="img" aria-label="Merged pull requests by month in 2026: March 1, April 8, May 1, June 0, July 6, August 18, September 12, October 22 to date."><div class="hc" style="--a:0.05"><b>1</b><span>Mar</span></div><div class="hc" style="--a:0.36"><b>8</b><span>Apr</span></div><div class="hc" style="--a:0.05"><b>1</b><span>May</span></div><div class="hc" style="--a:0.00"><b>0</b><span>Jun</span></div><div class="hc" style="--a:0.27"><b>6</b><span>Jul</span></div><div class="hc hi" style="--a:0.82"><b>18</b><span>Aug</span></div><div class="hc hi" style="--a:0.55"><b>12</b><span>Sep</span></div><div class="hc hi" style="--a:1.00"><b>22</b><span>Oct</span></div></div>
+ <p class="dq-cap">Merged PRs by month, 2026, as of Oct 2026. 16 from March to July, 52 from August to October: once the loop was in place, shipping became part of designing.</p>
+</section>
+<section class="dq-sec" id="dp-how" data-rail="The loop">
+ <p class="dq-k">workflow</p><h2>The loop</h2>
+ <p class="dq-lead" data-long="">The slowest part of design here was never Figma. It was the queue between a finished design and a shipped one. So I close it myself.</p>
+ <ol class="dq-pipe"><li tabindex="0"><span class="pn">01</span><b>Intent</b><em>I decide what should change and why, in product terms.</em></li><li tabindex="0"><span class="pn">02</span><b>Claude Code</b><em>Writes the code inside the real repo, following its CLAUDE.md rules.</em></li><li tabindex="0"><span class="pn">03</span><b>Preview</b><em>I check the result live against the design and iterate.</em></li><li tabindex="0"><span class="pn">04</span><b>Reviews</b><em>Claude review, check-quality and ultra-review, every time.</em></li><li tabindex="0"><span class="pn">05</span><b>CI</b><em>Lint and tests run on every push.</em></li><li tabindex="0"><span class="pn">06</span><b>Merge</b><em>Frontend and minor backend: I merge. Bigger backend changes: developers review and merge.</em></li></ol>
+ <div class="dq-two"><div class="tw "><div class="tw-bar"><i></i><i></i><i></i><span>CLAUDE.md · paraphrased</span></div><div class="tw-body"><pre class="code md"><span class="c"># Conventions (excerpt)</span>
+<span class="ln">- </span>Radix Themes components only
+<span class="ln">- </span>Design tokens. No hardcoded colours or sizes
+<span class="ln">- </span>CSS Modules
+<span class="ln">- </span>One icon set
+<span class="ln">- </span>Analytics on every click
+<span class="ln">- </span>Strict lint
+<span class="ln">- </span>CI on every push
+<span class="ln">- </span><span class="hl">Never disable a CTA for incomplete input.
+  Answer with an inline error.</span>  <span class="c">← added after story/01</span></pre></div></div><div class="dq-who"><div><p class="dq-k">claude code</p><p>Writes most of the code and the PR summaries. 96 of my 97 PRs carry its attribution.</p></div><div><p class="dq-k">me</p><p>Decides what to build, sets constraints, runs the reviews, asks for every backend change in plain words, and owns it when it breaks.</p></div></div></div>
+</section>
+<section class="dq-sec" data-rail="Four stories"><p class="dq-k">stories</p><h2>Four changes, end to end</h2>
+<nav class="ci-dnav" aria-label="Jump to a story"><button type="button" data-jump="dp-s1"><span>01</span>Never disable a button</button><button type="button" data-jump="dp-s2"><span>02</span>AI Edit panel</button><button type="button" data-jump="dp-s3"><span>03</span>What's generating</button><button type="button" data-jump="dp-s4"><span>04</span>The revert</button></nav></section>
+<section class="dq-story" id="dp-s1" data-rail="01 Never disable a button">
+ <div class="dq-st-text">
+  <p class="dq-k">story/01 <span>accessibility</span></p>
+  <h3>Never disable a button. Explain instead.</h3>
+  <dl class="dq-pc"><div><dt>Problem</dt><dd>A greyed-out submit left people stuck, with no idea why.</dd></div><div><dt>Change</dt><dd>The button always works. An empty submit answers inline, even before login.</dd></div><div class="why"><dt>Why it matters</dt><dd>It became a written rule for the whole repo.</dd></div></dl>
+  <details class="dq-more" data-long=""><summary>How it was built</summary><div><p>The check runs before the login gate, so logged-out visitors see guidance instead of a sign-in wall. The message uses <code>role="alert"</code> for screen readers, and invalid submits are tracked in analytics.</p></div></details>
+ </div>
+ <div class="dq-st-media"><div class="dp-valid dq-demo" data-valid="">
+<div class="dq-demo-h"><div class="ci-tabs dp-ba-tabs" role="tablist" aria-label="Before or after"><button type="button" role="tab" aria-selected="false" tabindex="-1" data-mode="before">Before</button><button type="button" role="tab" aria-selected="true" tabindex="0" data-mode="after">After</button></div><span class="dq-note">recreation</span></div>
+<div class="dp-vbox"><label class="dp-vlab" for="dp-vin">What's your story about?</label><textarea id="dp-vin" rows="3" placeholder="A shy dragon who learns to share…"></textarea><p class="dp-verr" role="alert" hidden="">Describe your idea to get started</p><div class="dp-vfoot"><span class="dp-vhint" data-hint="">Click Create with the box empty.</span><button type="button" class="dp-vbtn" data-vbtn="">Create</button></div></div></div><div class="tw "><div class="tw-bar"><i></i><i></i><i></i><span>prompt-form · simplified</span><span class="tw-tag">illustration</span></div><div class="tw-body"><div class="code diff"><span class="l del">- &lt;Button disabled={!idea}&gt;Create&lt;/Button&gt;</span><span class="l add">+ &lt;Button onClick={submit}&gt;Create&lt;/Button&gt;</span><span class="l add">+ {error &amp;&amp; &lt;Text role="alert"&gt;Describe your idea…&lt;/Text&gt;}</span><span class="l ">  </span><span class="l ">  function submit() {</span><span class="l add">+   if (!idea.trim()) { showError(); track('invalid_submit'); return }</span><span class="l ">    requireLogin(() =&gt; start(idea))</span><span class="l ">  }</span></div></div></div><figure class="dq-shot"><button class="ci-z" type="button" data-zoom="dp_valid" aria-label="Enlarge: The live wizard: Continue stays active, and an inline message says the script must be at least 20 characters"><img loading="lazy" decoding="async" width="932" height="405" alt="The live wizard: Continue stays active, and an inline message says the script must be at least 20 characters"></button><figcaption>The same rule in the live wizard.</figcaption></figure></div>
+</section>
+<section class="dq-story" id="dp-s2" data-rail="02 AI Edit panel">
+ <div class="dq-st-text">
+  <p class="dq-k">story/02 <span>architecture</span></p>
+  <h3>AI Edit: from floating window to a real panel.</h3>
+  <dl class="dq-pc"><div><dt>Problem</dt><dd>AI Edit floated over the scene you were editing and behaved unlike every other tool.</dd></div><div><dt>Change</dt><dd>It now opens in the editor's standard side panel.</dd></div><div class="why"><dt>Why it matters</dt><dd>Consistency came from changing the architecture, not the paint.</dd></div></dl>
+  <details class="dq-more" data-long=""><summary>How it was built</summary><div><p>I removed the drag hook and the portal rendering, and dropped its separate open/closed state from the global store, so it rides on the same panel system as everything else.</p></div></details>
+ </div>
+ <div class="dq-st-media"><div class="dq-arch">
+ <div class="col"><p class="dq-k">before</p><div class="box main">Scene editor</div><div class="box float">AI Edit · floating window<ul><li class="x">drag hook</li><li class="x">portal rendering</li><li class="x">its own open/closed state</li></ul></div></div>
+ <div class="arrow" aria-hidden="true">→</div>
+ <div class="col"><p class="dq-k">after</p><div class="box main">Scene editor · shared panel system<div class="panels"><span>Image</span><span>Motion</span><span>Audio</span><span>Lip sync</span><span class="on">AI Edit</span></div></div><p class="dq-cap">Deleted code, not added code. AI Edit became one more panel.</p></div>
+</div><figure class="dq-shot"><button class="ci-z" type="button" data-zoom="dp_aiedit" aria-label="Enlarge: The scene editor with AI Edit docked as a side panel next to the other tools"><img loading="lazy" decoding="async" width="668" height="743" alt="The scene editor with AI Edit docked as a side panel next to the other tools"></button><figcaption>AI Edit, docked with the other tools.</figcaption></figure></div>
+</section>
+<section class="dq-story" id="dp-s3" data-rail="03 What's generating">
+ <div class="dq-st-text">
+  <p class="dq-k">story/03 <span>async state</span></p>
+  <h3>Showing what's generating, everywhere.</h3>
+  <dl class="dq-pc"><div><dt>Problem</dt><dd>Jobs run in the background across scenes, and people lost track.</dd></div><div><dt>Change</dt><dd>Rail tabs get live badges, and the tooltip names what's in flight.</dd></div><div class="why"><dt>Why it matters</dt><dd>Async state is one of the hardest UX problems in AI products.</dd></div></dl>
+  <details class="dq-more" data-long=""><summary>How it was built</summary><div><p>A new hook watches every scene. Badges have <code>aria-label</code>s, and the animation respects <code>prefers-reduced-motion</code>.</p></div></details>
+ </div>
+ <div class="dq-st-media"><div class="ci-demo dp-rail dq-demo" data-rail-demo="">
+<div class="dq-demo-h"><span class="dq-note">recreation · hover a tab</span></div>
+<div class="dp-rwrap">
+ <div class="dp-rtabs" role="list" aria-label="Editing panel tabs">
+  <button type="button" class="dp-rt" data-tip="Generating A-roll · Scenes 2, 5" aria-label="Visual, generating in scenes 2 and 5"><span class="ico" aria-hidden="true">▣</span><span class="nm">Visual</span><span class="bd spin" aria-hidden="true"></span></button>
+  <button type="button" class="dp-rt" data-tip="Generating motion · Scene 3" aria-label="Motion, generating in scene 3"><span class="ico" aria-hidden="true">◎</span><span class="nm">Motion</span><span class="bd spin" aria-hidden="true"></span></button>
+  <button type="button" class="dp-rt" data-tip="Voiceover done · Scene 4" aria-label="Audio, done in scene 4"><span class="ico" aria-hidden="true">♪</span><span class="nm">Audio</span><span class="bd done" aria-hidden="true">✓</span></button>
+  <button type="button" class="dp-rt" data-tip="Nothing running" aria-label="Lip sync, nothing running"><span class="ico" aria-hidden="true">☺</span><span class="nm">Lip sync</span></button>
+ </div>
+ <div class="dp-rscene"><p class="dp-rtip" aria-live="polite">Hover or tap a tab to see what's in flight.</p><div class="dp-rgrid"><span class="">Scene 1</span><span class="busy">Scene 2</span><span class="busy">Scene 3</span><span class=" ok">Scene 4</span><span class="busy">Scene 5</span><span class="">Scene 6</span></div></div>
+</div></div></div>
+</section>
+<section class="dq-story" id="dp-s4" data-rail="04 The revert">
+ <div class="dq-st-text">
+  <p class="dq-k">story/04 <span>owning failures</span></p>
+  <h3>Shipping a regression, and fixing it properly.</h3>
+  <dl class="dq-pc"><div><dt>Problem</dt><dd>My one-click narrator change dropped the "this affects N scenes" step.</dd></div><div><dt>Change</dt><dd>It was reverted, then re-landed with a per-scene regenerate dialog.</dd></div><div class="why"><dt>Why it matters</dt><dd>Owning the code means owning its failures. The second version is better than the plan.</dd></div></dl>
+  <details class="dq-more" data-long=""><summary>How it was built</summary><div><p>The re-land also needed a small backend change, so regeneration accepts a list of scenes, with a test.</p></div></details>
+ </div>
+ <div class="dq-st-media"><div class="dq-git" data-git=""><svg viewBox="0 0 560 210" role="img" aria-label="Git history: a change ships, is reverted, then re-landed with the missing piece.">
+ <path class="g-main" d="M20 150 H540"></path>
+ <path class="g-br" d="M70 150 C110 150 110 60 150 60 H210 C250 60 250 150 290 150"></path>
+ <path class="g-br2" d="M330 150 C370 150 370 60 410 60 H440 C480 60 480 150 520 150"></path>
+ <circle class="c1" cx="180" cy="60" r="9"></circle><circle class="c2" cx="300" cy="150" r="9"></circle><circle class="c3" cx="425" cy="60" r="9"></circle><circle class="c4" cx="520" cy="150" r="9"></circle>
+ <text x="180" y="34" text-anchor="middle">v1 · one-click narrator</text>
+ <text x="300" y="186" text-anchor="middle" class="tr">revert</text>
+ <text x="425" y="34" text-anchor="middle">v2 · + regenerate dialog</text>
+ <text x="520" y="186" text-anchor="middle" class="tg">merged</text>
+</svg>
+<ul class="dq-gl"><li><span class="k b"></span>v1 dropped the "this affects N scenes" step</li><li><span class="k r"></span>Rolled back</li><li><span class="k g"></span>v2: per-scene dialog, backend accepts a list of scenes, plus a test</li></ul></div></div>
+</section>
+<section class="dq-sec" id="dp-learn" data-rail="What I'm learning"><p class="dq-k">learning</p><h2>The vocabulary, one real problem at a time</h2>
+ <ul class="dq-learn"><li>Whenever Claude changes the backend, I ask it to explain exactly what it did, in simple terms, before anything merges.</li><li>On PRs with migrations, that's how I understood which columns were being added.</li><li>When a migration conflict came up, I had it explain what that meant. That's how the terms below stuck.</li></ul>
+ <div class="dq-gloss"><button type="button" class="gc" aria-pressed="false"><span class="f"><code>Migration</code><i>tap to flip</i></span><span class="b"><b>A versioned change to the database, like adding a column. The app and the database have to agree on it.</b><i>Met it in: PRs that added new columns</i></span></button><button type="button" class="gc" aria-pressed="false"><span class="f"><code>Migration conflict</code><i>tap to flip</i></span><span class="b"><b>Two branches each changed the database, and the migration history no longer lines up.</b><i>Met it in: A conflict on one of my PRs</i></span></button><button type="button" class="gc" aria-pressed="false"><span class="f"><code>Revert</code><i>tap to flip</i></span><span class="b"><b>A new commit that undoes an earlier one, so the history stays honest.</b><i>Met it in: story/04</i></span></button><button type="button" class="gc" aria-pressed="false"><span class="f"><code>CI</code><i>tap to flip</i></span><span class="b"><b>Checks that run automatically on every push: lint, tests, build.</b><i>Met it in: Every PR</i></span></button><button type="button" class="gc" aria-pressed="false"><span class="f"><code>Hook</code><i>tap to flip</i></span><span class="b"><b>A reusable piece of React logic. Mine watches every scene for running jobs.</b><i>Met it in: story/03</i></span></button><button type="button" class="gc" aria-pressed="false"><span class="f"><code>Portal</code><i>tap to flip</i></span><span class="b"><b>Rendering a component outside its parent, used for floating layers.</b><i>Met it in: The old AI Edit window, story/02</i></span></button><button type="button" class="gc" aria-pressed="false"><span class="f"><code>Global state</code><i>tap to flip</i></span><span class="b"><b>Data the whole app can read, kept in a store like Redux.</b><i>Met it in: Removing AI Edit's open/closed flag</i></span></button><button type="button" class="gc" aria-pressed="false"><span class="f"><code>role="alert"</code><i>tap to flip</i></span><span class="b"><b>Tells screen readers to announce a message the moment it appears.</b><i>Met it in: story/01</i></span></button></div>
+</section>
+<section class="dq-sec" id="dp-range" data-rail="The range" data-long=""><p class="dq-k">range</p><h2>Everything else, by area</h2><div class="tw dq-log" data-switch=""><div class="tw-bar"><i></i><i></i><i></i><span>CHANGELOG · by area</span></div>
+<div class="tw-body"><div class="ci-tabs dq-tabs" role="tablist" aria-label="Areas"><button type="button" role="tab" id="dq-t0" aria-controls="dq-p0" aria-selected="true" tabindex="0">onboarding</button><button type="button" role="tab" id="dq-t1" aria-controls="dq-p1" aria-selected="false" tabindex="-1">wizard</button><button type="button" role="tab" id="dq-t2" aria-controls="dq-p2" aria-selected="false" tabindex="-1">editor</button><button type="button" role="tab" id="dq-t3" aria-controls="dq-p3" aria-selected="false" tabindex="-1">audio</button><button type="button" role="tab" id="dq-t4" aria-controls="dq-p4" aria-selected="false" tabindex="-1">discovery</button><button type="button" role="tab" id="dq-t5" aria-controls="dq-p5" aria-selected="false" tabindex="-1">motion</button></div>
+<ul class="dq-lines" role="tabpanel" id="dq-p0" aria-labelledby="dq-t0"><li><span>+</span>Welcome-offer messaging and badges</li><li><span>+</span>Animated strikethrough on the original price</li><li><span>+</span>Post-purchase onboarding-call offer</li><li><span>+</span>"How did you hear about us?" adds ChatGPT, Claude, Grok</li><li><span>+</span>Cancellation reasons shuffled per user to remove order bias</li></ul><ul class="dq-lines" role="tabpanel" id="dq-p1" aria-labelledby="dq-t1" hidden=""><li><span>+</span>Mobile stepper bar</li><li><span>+</span>Exit confirmation mid-wizard</li><li><span>+</span>Scroll affordance for long content</li><li><span>+</span>Deep links that pre-fill a script</li><li><span>+</span>Custom and preset styles in one dropdown</li></ul><ul class="dq-lines" role="tabpanel" id="dq-p2" aria-labelledby="dq-t2" hidden=""><li><span>+</span>Insert a scene between scenes</li><li><span>+</span>Clearer selected scene, scroll-to-current</li><li><span>+</span>Visible tile loading state</li><li><span>+</span>Dismissible hover demos on tabs</li></ul><ul class="dq-lines" role="tabpanel" id="dq-p3" aria-labelledby="dq-t3" hidden=""><li><span>+</span>Redesigned audio trimmer</li><li><span>+</span>Smarter music entry points</li></ul><ul class="dq-lines" role="tabpanel" id="dq-p4" aria-labelledby="dq-t4" hidden=""><li><span>+</span>Live webinar strip on Tutorials</li><li><span>+</span>Shareable section links</li><li><span>+</span>Preview videos on picker cards</li><li><span>+</span>"My Stories" menu with recent stories</li></ul><ul class="dq-lines" role="tabpanel" id="dq-p5" aria-labelledby="dq-t5" hidden=""><li><span>+</span>Staggered rise-in on project grids</li><li><span>+</span>Hover lift and delete-in-flight states</li><li><span>+</span>All of it honours reduced motion</li></ul></div></div></section>
+<section class="dq-fn"><ol>
+ <li>Source: pull request history of Atlabs' private product repository, Oct 2026. 97 opened, 68 merged. Backend and tracking counts are based on PR descriptions.</li>
+ <li>Code written with Claude Code (96 of 97 PRs carry its attribution). Every change passed CI and AI review; frontend and minor backend changes I merge, larger backend changes are reviewed and merged by developers.</li>
+ <li>The replay, diff and demos are recreations to explain the work, not production code or screenshots. Screenshots are labelled as such.</li>
+</ol></section>
+</div>
+<nav class="case-nav" aria-label="More case studies">
+    <div class="cn-head"><p>You've reached the end of <b>Designing in production</b></p><div class="cn-dots"><a href="#/video-teaser" class="cn-dot" style="--cc:#C2410C" aria-label="Video teaser"></a><a href="#/create-image" class="cn-dot" style="--cc:#C2410C" aria-label="Create Image"></a><a href="#/editing-experience" class="cn-dot" style="--cc:#23734A" aria-label="Editing experience"></a><a href="#/designing-in-production" class="cn-dot on" style="--cc:#2F5BD3" aria-label="Designing in production" aria-current="page"></a><a href="#/xalts" class="cn-dot" style="--cc:#1E3A5F" aria-label="Xalts"></a><a href="#/clearfeed" class="cn-dot" style="--cc:#5B44F2" aria-label="ClearFeed"></a><a href="#/curelink" class="cn-dot" style="--cc:#1F7AE8" aria-label="Curelink"></a><a href="#/alphy" class="cn-dot" style="--cc:#6B4FA8" aria-label="Alphy"></a><a href="#/night-schedule" class="cn-dot" style="--cc:#E8590C" aria-label="Night Schedule"></a><a href="https://www.behance.net/gallery/204867193/Deeper-Connections-via-Tinder-a-design-case-study" target="_blank" rel="noopener" class="cn-dot" style="--cc:#E0457B" aria-label="Tinder concept"></a><span>4 of 10</span></div></div>
+    <div class="cn-grid solo"><a class="cn-card next" href="#/xalts" style="--cc:#1E3A5F">
+      <span class="cn-txt"><span class="cn-k">Up next →</span><b>Xalts</b><span class="cn-l">Letting banks bring their own vault</span><span class="cn-m">Web3 · fintech</span></span>
+      <span class="cn-img" aria-hidden="true"><img class="" loading="lazy" decoding="async" alt=""></span></a></div>
+    <div class="cn-foot"><a class="cn-home" href="#/"><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M16 10H4M9 5l-5 5 5 5"></path></svg>Back to home</a><a class="cn-all" href="#/work/previous">See all work</a></div>
+  </nav><section class="desk-sec" aria-labelledby="desk-h">
+ <div class="dk-copy"><h2 id="desk-h">Get to know me.</h2>
+  <p>The story behind the work, or my résumé on one page.</p>
+  <div class="dk-hint" aria-hidden="true"><span>pick one up</span>
+   <svg width="58" height="22" viewBox="0 0 58 22" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M2 15C16 5 36 4 53 11"></path><path d="M45 5.5l8 5.5-8.5 5"></path></svg></div>
+ </div>
+ <div class="dk-desk" id="desk">
+  <a class="dk-obj dk-pol dk-pre" href="#/about" draggable="false" data-k="story" aria-label="Read my story, 2 minute read">
+   <div class="dk-inner"><span class="dk-seen" aria-hidden="true">✓</span><div class="dk-body"><span class="dk-tape"></span>
+    <div class="dk-flip">
+     <div class="dk-face"><div class="dk-ph"><img alt="Rupam" draggable="false"></div><em>my story</em></div>
+     <div class="dk-face dk-back"><p>How an engineer from IIT Roorkee ended up designing AI video tools.</p><span>Read it →</span></div>
+    </div></div></div>
+   <span class="dk-lbl">My story <i>· 2 min read</i></span></a>
+  <a class="dk-obj dk-sheet dk-pre" href="#/resume" data-resume="" draggable="false" data-k="resume" aria-label="Open résumé, one page PDF">
+   <div class="dk-inner"><span class="dk-seen" aria-hidden="true">✓</span><div class="dk-body">
+    <svg class="dk-clip" width="22" height="52" viewBox="0 0 22 52" fill="none" stroke="#9C9B96" stroke-width="2" stroke-linecap="round"><path d="M16 14v26a5 5 0 0 1-10 0V8a4 4 0 0 1 8 0v30a2 2 0 0 1-4 0V14"></path></svg>
+    <h4>Rupam</h4><div class="dk-r">Founding Designer · Atlabs AI</div>
+    <div class="dk-row"><span>Atlabs AI</span><span>Now</span></div><div class="dk-row"><span>Xalts</span><span>2024</span></div>
+    <div class="dk-row"><span>ClearFeed</span><span>2023</span></div><div class="dk-row"><span>IIT Roorkee</span><span>Int. MSc</span></div>
+    <div class="dk-bars"><div style="width:90%"></div><div style="width:70%"></div><div style="width:80%"></div></div>
+    <span class="dk-stamp">1 PAGE</span>
+    <div class="dk-dl"><b>Open résumé ↗</b></div></div></div>
+   <span class="dk-lbl">Résumé <i>· PDF</i></span></a>
+ </div>
+</section></main></div>
+  <dialog class="lb" id="lb"><img alt=""><form method="dialog"><button>Close</button></form></dialog>
+  <dialog class="rvd" id="rvd" aria-labelledby="rvd-t">
+    <div class="rvd-bar"><p id="rvd-t">Resume</p><div class="rvd-acts"><button type="button" class="sf-btn primary" id="rvd-dl"><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M10 3v10M5.5 8.5 10 13l4.5-4.5M4 16.5h12"/></svg><span>Download PDF</span></button><button type="button" class="rvd-x" id="rvd-x" aria-label="Close resume"><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M5 5l10 10M15 5 5 15"/></svg></button></div></div>
+    <div class="rvd-body"><img id="rvd-img" alt="Rupam Gumber's resume, Oct 2026: Founding Designer at Atlabs AI; earlier at Xalts and ClearFeed; IIT Roorkee; Adobe Designathon 2024 first runner-up and Best CSS Site of the Day." width="1600" height="2262"></div>
+    <p class="rvd-note" id="rvd-note" aria-live="polite"></p>
+  </dialog>
+  <div class="rprog" id="rprog" aria-hidden="true"></div>
+  <button type="button" class="rchip" id="rchip" hidden aria-label="Reading progress. Jump to the end"><span class="ring" aria-hidden="true"></span><span class="t"><b></b><span class="sec-name"></span></span><span class="left"></span></button>
+<!-- rupam.work chat widget (v2) — from claude/chat-widget.html, replaces the old "Contact me" button + menu -->
+<style>
+  #rw-chat, #rw-chat * { box-sizing: border-box; }
+  #rw-chat {
+    --ink: #191917; --muted: #6B6862; --soft: #4A4743; --line: #E6E3DD; --line-2: #DAD6CF;
+    --bubble: #F1EFEA; --panel: #FFFFFF; --online: #2F9E55; --badge: #D93F3F; --error: #B42318;
+    position: fixed; right: 24px; bottom: 24px; z-index: 2147483000;
+    font-family: var(--sans, 'Geist'), system-ui, -apple-system, sans-serif; font-size: 14px; line-height: 1.45; color: var(--ink);
+  }
+  #rw-chat button, #rw-chat input, #rw-chat textarea { font: inherit; color: inherit; }
+  @keyframes rwPop { from { opacity: 0; transform: translateY(8px) scale(.96); } to { opacity: 1; transform: none; } }
+  @keyframes rwDot { 0%,80%,100% { opacity: .25; transform: translateY(0); } 40% { opacity: 1; transform: translateY(-2px); } }
+  .rw-pop { animation: rwPop .32s cubic-bezier(.2,.8,.2,1) both; transform-origin: bottom right; }
+  @media (prefers-reduced-motion: reduce) { .rw-pop, .rw-dot { animation: none !important; } }
+  .rw-hidden { display: none !important; }
+
+  .rw-avatar { position: relative; flex: none; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 600; background: var(--ink); color: #fff; }
+  .rw-avatar::after { content: ""; position: absolute; right: -1px; bottom: -1px; width: 10px; height: 10px; border-radius: 50%; background: var(--online); border: 2px solid #fff; }
+
+  /* launcher */
+  .rw-launch { position: relative; display: flex; align-items: center; gap: 10px; height: 52px; padding: 0 20px 0 8px; margin-left: auto;
+    background: var(--ink); color: #fff; border: 0; border-radius: 26px; cursor: pointer; font-size: 15px; font-weight: 500;
+    box-shadow: 0 12px 30px -10px rgba(25,25,23,.55); }
+  .rw-launch:hover, .rw-close-fab:hover, .rw-primary:hover { background: #2E2E2B; }
+  .rw-launch .rw-avatar { width: 36px; height: 36px; font-size: 14px; background: #fff; color: var(--ink); }
+  .rw-launch .rw-avatar::after { border-color: var(--ink); }
+  .rw-badge { position: absolute; top: -5px; right: -3px; min-width: 20px; height: 20px; padding: 0 5px; border-radius: 10px; background: var(--badge);
+    color: #fff; font-size: 11px; font-weight: 600; display: flex; align-items: center; justify-content: center; border: 2px solid var(--paper, #F5F3EF); }
+  .rw-close-fab { width: 52px; height: 52px; margin-left: auto; border-radius: 26px; border: 0; background: var(--ink); color: #fff; display: flex;
+    align-items: center; justify-content: center; cursor: pointer; box-shadow: 0 12px 30px -10px rgba(25,25,23,.55); }
+
+  /* greeting peek */
+  .rw-peek { position: absolute; right: 0; bottom: 68px; width: 280px; }
+  .rw-peek-card { display: flex; gap: 12px; align-items: flex-start; width: 100%; text-align: left; padding: 14px 16px; background: #fff;
+    border: 1px solid var(--line); border-radius: 18px 18px 4px 18px; cursor: pointer;
+    box-shadow: 0 1px 2px rgba(25,25,23,.06), 0 16px 36px -10px rgba(25,25,23,.22); }
+  .rw-peek-card .rw-avatar { width: 34px; height: 34px; font-size: 14px; }
+  .rw-peek-meta { font-size: 12px; color: var(--muted); display: block; }
+  .rw-peek-text { font-size: 16px; font-weight: 500; display: block; }
+  .rw-peek-x { position: absolute; top: -12px; left: -12px; width: 28px; height: 28px; border-radius: 50%; background: #fff; border: 1px solid var(--line);
+    display: flex; align-items: center; justify-content: center; cursor: pointer; padding: 0; color: var(--muted); box-shadow: 0 2px 6px rgba(25,25,23,.08); }
+
+  /* panel */
+  .rw-panel { position: absolute; right: 0; bottom: 68px; width: 372px; height: 560px; max-height: calc(100vh - 120px); display: flex; flex-direction: column;
+    background: var(--panel); border: 1px solid var(--line); border-radius: 22px; overflow: hidden;
+    box-shadow: 0 1px 2px rgba(25,25,23,.06), 0 24px 60px -16px rgba(25,25,23,.28); }
+  .rw-head { display: flex; align-items: center; gap: 12px; padding: 16px 12px 16px 18px; border-bottom: 1px solid #EFECE6; }
+  .rw-head .rw-avatar { width: 40px; height: 40px; font-size: 16px; }
+  .rw-head-text { display: flex; flex-direction: column; flex: 1; min-width: 0; }
+  .rw-name { font-size: 15px; font-weight: 600; }
+  .rw-sub { font-size: 12px; color: var(--muted); }
+  .rw-icon-btn { flex: none; width: 36px; height: 36px; border-radius: 10px; border: 0; background: transparent; color: var(--muted);
+    display: flex; align-items: center; justify-content: center; cursor: pointer; padding: 0; }
+  .rw-icon-btn:hover, .rw-ghost:hover, .rw-chip:hover { background: var(--bubble); }
+
+  .rw-thread { flex: 1; overflow-y: auto; padding: 16px 16px 12px; display: flex; flex-direction: column; gap: 8px; }
+  .rw-day { align-self: center; font-size: 12px; color: var(--muted); padding-bottom: 4px; }
+  .rw-msg { max-width: 82%; padding: 10px 14px; white-space: pre-wrap; word-wrap: break-word; }
+  .rw-them { align-self: flex-start; background: var(--bubble); border-radius: 18px 18px 18px 4px; }
+  .rw-me { align-self: flex-end; background: var(--ink); color: #fff; border-radius: 18px 18px 4px 18px; }
+  .rw-typing { align-self: flex-start; display: flex; gap: 4px; padding: 14px 16px; background: var(--bubble); border-radius: 18px 18px 18px 4px; }
+  .rw-dot { width: 6px; height: 6px; border-radius: 3px; background: var(--muted); animation: rwDot 1s infinite; }
+  .rw-dot:nth-child(2) { animation-delay: .15s; } .rw-dot:nth-child(3) { animation-delay: .3s; }
+
+  .rw-chips { display: flex; flex-wrap: wrap; justify-content: flex-end; gap: 6px; padding-top: 6px; }
+  .rw-chip { height: 34px; padding: 0 14px; border: 1px solid var(--line-2); border-radius: 17px; background: #fff; font-size: 13px; cursor: pointer; }
+
+  .rw-email { display: flex; flex-direction: column; gap: 8px; margin-top: 4px; padding: 12px; border: 1px solid var(--line); border-radius: 14px; background: #FBFAF8; }
+  .rw-email label { font-size: 12px; color: var(--muted); }
+  .rw-email-row { display: flex; gap: 8px; }
+  .rw-email input { flex: 1; min-width: 0; height: 40px; padding: 0 12px; border: 1px solid var(--line-2); border-radius: 10px; font-size: 14px; background: #fff; }
+  .rw-primary { flex: none; height: 40px; padding: 0 16px; background: var(--ink); color: #fff; border: 0; border-radius: 10px; font-size: 14px; font-weight: 500; cursor: pointer; }
+  .rw-error { font-size: 12px; color: var(--error); }
+
+  .rw-foot { border-top: 1px solid #EFECE6; }
+  .rw-composer { position: relative; display: flex; align-items: flex-end; gap: 8px; margin: 12px 12px 6px; padding: 6px 6px 6px 14px;
+    border: 1px solid var(--line-2); border-radius: 14px; background: #fff; }
+  .rw-composer textarea { flex: 1; resize: none; border: 0; outline: none; font-size: 14px; line-height: 1.45; background: transparent; padding: 7px 0; min-height: 44px; max-height: 120px; }
+  .rw-send { flex: none; width: 38px; height: 38px; border-radius: 11px; border: 0; background: #C9C5BE; color: #fff; display: flex; align-items: center; justify-content: center; cursor: pointer; padding: 0; }
+  .rw-send.is-ready { background: var(--ink); }
+  .rw-actions { display: flex; align-items: center; gap: 2px; padding: 4px 8px 10px; }
+  .rw-ghost { display: flex; align-items: center; gap: 6px; height: 36px; padding: 0 10px; border: 0; border-radius: 9px; background: transparent;
+    color: var(--soft); font-size: 13px; cursor: pointer; text-decoration: none; }
+  .rw-sr { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+
+  @media (max-width: 480px) {
+    #rw-chat { right: 16px; bottom: 16px; left: 16px; }
+    .rw-panel { width: 100%; height: calc(100vh - 100px); }
+    .rw-peek { width: min(280px, 100%); }
+  }
+
+  /* portfolio fit: keep the launcher visible on the dark theme, and let clicks pass through the empty part of the full-width mobile container */
+  #rw-chat .rw-launch, #rw-chat .rw-close-fab, #rw-chat .rw-send, #rw-chat .rw-primary, #rw-chat .rw-me { color: #fff; }
+  :root[data-theme="dark"] #rw-chat .rw-launch, :root[data-theme="dark"] #rw-chat .rw-close-fab { background: #FAFAF8; color: #191917; }
+  :root[data-theme="dark"] #rw-chat .rw-launch:hover, :root[data-theme="dark"] #rw-chat .rw-close-fab:hover { background: #ECECE8; }
+  :root[data-theme="dark"] .rw-launch .rw-avatar { background: #191917; color: #fff; }
+  :root[data-theme="dark"] .rw-launch .rw-avatar::after { border-color: #FAFAF8; }
+  #rw-chat { pointer-events: none; }
+  #rw-chat > * { pointer-events: auto; }
+</style>
+
+<div id="rw-chat">
+  <div class="rw-peek rw-pop rw-hidden" data-rw="peek">
+    <button type="button" class="rw-peek-card" data-rw="open">
+      <span class="rw-avatar" aria-hidden="true"><img src="data:image/webp;base64,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" alt=""></span>
+      <span>
+        <span class="rw-peek-meta">Rupam · usually replies within a day</span>
+        <span class="rw-peek-text">Hi, how can I help you?</span>
+      </span>
+    </button>
+    <button type="button" class="rw-peek-x" data-rw="dismiss" aria-label="Dismiss greeting">
+      <svg width="10" height="10" viewBox="0 0 10 10" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" aria-hidden="true"><path d="M1.5 1.5l7 7M8.5 1.5l-7 7"/></svg>
+    </button>
+  </div>
+
+  <section class="rw-panel rw-pop rw-hidden" data-rw="panel" aria-label="Send Rupam a message">
+    <header class="rw-head">
+      <span class="rw-avatar" aria-hidden="true"><img src="data:image/webp;base64,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" alt=""></span>
+      <div class="rw-head-text">
+        <span class="rw-name">Rupam Gumber</span>
+        <span class="rw-sub">Founding designer at Atlabs · replies within a day</span>
+      </div>
+      <button type="button" class="rw-icon-btn" data-rw="close" aria-label="Close messages">
+        <svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" aria-hidden="true"><path d="M2 2l10 10M12 2L2 12"/></svg>
+      </button>
+    </header>
+    <div class="rw-thread" data-rw="thread" aria-live="polite"></div>
+    <div class="rw-foot">
+      <form class="rw-composer" data-rw="composer">
+        <label for="rw-msg" class="rw-sr">Message</label>
+        <textarea id="rw-msg" rows="2" placeholder="Write a message…" data-rw="input"></textarea>
+        <button type="submit" class="rw-send" data-rw="send" aria-label="Send message" disabled>
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 13V3M3.5 7.5L8 3l4.5 4.5"/></svg>
+        </button>
+      </form>
+      <div class="rw-actions">
+        <button type="button" class="rw-ghost" data-rw="copy">
+          <svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round" aria-hidden="true"><rect x="4.5" y="4.5" width="8" height="8" rx="1.8"/><path d="M9.5 4.5V3.3c0-1-.8-1.8-1.8-1.8H3.3c-1 0-1.8.8-1.8 1.8v4.4c0 1 .8 1.8 1.8 1.8h1.2"/></svg>
+          <span data-rw="copy-label">Copy email</span>
+        </button>
+        <a class="rw-ghost" data-rw="calendly" href="#" target="_blank" rel="noopener">
+          <svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" aria-hidden="true"><rect x="1.5" y="2.5" width="11" height="10" rx="2"/><path d="M1.5 6h11M4.5 1v3M9.5 1v3"/></svg>
+          <span>Book a 30-min call</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <button type="button" class="rw-launch" data-rw="launch">
+    <span class="rw-avatar" aria-hidden="true"><img src="data:image/webp;base64,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" alt=""></span>
+    <span>Send a message</span>
+    <span class="rw-badge" data-rw="badge" aria-label="1 new message">1</span>
+  </button>
+  <button type="button" class="rw-close-fab rw-hidden" data-rw="fab-close" aria-label="Close messages">
+    <svg width="18" height="18" viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4.5 7l4.5 4.5L13.5 7"/></svg>
+  </button>
+</div>
+
+<footer class="site-foot" aria-label="Footer">
+    <a class="sf-fill fe" href="mailto:rupamuxdesign@gmail.com" tabindex="-1" aria-hidden="true"><b>Email me <svg viewBox="0 0 24 24"><path d="M7 17 17 7M8 7h9v9"/></svg></b><small>rupamuxdesign@gmail.com</small></a>
+    <a class="sf-fill fs" href="https://calendly.com/rupam_g-ma/30min" tabindex="-1" aria-hidden="true"><b>Schedule a call <svg viewBox="0 0 24 24"><path d="M7 17 17 7M8 7h9v9"/></svg></b><small>30 minutes, on Calendly</small></a>
+    <div class="sf-cta">
+      <div class="sf-lead"><p class="sf-big">Still reading? That's a good sign.</p>
+        <nav class="sf-social" aria-label="Social"><a href="https://x.com/rupam_gumber" target="_blank" rel="noopener">X<svg viewBox="0 0 20 20" aria-hidden="true"><path d="M6 14 14 6M7 6h7v7"/></svg></a><a href="https://www.linkedin.com/in/rupam-gumber-120252204/" target="_blank" rel="noopener">LinkedIn<svg viewBox="0 0 20 20" aria-hidden="true"><path d="M6 14 14 6M7 6h7v7"/></svg></a><a href="https://medium.com/@rupamgumber38" target="_blank" rel="noopener">Medium<svg viewBox="0 0 20 20" aria-hidden="true"><path d="M6 14 14 6M7 6h7v7"/></svg></a></nav></div>
+      <div class="sf-btns">
+        <a class="sf-btn primary" href="mailto:rupamuxdesign@gmail.com">Email me</a>
+        <a class="sf-btn alt" href="https://calendly.com/rupam_g-ma/30min">Schedule a call</a>
+      </div>
+    </div>
+    <section class="bookshelf bsp-wrap" aria-labelledby="bs-title">
+      <div class="bsp-head"><p class="bs-title" id="bs-title">Currently on my bookshelf</p><button type="button" class="bsp-tidy" id="bsp-tidy" hidden>Tidy up</button></div>
+      <div class="bsp" id="bsp" role="group" aria-label="Bookshelf. Drag and throw the books."></div>
+    </section>
+  </footer>
+</div>
+
+
+<script src="/assets/js0.js"></script>
+<script src="/assets/js1.js"></script>
+<script src="/assets/js2.js"></script>
+<script src="/assets/js3.js"></script>
+<script src="/assets/js4.js"></script>
+<script src="/assets/js5.js"></script>
+<script src="/assets/js6.js"></script>
+<script src="/assets/js7.js"></script>
+<script src="/assets/js8.js"></script>
+<script src="/assets/js9.js"></script>
+</body>
+</html>

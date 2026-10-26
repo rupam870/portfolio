@@ -1,0 +1,363 @@
+<!doctype html>
+<html lang="en" data-theme="light">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Geist:wght@400;500;600&family=Caveat:wght@500;700&family=Geist+Mono:wght@400;500&display=swap">
+<title>ClearFeed: GPT Answers for Slack Support — Rupam Gumber</title>
+<meta name="description" content="B2B SaaS case study: setup, test and activation flows that let support teams auto-answer repeat Slack questions.">
+<meta name="author" content="Rupam Gumber">
+<meta name="robots" content="index,follow,max-image-preview:large">
+<link rel="canonical" href="https://rupam.work/work/clearfeed/">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Rupam Gumber">
+<meta property="og:title" content="ClearFeed: GPT Answers for Slack Support — Rupam Gumber">
+<meta property="og:description" content="B2B SaaS case study: setup, test and activation flows that let support teams auto-answer repeat Slack questions.">
+<meta property="og:url" content="https://rupam.work/work/clearfeed/">
+<meta property="og:image" content="https://rupam.work/og/clearfeed.jpg">
+<meta property="og:image:width" content="1200"><meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="ClearFeed: answering a Slack question only once">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:site" content="@rupam_gumber"><meta name="twitter:creator" content="@rupam_gumber">
+<meta name="twitter:title" content="ClearFeed: GPT Answers for Slack Support — Rupam Gumber">
+<meta name="twitter:description" content="B2B SaaS case study: setup, test and activation flows that let support teams auto-answer repeat Slack questions.">
+<meta name="twitter:image" content="https://rupam.work/og/clearfeed.jpg">
+<meta name="theme-color" content="#FAFAF8">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='16' fill='%2317171A'/%3E%3Ctext x='32' y='45' font-family='Georgia,serif' font-size='40' text-anchor='middle' fill='%23FAFAF8'%3Er%3C/text%3E%3C/svg%3E">
+<link rel="stylesheet" href="/assets/app.css">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebPage", "name": "ClearFeed: GPT Answers for Slack Support \u2014 Rupam Gumber", "url": "https://rupam.work/work/clearfeed/", "description": "B2B SaaS case study: setup, test and activation flows that let support teams auto-answer repeat Slack questions.", "author": {"@type": "Person", "name": "Rupam Gumber", "url": "https://rupam.work/"}}</script>
+<script src="/assets/router.js"></script>
+</head>
+<body>
+
+<div class="wrap">
+  <header class="top">
+    <a class="name" href="#/">Rupam Gumber</a>
+    <nav aria-label="Main">
+      <a href="#/about" data-r="about">About</a>
+      <a href="#/resume" data-resume>Resume</a>
+      <button class="theme-btn" type="button" id="theme-btn" aria-label="Switch to dark mode">
+        <svg viewBox="0 0 24 24" aria-hidden="true">
+          <mask id="bite-mask"><rect x="-6" y="-6" width="36" height="36" fill="#fff"/><circle class="bite" cx="25" cy="-1" r="6" fill="#000"/></mask>
+          <circle class="core" cx="12" cy="12" r="5" fill="currentColor" mask="url(#bite-mask)"/>
+          <g class="rays" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M12 1.5v2.2M12 20.3v2.2M1.5 12h2.2M20.3 12h2.2M4.6 4.6l1.5 1.5M17.9 17.9l1.5 1.5M4.6 19.4l1.5-1.5M17.9 6.1l1.5-1.5"/></g>
+        </svg>
+      </button>
+    </nav>
+  </header>
+  <div id="app"><main>
+<section class="ph text"><a class="back" href="#/">Back to home</a><h1>Answering the same Slack question only once</h1><p>ClearFeed's customers run support inside Slack, and the same questions kept coming back. I designed how a support head plugs their docs into GPT, checks the answers, and switches automated replies on.</p></section>
+<div class="facts"><div><span>Role</span>Product Design Intern</div><div><span>Team</span>1 PM, 4 developers, 2 data scientists, 1 researcher</div><div><span>Timeline</span>2.5 months, Jan–Sep '23 internship</div><div><span>Platform</span>Web</div></div>
+<section class="sec"><h2 class="lab">A 30-second primer</h2><div class="text"><p>Lots of B2B companies, especially in the US, support their customers in shared Slack channels. It's fast and people love it, until there are hundreds of channels and nobody knows which question is open, who owns it, or which ones are about to breach an SLA.</p><p>ClearFeed sits on top of Slack and turns those channels into a proper support queue, with a dashboard for response insights.</p></div></section>
+<section class="sec"><h2 class="lab">The problem</h2><div class="text"><p class="quote">Support teams were answering the same questions again and again, by digging through docs and old replies each time.</p><p>It slowed every agent down. And after ChatGPT, every support leader was asking some version of this:</p></div></section>
+<blockquote class="cs-quote"><p>“How can these AI systems be more efficient? How can our agents not have to respond to so many user queries at all? And how can we make it easier for agents to resolve problems?”</p></blockquote>
+<section class="sec"><h2 class="lab">What we heard</h2><div><p class="text" style="color:var(--mute)">We ran interviews, rewatched old recordings, read what support leaders were writing, and I sat with ClearFeed's own support team to watch how they worked. Interviews were expensive, so we saved them for support heads.</p></div></section>
+<ol class="cs-insights"><li><span class="cs-ic" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M17 2l3 3-3 3"></path><path d="M4 11V9a4 4 0 0 1 4-4h12"></path><path d="M7 22l-3-3 3-3"></path><path d="M20 13v2a4 4 0 0 1-4 4H4"></path></svg></span><p>Support teams have been <mark>aware of this problem</mark>, repeat questions, for years.</p></li><li><span class="cs-ic" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M4 5.5A2.5 2.5 0 0 1 6.5 3H20v15H6.5A2.5 2.5 0 0 0 4 20.5z"></path><path d="M4 20.5A2.5 2.5 0 0 0 6.5 23H20v-5"></path><path d="M8 8h8M8 11.5h6"></path></svg></span><p>On top of their docs, they had <mark>invested in FAQs and knowledge bases</mark> for customers.</p></li><li><span class="cs-ic" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M4 6.5A2.5 2.5 0 0 1 6.5 4h11A2.5 2.5 0 0 1 20 6.5v8a2.5 2.5 0 0 1-2.5 2.5H10l-4.2 3.2c-.5.4-1.3 0-1.3-.6V17A2.5 2.5 0 0 1 4 14.5Z"></path></svg></span><p><mark>85% of users prefer asking in Slack</mark> instead of searching a support portal.</p></li><li><span class="cs-ic" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="8.5"></circle><path d="M12 7.5V12l3 2"></path></svg></span><p>Keeping those <mark>knowledge bases up to date</mark> was a constant struggle.</p></li><li><span class="cs-ic" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 3v4M12 17v4M3 12h4M17 12h4M6 6l2.5 2.5M15.5 15.5 18 18M6 18l2.5-2.5M15.5 8.5 18 6"></path></svg></span><p>Ironically, <mark>Slack channels themselves</mark> are one of the best sources of knowledge.</p></li></ol>
+<section class="sec"><h2 class="lab">What it adds up to</h2><div class="heard">
+  <div>Knowledge bases existed, but agents rarely used them, so the same answer got rewritten by hand.</div>
+  <div>A steady stream of repeat questions buried the urgent, unusual ones.</div>
+  <div>More repeat questions meant more people, which made support expensive to scale.</div>
+  <div>Replies varied from agent to agent, so customers got an inconsistent experience.</div>
+</div></section>
+<section class="sec"><h2 class="lab">Who I designed for</h2><div class="text"><p>The Head of Customer Support, the person who sets this up. Think David: 15 years in support, 7 leading a team, measured on SLAs, response times and how stretched his team feels.</p><p>His job with our feature came down to three things.</p></div></section>
+<div class="cs-steps"><div class="cs-step"><span class="cs-ic" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="6" cy="5" r="2"></circle><path d="M6 7v4a4 4 0 0 0 4 4h8"></path><path d="M15 12l3 3-3 3"></path></svg></span><b>Index</b><p>Connect public and private docs to GPT within hours, by pasting URLs or using ready-made connectors.</p></div><div class="cs-step"><span class="cs-ic" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="8.5"></circle><path d="M8.5 12.2l2.4 2.4 4.6-5"></path></svg></span><b>Test</b><p>Ask real questions and check how accurate and relevant the answers are, before any customer sees them.</p></div><div class="cs-step"><span class="cs-ic" aria-hidden="true"><svg viewBox="0 0 24 24"><rect x="2.5" y="7" width="19" height="10" rx="5"></rect><circle cx="16.5" cy="12" r="3"></circle></svg></span><b>Activate</b><p>Switch GPT answers on for a triage channel, so the easy questions get deflected.</p></div></div>
+<section class="sec"><h2 class="lab">Two halves, two designers</h2><p class="text">I owned the setup in the web app. Suraj Mahraj, my senior, owned how it shows up in Slack. We met often, since each half depended on the other, and he unblocked me more than once.</p></section>
+<div class="cs-parts">
+  <div class="cs-part2"><span class="n">Part 01</span><b>Configuring the data sources and setting them up</b><span class="who" style="--c:#F2C94C;--t:#1A1A1F"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 3l15 7-6.3 2-3 6.8z" fill="#F2C94C" stroke="#fff" stroke-width="1.6" stroke-linejoin="round"></path></svg><i>Rupam Gumber</i></span></div>
+  <span class="plus" aria-hidden="true">+</span>
+  <div class="cs-part2"><span class="n">Part 02</span><b>Seeing it in action on Slack</b><span class="who" style="--c:#E0603A;--t:#fff"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 3l15 7-6.3 2-3 6.8z" fill="#E0603A" stroke="#fff" stroke-width="1.6" stroke-linejoin="round"></path></svg><i>Suraj Mahraj</i></span></div>
+</div>
+<section class="sec"><h2 class="lab">Sketching first</h2><div class="text"><p>Coffee, paper, and a lot of versions of how the three steps could sit together in one flow, before anything went into Figma.</p></div></section>
+<figure class="cs-img"><button class="zoom" type="button" data-zoom="cf_sketch" aria-label="Enlarge Early sketches"><img loading="lazy" decoding="async" width="1612" height="735" alt=""></button></figure>
+<section class="sec"><h2 class="lab">Step 1: index</h2><div class="text"><p>There are dozens of possible sources, so I asked customers directly. ClearFeed can broadcast a message to every customer channel, so I used it as a poll. Public documentation and Confluence came out on top, and became the first release.</p><p>Then I sat with the data science team to learn exactly what each source needs to connect, so the forms asked for nothing extra.</p></div></section>
+<div class="cs-two cs-eq">
+  <figure class="cs-slack"><div class="cs-msg"><img class="av" alt="" width="36" height="36"><div><p class="meta"><b>Rupam Gumber</b><span>11:55</span></p><p>Hi, I'm looking for your input on which data source you use most. I'm designing GPT Powered Automated Answers, and the most popular sources will be released first. Options below; reply if you use something else.</p><ol><li>Public data sources</li><li>Confluence</li><li>Zendesk</li><li>Freshdesk</li><li>Intercom</li></ol></div></div><figcaption>The poll, sent to every customer channel at once</figcaption></figure>
+  <figure class="cs-fields"><div class="cs-fields-in">
+    <div><b>Source 1: Public docs</b><ul><li>Name of the source</li><li>Tags, like version or type</li><li>One or more URLs</li><li>One or more excluded URLs</li></ul></div>
+    <div><b>Source 2: Confluence</b><ul><li>Name of the source</li><li>Tags, like version or type</li><li>Space name: index every page, or pick pages</li></ul></div>
+  </div><figcaption>What each source needs, agreed with data science</figcaption></figure>
+</div>
+<section class="cs-iters" aria-labelledby="it-h">
+  <div class="it-head"><div><p class="it-k">Iterations</p><h3 id="it-h">What changed before the final version</h3></div><div class="it-tabs" role="group" aria-label="Screen"><button type="button" class="it-tab" data-it="intro" aria-pressed="true">Introductory screen</button><button type="button" class="it-tab" data-it="details" aria-pressed="false">Details screen</button><button type="button" class="it-tab" data-it="final" aria-pressed="false">Final screen</button></div></div>
+  <div class="it-panel" data-itp="intro"><div class="it-side"><p class="it-v">Iteration 1</p><div class="cs-win sm"><div class="bar" aria-hidden="true"><i></i><i></i><i></i></div><button class="zoom" type="button" data-zoom="cf_it1" aria-label="Enlarge Iteration 1"><img loading="lazy" decoding="async" width="1400" height="839" alt=""></button></div><ul class="it-notes"><li class="g">Consistent with our other empty states</li><li class="b">The value wasn't clear</li></ul></div><div class="it-side"><p class="it-v">Iteration 2 <em>Shipped</em></p><div class="cs-win sm"><div class="bar" aria-hidden="true"><i></i><i></i><i></i></div><button class="zoom" type="button" data-zoom="cf_it2" aria-label="Enlarge Iteration 2"><img loading="lazy" decoding="async" width="1400" height="836" alt=""></button></div><ul class="it-notes"><li class="g">Clarity over consistency: an animation shows what it does</li><li class="g">Reads as an introduction, not an empty state</li></ul></div></div><div class="it-panel" data-itp="details" hidden=""><div class="it-side"><p class="it-v">Iteration 1</p><div class="cs-win sm"><div class="bar" aria-hidden="true"><i></i><i></i><i></i></div><button class="zoom" type="button" data-zoom="cf_it3" aria-label="Enlarge Iteration 1"><img loading="lazy" decoding="async" width="1400" height="839" alt=""></button></div><ul class="it-notes"><li class="b">As a side sheet, the animation behind it still distracted, even dimmed</li></ul></div><div class="it-side"><p class="it-v">Iteration 2 <em>Shipped</em></p><div class="cs-win sm"><div class="bar" aria-hidden="true"><i></i><i></i><i></i></div><button class="zoom" type="button" data-zoom="cf_it4" aria-label="Enlarge Iteration 2"><img loading="lazy" decoding="async" width="1400" height="839" alt=""></button></div><ul class="it-notes"><li class="g">A calmer, more stable full screen</li></ul></div></div><div class="it-panel" data-itp="final" hidden=""><div class="it-side"><p class="it-v">Iteration 1</p><div class="cs-win sm"><div class="bar" aria-hidden="true"><i></i><i></i><i></i></div><button class="zoom" type="button" data-zoom="cf_it5" aria-label="Enlarge Iteration 1"><img loading="lazy" decoding="async" width="1400" height="840" alt=""></button></div><ul class="it-notes"><li class="b">A table couldn't fit all the tags</li><li class="b">Most teams have 4–5 sources, so a table was overkill</li></ul></div><div class="it-side"><p class="it-v">Iteration 2 <em>Shipped</em></p><div class="cs-win sm"><div class="bar" aria-hidden="true"><i></i><i></i><i></i></div><button class="zoom" type="button" data-zoom="cf_it6" aria-label="Enlarge Iteration 2"><img loading="lazy" decoding="async" width="1400" height="839" alt=""></button></div><ul class="it-notes"><li class="g">Clearer hierarchy: name, status and tags in one card</li></ul></div></div>
+</section>
+<section class="sec"><h2 class="lab">The final flow</h2><div><p class="text" style="color:var(--mute)">Minimal on purpose: fewer choices meant fewer setup mistakes and a faster first run.</p>
+<div class="decs">
+  <div><b>An intro that shows, not tells</b><p>The first screen animates what the feature does, so nobody has to read a wall of text to get it.</p></div>
+  <div><b>Pick a source, fill a short form</b><p>Clear labels and tooltips where people usually got stuck.</p></div>
+  <div><b>Progress you can see</b><p>Indexing takes time, so live status keeps expectations right and builds trust.</p></div>
+  <div><b>Status at a glance</b><p>Colour-coded indexing, failed and indexed states across every source.</p></div>
+</div></div></section>
+<figure class="cs-mock"><div class="cs-win"><div class="bar" aria-hidden="true"><i></i><i></i><i></i><span>app.clearfeed.ai</span></div><button class="zoom" type="button" data-zoom="cf_fs1" aria-label="Enlarge Index public documentation"><img loading="lazy" decoding="async" width="2000" height="1198" alt=""></button></div><figcaption>Adding a public docs source</figcaption></figure>
+<figure class="cs-mock"><div class="cs-win"><div class="bar" aria-hidden="true"><i></i><i></i><i></i><span>app.clearfeed.ai</span></div><button class="zoom" type="button" data-zoom="cf_fs2" aria-label="Enlarge Index Confluence"><img loading="lazy" decoding="async" width="2000" height="1296" alt=""></button></div><figcaption>Adding Confluence, with spaces and pages to pick</figcaption></figure>
+<figure class="cs-mock"><div class="cs-win"><div class="bar" aria-hidden="true"><i></i><i></i><i></i><span>app.clearfeed.ai</span></div><button class="zoom" type="button" data-zoom="cf_fs3" aria-label="Enlarge Data sources overview"><img loading="lazy" decoding="async" width="2000" height="1199" alt=""></button></div><figcaption>Every source and its status at a glance</figcaption></figure>
+<figure class="cs-mock bare"><button class="zoom" type="button" data-zoom="cf_fs4" aria-label="Enlarge Eight key screens and twelve components"><img loading="lazy" decoding="async" width="2000" height="1125" alt=""></button><figcaption>Eight key screens, twelve new components</figcaption></figure>
+<section class="sec"><h2 class="lab">Step 2: test</h2><div class="text"><p>Support heads wanted to double-check that their docs were really indexed before trusting the bot. I borrowed the pattern from simple ask-and-answer web apps, mapped the information it needed, and showed both the generated answer and the search results behind it.</p></div></section>
+<figure class="cs-tree2" role="img" aria-label="The test screen holds three things: select data sources, the question input, and the output with references and search results.">
+  <div class="root"><span class="dot"></span>Test screen</div>
+  <div class="links" aria-hidden="true"></div>
+  <div class="kids">
+    <div><span class="cs-ic"><svg viewBox="0 0 24 24" aria-hidden="true"><ellipse cx="12" cy="6" rx="7" ry="2.8"></ellipse><path d="M5 6v6c0 1.5 3.1 2.8 7 2.8s7-1.3 7-2.8V6M5 12v6c0 1.5 3.1 2.8 7 2.8s7-1.3 7-2.8v-6"></path></svg></span><b>Select data sources</b><span>Which docs to test against</span></div>
+    <div><span class="cs-ic"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="7" width="18" height="10" rx="3"></rect><path d="M7 12h6"></path><path d="M16 10.5v3"></path></svg></span><b>Input</b><span>A real question to ask</span></div>
+    <div><span class="cs-ic"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 4h12v16H6z"></path><path d="M9 8.5h6M9 12h6M9 15.5h3.5"></path></svg></span><b>Output</b><span>The answer, plus references and search results</span></div>
+  </div>
+  <figcaption>What the test screen needed to hold</figcaption>
+</figure>
+<section class="sec"><h2 class="lab">Step 3: activate</h2><div class="text"><p>Pricing was set per generated answer, so answering everything could get expensive. I added a second mode where an answer is only generated when an agent reacts with an emoji. A single toggle turns it on or off, and teams choose how many answers to generate.</p></div></section>
+<figure class="cs-flow2" role="img" aria-label="Activation: step 1, select data sources. Step 2, select a mode: automatic, recommended, which drafts an answer for every query, or emoji, which only drafts one when an agent reacts.">
+  <div class="stp"><span class="num">1</span><b>Select data sources</b><span>All sources, or a chosen few</span></div>
+  <svg class="arr" viewBox="0 0 48 12" aria-hidden="true"><path d="M0 6h44M39 1l5 5-5 5"></path></svg>
+  <div class="stp"><span class="num">2</span><b>Select mode</b>
+    <div class="opt on"><i></i><div><b>Automatic <em>Recommended</em></b><span>Drafts an answer for every query, without sending it</span></div></div>
+    <div class="opt"><i></i><div><b>Emoji</b><span>Drafts one only when an agent reacts with 🔍</span></div></div>
+  </div>
+  <figcaption>Two modes, because pricing was per generated answer</figcaption>
+</figure>
+<section class="sec"><h2 class="lab">How it shows up in Slack</h2><div class="text"><p>A customer asks a question and the virtual agent replies from the indexed docs. If the answer misses, the agent taps "No, file a ticket", replies by hand, and AI suggests turning that reply into a new FAQ. Suraj designed this side.</p></div></section>
+<figure class="cs-mock bare"><button class="zoom" type="button" data-zoom="cf_slack1" aria-label="Enlarge Generated answer in a Slack thread"><img loading="lazy" decoding="async" width="2000" height="1346" alt=""></button><figcaption>A generated answer in the thread, with its sources</figcaption></figure>
+<figure class="cs-mock bare"><button class="zoom" type="button" data-zoom="cf_slack2" aria-label="Enlarge Ticket filing and FAQ suggestions in Slack"><img loading="lazy" decoding="async" width="2000" height="647" alt=""></button><figcaption>Filing a ticket, and turning a new reply into an FAQ</figcaption></figure>
+<section class="sec"><h2 class="lab">What changed</h2><div><div class="stats"><div><b>96%</b><span>Task success when setting it up</span></div><div><b>12%</b><span>Of queries solved by generated answers</span></div><div><b>1.6×</b><span>Faster response time</span></div></div><p class="text">Measured over two weeks, across two customer buckets. It rolled out to ClearFeed customers bucket by bucket, and teams like CastAI used it to mix their canned responses with official documentation.</p></div></section>
+<figure class="cs-testi"><p class="lab">Customer testimonial · CastAI</p><blockquote><p>“It's interesting to have a combination of a previous set of canned responses by the support engineering team for customer queries, and the official Kubernetes documentation as input to the large language model to form a hybrid approach and be able to help our customers with automatic response.”</p></blockquote><figcaption><img alt="" width="48" height="48"><span><b>Shravan Ashok</b>Staff Technical Program Manager, CastAI</span></figcaption></figure>
+<section class="sec"><h2 class="lab">After launch</h2><div><p class="text" style="color:var(--mute)">We collected feedback from each bucket, and three requests stood out.</p>
+<div class="decs">
+  <div><b>Exclude URLs</b><p>Teams wanted control over what got indexed, so I added include and exclude rules for public docs.</p></div>
+  <div><b>More than one answer</b><p>Some wanted several drafts to pick from, so activation settings got a number of responses.</p></div>
+  <div><b>Fully automatic, not yet</b><p>A few asked for replies with no human check. We held off: a wrong answer sent to a customer costs more than a slow one, and the model needed more data first.</p></div>
+</div></div></section>
+<figure class="cs-mock"><div class="cs-win"><div class="bar" aria-hidden="true"><i></i><i></i><i></i><span>app.clearfeed.ai</span></div><button class="zoom" type="button" data-zoom="cf_ex1" aria-label="Enlarge Before: excluded URLs as a plain list"><img loading="lazy" decoding="async" width="2000" height="1204" alt=""></button></div><figcaption>Before: excluded URLs as a plain list</figcaption></figure>
+<figure class="cs-mock"><div class="cs-win"><div class="bar" aria-hidden="true"><i></i><i></i><i></i><span>app.clearfeed.ai</span></div><button class="zoom" type="button" data-zoom="cf_ex2" aria-label="Enlarge After: index pages by URL conditions"><img loading="lazy" decoding="async" width="2000" height="1279" alt=""></button></div><figcaption>After: rules like starts with, contains or does not contain</figcaption></figure>
+<figure class="cs-mock"><div class="cs-win"><div class="bar" aria-hidden="true"><i></i><i></i><i></i><span>app.clearfeed.ai</span></div><button class="zoom" type="button" data-zoom="cf_multi" aria-label="Enlarge Choosing the number of responses"><img loading="lazy" decoding="async" width="2000" height="1335" alt=""></button></div><figcaption>Activation settings, now with the number of responses to generate</figcaption></figure>
+<section class="sec"><h2 class="lab">Where it went</h2><div class="text"><p>My internship ended here. The feature kept growing, and it now works across all public docs and many private knowledge sources.</p></div></section>
+<section class="sec"><h2 class="lab">Thanks to</h2><p class="text">Suraj Mahraj, who designed the Slack side and unblocked me more than once, and Ankit Jain, Lalit Indoria and Joydeep Sen Sarma for the reviews along the way.</p></section>
+<nav class="case-nav" aria-label="More case studies">
+    <div class="cn-head"><p>You've reached the end of <b>ClearFeed</b></p><div class="cn-dots"><a href="#/video-teaser" class="cn-dot" style="--cc:#C2410C" aria-label="Video teaser"></a><a href="#/create-image" class="cn-dot" style="--cc:#C2410C" aria-label="Create Image"></a><a href="#/editing-experience" class="cn-dot" style="--cc:#23734A" aria-label="Editing experience"></a><a href="#/designing-in-production" class="cn-dot" style="--cc:#2F5BD3" aria-label="Designing in production"></a><a href="#/xalts" class="cn-dot" style="--cc:#1E3A5F" aria-label="Xalts"></a><a href="#/clearfeed" class="cn-dot on" style="--cc:#5B44F2" aria-label="ClearFeed" aria-current="page"></a><a href="#/curelink" class="cn-dot" style="--cc:#1F7AE8" aria-label="Curelink"></a><a href="#/alphy" class="cn-dot" style="--cc:#6B4FA8" aria-label="Alphy"></a><a href="#/night-schedule" class="cn-dot" style="--cc:#E8590C" aria-label="Night Schedule"></a><a href="https://www.behance.net/gallery/204867193/Deeper-Connections-via-Tinder-a-design-case-study" target="_blank" rel="noopener" class="cn-dot" style="--cc:#E0457B" aria-label="Tinder concept"></a><span>6 of 10</span></div></div>
+    <div class="cn-grid solo"><a class="cn-card next" href="#/curelink" style="--cc:#1F7AE8">
+      <span class="cn-txt"><span class="cn-k">Up next →</span><b>Curelink</b><span class="cn-l">Scratch cards that made enrolling worth it</span><span class="cn-m">Health tech · mobile</span></span>
+      <span class="cn-img" aria-hidden="true"><img class="tall" loading="lazy" decoding="async" alt=""></span></a></div>
+    <div class="cn-foot"><a class="cn-home" href="#/"><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M16 10H4M9 5l-5 5 5 5"></path></svg>Back to home</a><a class="cn-all" href="#/work/previous">See all work</a></div>
+  </nav><section class="desk-sec" aria-labelledby="desk-h">
+ <div class="dk-copy"><h2 id="desk-h">Get to know me.</h2>
+  <p>The story behind the work, or my résumé on one page.</p>
+  <div class="dk-hint" aria-hidden="true"><span>pick one up</span>
+   <svg width="58" height="22" viewBox="0 0 58 22" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M2 15C16 5 36 4 53 11"></path><path d="M45 5.5l8 5.5-8.5 5"></path></svg></div>
+ </div>
+ <div class="dk-desk" id="desk">
+  <a class="dk-obj dk-pol dk-pre" href="#/about" draggable="false" data-k="story" aria-label="Read my story, 2 minute read">
+   <div class="dk-inner"><span class="dk-seen" aria-hidden="true">✓</span><div class="dk-body"><span class="dk-tape"></span>
+    <div class="dk-flip">
+     <div class="dk-face"><div class="dk-ph"><img alt="Rupam" draggable="false"></div><em>my story</em></div>
+     <div class="dk-face dk-back"><p>How an engineer from IIT Roorkee ended up designing AI video tools.</p><span>Read it →</span></div>
+    </div></div></div>
+   <span class="dk-lbl">My story <i>· 2 min read</i></span></a>
+  <a class="dk-obj dk-sheet dk-pre" href="#/resume" data-resume="" draggable="false" data-k="resume" aria-label="Open résumé, one page PDF">
+   <div class="dk-inner"><span class="dk-seen" aria-hidden="true">✓</span><div class="dk-body">
+    <svg class="dk-clip" width="22" height="52" viewBox="0 0 22 52" fill="none" stroke="#9C9B96" stroke-width="2" stroke-linecap="round"><path d="M16 14v26a5 5 0 0 1-10 0V8a4 4 0 0 1 8 0v30a2 2 0 0 1-4 0V14"></path></svg>
+    <h4>Rupam</h4><div class="dk-r">Founding Designer · Atlabs AI</div>
+    <div class="dk-row"><span>Atlabs AI</span><span>Now</span></div><div class="dk-row"><span>Xalts</span><span>2024</span></div>
+    <div class="dk-row"><span>ClearFeed</span><span>2023</span></div><div class="dk-row"><span>IIT Roorkee</span><span>Int. MSc</span></div>
+    <div class="dk-bars"><div style="width:90%"></div><div style="width:70%"></div><div style="width:80%"></div></div>
+    <span class="dk-stamp">1 PAGE</span>
+    <div class="dk-dl"><b>Open résumé ↗</b></div></div></div>
+   <span class="dk-lbl">Résumé <i>· PDF</i></span></a>
+ </div>
+</section></main></div>
+  <dialog class="lb" id="lb"><img alt=""><form method="dialog"><button>Close</button></form></dialog>
+  <dialog class="rvd" id="rvd" aria-labelledby="rvd-t">
+    <div class="rvd-bar"><p id="rvd-t">Resume</p><div class="rvd-acts"><button type="button" class="sf-btn primary" id="rvd-dl"><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M10 3v10M5.5 8.5 10 13l4.5-4.5M4 16.5h12"/></svg><span>Download PDF</span></button><button type="button" class="rvd-x" id="rvd-x" aria-label="Close resume"><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M5 5l10 10M15 5 5 15"/></svg></button></div></div>
+    <div class="rvd-body"><img id="rvd-img" alt="Rupam Gumber's resume, Oct 2026: Founding Designer at Atlabs AI; earlier at Xalts and ClearFeed; IIT Roorkee; Adobe Designathon 2024 first runner-up and Best CSS Site of the Day." width="1600" height="2262"></div>
+    <p class="rvd-note" id="rvd-note" aria-live="polite"></p>
+  </dialog>
+  <div class="rprog" id="rprog" aria-hidden="true"></div>
+  <button type="button" class="rchip" id="rchip" hidden aria-label="Reading progress. Jump to the end"><span class="ring" aria-hidden="true"></span><span class="t"><b></b><span class="sec-name"></span></span><span class="left"></span></button>
+<!-- rupam.work chat widget (v2) — from claude/chat-widget.html, replaces the old "Contact me" button + menu -->
+<style>
+  #rw-chat, #rw-chat * { box-sizing: border-box; }
+  #rw-chat {
+    --ink: #191917; --muted: #6B6862; --soft: #4A4743; --line: #E6E3DD; --line-2: #DAD6CF;
+    --bubble: #F1EFEA; --panel: #FFFFFF; --online: #2F9E55; --badge: #D93F3F; --error: #B42318;
+    position: fixed; right: 24px; bottom: 24px; z-index: 2147483000;
+    font-family: var(--sans, 'Geist'), system-ui, -apple-system, sans-serif; font-size: 14px; line-height: 1.45; color: var(--ink);
+  }
+  #rw-chat button, #rw-chat input, #rw-chat textarea { font: inherit; color: inherit; }
+  @keyframes rwPop { from { opacity: 0; transform: translateY(8px) scale(.96); } to { opacity: 1; transform: none; } }
+  @keyframes rwDot { 0%,80%,100% { opacity: .25; transform: translateY(0); } 40% { opacity: 1; transform: translateY(-2px); } }
+  .rw-pop { animation: rwPop .32s cubic-bezier(.2,.8,.2,1) both; transform-origin: bottom right; }
+  @media (prefers-reduced-motion: reduce) { .rw-pop, .rw-dot { animation: none !important; } }
+  .rw-hidden { display: none !important; }
+
+  .rw-avatar { position: relative; flex: none; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 600; background: var(--ink); color: #fff; }
+  .rw-avatar::after { content: ""; position: absolute; right: -1px; bottom: -1px; width: 10px; height: 10px; border-radius: 50%; background: var(--online); border: 2px solid #fff; }
+
+  /* launcher */
+  .rw-launch { position: relative; display: flex; align-items: center; gap: 10px; height: 52px; padding: 0 20px 0 8px; margin-left: auto;
+    background: var(--ink); color: #fff; border: 0; border-radius: 26px; cursor: pointer; font-size: 15px; font-weight: 500;
+    box-shadow: 0 12px 30px -10px rgba(25,25,23,.55); }
+  .rw-launch:hover, .rw-close-fab:hover, .rw-primary:hover { background: #2E2E2B; }
+  .rw-launch .rw-avatar { width: 36px; height: 36px; font-size: 14px; background: #fff; color: var(--ink); }
+  .rw-launch .rw-avatar::after { border-color: var(--ink); }
+  .rw-badge { position: absolute; top: -5px; right: -3px; min-width: 20px; height: 20px; padding: 0 5px; border-radius: 10px; background: var(--badge);
+    color: #fff; font-size: 11px; font-weight: 600; display: flex; align-items: center; justify-content: center; border: 2px solid var(--paper, #F5F3EF); }
+  .rw-close-fab { width: 52px; height: 52px; margin-left: auto; border-radius: 26px; border: 0; background: var(--ink); color: #fff; display: flex;
+    align-items: center; justify-content: center; cursor: pointer; box-shadow: 0 12px 30px -10px rgba(25,25,23,.55); }
+
+  /* greeting peek */
+  .rw-peek { position: absolute; right: 0; bottom: 68px; width: 280px; }
+  .rw-peek-card { display: flex; gap: 12px; align-items: flex-start; width: 100%; text-align: left; padding: 14px 16px; background: #fff;
+    border: 1px solid var(--line); border-radius: 18px 18px 4px 18px; cursor: pointer;
+    box-shadow: 0 1px 2px rgba(25,25,23,.06), 0 16px 36px -10px rgba(25,25,23,.22); }
+  .rw-peek-card .rw-avatar { width: 34px; height: 34px; font-size: 14px; }
+  .rw-peek-meta { font-size: 12px; color: var(--muted); display: block; }
+  .rw-peek-text { font-size: 16px; font-weight: 500; display: block; }
+  .rw-peek-x { position: absolute; top: -12px; left: -12px; width: 28px; height: 28px; border-radius: 50%; background: #fff; border: 1px solid var(--line);
+    display: flex; align-items: center; justify-content: center; cursor: pointer; padding: 0; color: var(--muted); box-shadow: 0 2px 6px rgba(25,25,23,.08); }
+
+  /* panel */
+  .rw-panel { position: absolute; right: 0; bottom: 68px; width: 372px; height: 560px; max-height: calc(100vh - 120px); display: flex; flex-direction: column;
+    background: var(--panel); border: 1px solid var(--line); border-radius: 22px; overflow: hidden;
+    box-shadow: 0 1px 2px rgba(25,25,23,.06), 0 24px 60px -16px rgba(25,25,23,.28); }
+  .rw-head { display: flex; align-items: center; gap: 12px; padding: 16px 12px 16px 18px; border-bottom: 1px solid #EFECE6; }
+  .rw-head .rw-avatar { width: 40px; height: 40px; font-size: 16px; }
+  .rw-head-text { display: flex; flex-direction: column; flex: 1; min-width: 0; }
+  .rw-name { font-size: 15px; font-weight: 600; }
+  .rw-sub { font-size: 12px; color: var(--muted); }
+  .rw-icon-btn { flex: none; width: 36px; height: 36px; border-radius: 10px; border: 0; background: transparent; color: var(--muted);
+    display: flex; align-items: center; justify-content: center; cursor: pointer; padding: 0; }
+  .rw-icon-btn:hover, .rw-ghost:hover, .rw-chip:hover { background: var(--bubble); }
+
+  .rw-thread { flex: 1; overflow-y: auto; padding: 16px 16px 12px; display: flex; flex-direction: column; gap: 8px; }
+  .rw-day { align-self: center; font-size: 12px; color: var(--muted); padding-bottom: 4px; }
+  .rw-msg { max-width: 82%; padding: 10px 14px; white-space: pre-wrap; word-wrap: break-word; }
+  .rw-them { align-self: flex-start; background: var(--bubble); border-radius: 18px 18px 18px 4px; }
+  .rw-me { align-self: flex-end; background: var(--ink); color: #fff; border-radius: 18px 18px 4px 18px; }
+  .rw-typing { align-self: flex-start; display: flex; gap: 4px; padding: 14px 16px; background: var(--bubble); border-radius: 18px 18px 18px 4px; }
+  .rw-dot { width: 6px; height: 6px; border-radius: 3px; background: var(--muted); animation: rwDot 1s infinite; }
+  .rw-dot:nth-child(2) { animation-delay: .15s; } .rw-dot:nth-child(3) { animation-delay: .3s; }
+
+  .rw-chips { display: flex; flex-wrap: wrap; justify-content: flex-end; gap: 6px; padding-top: 6px; }
+  .rw-chip { height: 34px; padding: 0 14px; border: 1px solid var(--line-2); border-radius: 17px; background: #fff; font-size: 13px; cursor: pointer; }
+
+  .rw-email { display: flex; flex-direction: column; gap: 8px; margin-top: 4px; padding: 12px; border: 1px solid var(--line); border-radius: 14px; background: #FBFAF8; }
+  .rw-email label { font-size: 12px; color: var(--muted); }
+  .rw-email-row { display: flex; gap: 8px; }
+  .rw-email input { flex: 1; min-width: 0; height: 40px; padding: 0 12px; border: 1px solid var(--line-2); border-radius: 10px; font-size: 14px; background: #fff; }
+  .rw-primary { flex: none; height: 40px; padding: 0 16px; background: var(--ink); color: #fff; border: 0; border-radius: 10px; font-size: 14px; font-weight: 500; cursor: pointer; }
+  .rw-error { font-size: 12px; color: var(--error); }
+
+  .rw-foot { border-top: 1px solid #EFECE6; }
+  .rw-composer { position: relative; display: flex; align-items: flex-end; gap: 8px; margin: 12px 12px 6px; padding: 6px 6px 6px 14px;
+    border: 1px solid var(--line-2); border-radius: 14px; background: #fff; }
+  .rw-composer textarea { flex: 1; resize: none; border: 0; outline: none; font-size: 14px; line-height: 1.45; background: transparent; padding: 7px 0; min-height: 44px; max-height: 120px; }
+  .rw-send { flex: none; width: 38px; height: 38px; border-radius: 11px; border: 0; background: #C9C5BE; color: #fff; display: flex; align-items: center; justify-content: center; cursor: pointer; padding: 0; }
+  .rw-send.is-ready { background: var(--ink); }
+  .rw-actions { display: flex; align-items: center; gap: 2px; padding: 4px 8px 10px; }
+  .rw-ghost { display: flex; align-items: center; gap: 6px; height: 36px; padding: 0 10px; border: 0; border-radius: 9px; background: transparent;
+    color: var(--soft); font-size: 13px; cursor: pointer; text-decoration: none; }
+  .rw-sr { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+
+  @media (max-width: 480px) {
+    #rw-chat { right: 16px; bottom: 16px; left: 16px; }
+    .rw-panel { width: 100%; height: calc(100vh - 100px); }
+    .rw-peek { width: min(280px, 100%); }
+  }
+
+  /* portfolio fit: keep the launcher visible on the dark theme, and let clicks pass through the empty part of the full-width mobile container */
+  #rw-chat .rw-launch, #rw-chat .rw-close-fab, #rw-chat .rw-send, #rw-chat .rw-primary, #rw-chat .rw-me { color: #fff; }
+  :root[data-theme="dark"] #rw-chat .rw-launch, :root[data-theme="dark"] #rw-chat .rw-close-fab { background: #FAFAF8; color: #191917; }
+  :root[data-theme="dark"] #rw-chat .rw-launch:hover, :root[data-theme="dark"] #rw-chat .rw-close-fab:hover { background: #ECECE8; }
+  :root[data-theme="dark"] .rw-launch .rw-avatar { background: #191917; color: #fff; }
+  :root[data-theme="dark"] .rw-launch .rw-avatar::after { border-color: #FAFAF8; }
+  #rw-chat { pointer-events: none; }
+  #rw-chat > * { pointer-events: auto; }
+</style>
+
+<div id="rw-chat">
+  <div class="rw-peek rw-pop rw-hidden" data-rw="peek">
+    <button type="button" class="rw-peek-card" data-rw="open">
+      <span class="rw-avatar" aria-hidden="true"><img src="data:image/webp;base64,UklGRn4VAABXRUJQVlA4IHIVAACwRQCdASp4AHgAPkkci0QioaEYCgacKASEoAqScqySfeeafzT2l/A/tnm36J+wPL+6K87v/I9Yu3m8y/2Z+6z/wvW96DH8+6o70gPLn9pL9t7aP4J/bfA/xqfDM/HEH116hHyr8Lfu/XL/If8/wj+Ofzd7Bftj/Tb2jbL9d/YC9tvs//G8Mr/c9FPsD7AH6s+kf+68O30n2BP6L/gfRs/9P9h6If2X/X+wb+v//d7H37u+zN+3JOOHrx9ZbvhU6cbKYsqbkiQsaGJdhd/4uNVm2hxOOA0K2c+/3raIlzRvAQjE4zzoMJriKhjhbSOZzWu5hOvWmGvCngpaslFB3/tb9Yu61ptKoxMZWk+UCy37PZMVVeBDHEdfW8gtv39BfKWHhsx+V7LyZLONm8dP7mdiz5qBEst1mSgcFOJ4NUhmEkOZPuhVxex65UuYIg5fGVxaXlYR9cQW+iHoLr28vRAd8UXbc+wffM6w9UaMcs+G3RvRSyp7OrHWzfmHh7CG/5q1gPwlyN6xor4Nxk50N3psJuV/wkXWas4X8QR0ZEtdqdTT452k4xygy1pZVSrT/CuNOGbTlKrVC1Sps4iqnSmPvyIMO+Dull4a8ubPlkEevq4xt0z7dbB8qmREiZ83JecYWyVMoRTjsDNRQN1h+AjkP952oLzFC0HlzJ7+/4MB8WUme1rSvLiSt6TXlQOpV1ymV7Xf3fm8NJI1W8mNTS8x3oRlwJ9gfLVQIfJ1ajcmN+tsxzFJ4AD+/2QsIm2ORBB3UFk3EhqunXGOqQcI1n43QFGYelyzvXfhqmtG6tXNlRRHgTtdg+s66x3SW7RaGH3hktJ8dxwPfO4xs93IjTU01C+2t81T+cu2wd2y6m/6fMTT+X62hRWyMa5lJzvpa4IOeybO6I+YiHvtgAdEm3q+wlX9yRxVUxj5L1u9+B3BFbrSKAeKOy/cAHlU+VkFB6oJku37b1Q7r2sQElSd+Z5jErA/zkb9eqLAWB3BjHRhm2jLEaZkER9F++KwOSz84U/h9Gc7Pe9cp+REMr0b/8Kfy/x1wiCXUzkH2Uc9ppEXhKpX0Hjq0YOoWMq+rcL19k2osyRSJVCRjazne93/xoTH+7HknFWiZnkH0PpVw0h9QCpoNVzD5ScAxTf6qVohRV4vJWWWlJFALnIyGZbFB1CdO87r7qFlohk4QcG8KFPjTpMXy3ku/Gv4uT9a4k8MQnoLRm0Es2gm/NzsmJ13BBdae6BIqzMEH1hVhw4y0zMtKp39/EmAQcNtfSzW8giRI3EwaAjJt9fPE/XOyLY7i3F4BrxWIZ3iYFHAF60oDRhaElixu7kw8kIwQVkMvV/hczOwbEoIKBMTwM5szdB76EKzVFUm4w2gX/IReBG/VixG4qyXHEJpmjRivwvrDj7kuyQsHtZBEoWJK0TdBDiiu3il5XL/kOFEy+LcP0b9xdB2rLA9JK5m50f9Nn3LKlp3+2kUOKB1d3bKmVB13DIaAmVsDZl9DdQ0OBahRfG6UKz7cJW3S4bwfOGpk+gtkQ2SnQTePD3aD0TD7owqY6b/J2DOnByKFZvrJDLEqU2n2t21Kg/JZMFGbgx8545fHFpsXztX9oA/zdxS7AsqNSLCILgkutprHXca1DlF+0RZx+eKN1MOpb5FWKMlzqMysJGlVe+LKvJ0UQAsAvxcCSiJ08ocABX2U289UFVepAe463dBFi3HMhQ5N31QzS/taC9sAhu9LEl11ngcexNfWcoTJpBuVSh4gsoMylnSuzOh+PawojQcIYm577sRnfyg6HNgRJ5rnQiIehK6qPyF45GRjkmQEh8TEuRkpMe7Ezu3hZRZ/hasInLfmIAalQH9kQ3sh48s0myeptqx+o/aw1/ydvCBFZ2HTs8RCuRre5fL2Vn8a5AV+S9u2DfTISmSc1JWJ2bztoyXcGAiGxeyuLywz+ZvpQwvxQIiVnVB0jhB5o/qj+bl7xWFR5+uSBMoFZeqIxda9U+tYX8wR4S9FB24iB20oePcn3UEqnp3ER6we6dUFFL+akC0uGVXsy2ERGHFm2oler7OLOkbDvxM/clXXiN9ph3/4rPIPJ0DNNnL+Uib1hkqG/QsTkHILCw7Xw/tzKDAZAiKXVbbeWNH8+NLrrqB6A5dFVFrRCRguMvMYYrqEILyXZGVC49WWi+h+YSgB4kkRfniK+pAF+XBckXccq6AaLKEj2PimUoI87+Y70Z2q6c+NsMNNNVibjcBsXIc+DUYF1szUgia4pWPOsJTzLBSlyYSEdH4mM8zc9N292Zfm8J0JV6Ok5rkoih5AuA29VHbTgytvUqLQStYDtNPW/VemBTrAbru+lETDr+HinbXtACtYHXgxDc4QWbZdizMmoGORt9ps5lprIdZt+4u8/hty9WDey0x1H/Wj/5d2OIwE7S3boqnZIzy7WT/5ZEDdTKW+DAFcvVi3+S9uuB9huDSvJLoFb/3k18KlZyZMxhZQllCHMi1e8M8LQlo6ZFs3Omv189buBFyh4ETPqY2vRr8VxMyfFzV3zIv0bYavMZ4HGh9HEf5VEIzB+e69375KhxMQ2AhKB4f9MtW4NN5FlfB7eVkJx35kYT1xYZrRUELQUVGMwrO7V7qoncpEuxGCcqYUwubzy662vZlJo7pemXSFyaqrspvK7U+nlGjfSCpNAg0g59C55ABe7WEkKkj6Ft/07mMZuDMFAtaY73AG/sgBphfxqEslixjwS3H92rA1FkIwxkGV2YZFu9WFYYe4onoQWBU0NIX6eC9mWHNv22WIKeNfD8z4kMLIZ6KzubDCGSBsJw/E4WtUQRjl+UajIkGTDhYmCicPWUiLR8Xefl9KMzuzI16cs6g5yTDDMTTinvaE16oq5sUUOtwwyvQcjSAVKTP61KXdpacOfUQW6Y9Jordv5wu+pDGK+pXy894HG++O9Gm/B96DoZU0C9X7XOQhvR5WzIpBUTEc6vt82y7jc6X4VA5OBL/vhFMNw+2zYnonaYVKb2NxnwdIVv1Dd0XvH+IwiRduAueNfErgXjJQia5SUik5O0STwT2EQCV1/IsLqLJPBnF8dLCkHFY/QbD1qgNuahf0brd0Ch/+Z2iZyN+9riNkOc1YEv+kq4sutSR745f02Ozb/Xs/6LUZP8mYrnoOFLMANowMW6YxX7HOHt40/Gf8s8f9PRv/Onl85CYtjdK7jtpbotM9WYdGaW8n8VKRn1JD1MX63fv4Wo81sAF8+lFphBPLbROkqsFSbcWpUWDlPpKHVRyfb+PtW9fSrtog95qV858xx5TeXi8iqfrdxes/OSOpnv+Yb3b6Bex8PfBhacOXmVPEd3i+E93iuuZE3YvOPu5OKSClM/ymsmF6I1Q349NSMQgxokO0aW55/e/ubBrDL2Uu5Lpl9ca7g1HyHrH/EQ7SWKQ1AM2aDlRqK56xhYsJVWnwzF5+7sKvR10t3pWY3OvW+1zRCMvnhUHB5lv1C7bpUnEhPOR8djoXydlEnJRCj8fVgRlnNGNPmSjG6S6kOpEQScwRNC2w2+jUr3T2XwAl0n1CH/FUmnt3tt0q1LNhnKMS4woKl5RRZC3pJjK0P2ogPdAJ2KhBh/fcpwp6M5qpfX4uhLMaMfWM7nKTzGAz4uPuAaUhDfI7vpbX8LSR3v3U4BPmAT2cRq3PAbVJYozaNdWIsrw7JHS4Ace9U9vW2eTd4SLgkTrqaaeEQSAOnY5Ial14d/Bor2SM1fJYgQxh0hMAoI+2K0+LLj4oc+F12rESmkWOwQQF7o7FNfZ3muP3W2hY3ltyacEGT5+6v/zaUe44syModr/nklwpwHiV9uwJ2Q8PU2F+ZpyBRxSmecyhl5fdf1FphS+3jsgW3Dff3RUicsyyi+/n4bPpQFOgsyhK2nGHNjxAFnvb+6T7qlbPHx5wyVS2sYGYGcxN4q+iOPq9u9vqw1ix4OGEBuLKfNFRtISWUFvymAfKwHI7HjmWE/K6TqQ4MWaOOt+DWjJfI8I0x8+16RD+LufMfIhxVqTsoOgN8v1uInjfjtF4yJaWv+uQ+DHnbeRfsSUDOSi+sKhyvhqCSajGZhO4BmzHrL362xcvY7qxLTipXlUySnM9+R8zfdtqRa050kBrOCIrPTb7+D3SNXiqw/zT9Fw3cthRnZ5kk3XSUQRo9NJQ/Mw2m3OCGpHxPAj6BVnmirVToQ9517fTxW6sGOlcvNTT4YQxag9BeDKOsR2TGC3OGSHHHPDCoYIQCv/w4UZdtcZmdStEE+O+xMhix/ggtiUzBqPfpih3n3de7hAnFyUOhn/PMwFT5z7Xt1JLSb4govo8RjK5De+SZWmUBEC/edYdUPyGGnb30U4S/yxEc1C1+ZBG9MT9t02OHYGx05FnWB6ia8n5L/9MdhHBI3hzDxn4J5g9Rs71XWRifsPMbcS0kIVEOR+qgpkRpiSSvWXq/QPmHMDpKH1W42/9SvQ/RFkHMvoXmYtCxY6CTpi3gPJ84ur7PzGwfgUjY9eXvRy1SutX/Dkpx2KcdY0MNVNJFhGdUomskVBbYF8AMMk/0eEZuX838fuFH3JKzlcD9E52pWnZiEu7VvK7FwlxS/NVMhbhd63DZmHjESvKAX0XsdnVLYsiMFXt0X/SaSG6pXQc0xEY5XSfvIFbpWuxsI+e5v+Tmt8AqTwt27jCobGEYPvVKM8sxYwgmQzXALB76Q89pqWbQdeFVFmq/5x9HmtaPOIRgLJzPRHw/ftCtQ3x63yUxRMY2l9oocV+qFQ8pEPE77EZ4/Za93HJlWUwnJTasHCaQh48gc2Lpc0kMKScM1Zy5EZS1eRPZxraSGXc/cZs07rKl0HEdbXtnSDsBZDnb/ySaclNBot1qz/iHlC51+RUsvHxblu/jkvSSaLuHg9ksYGADNrYBxlJD3CIgGjw0jeAjfakamVsPPiBdtUdzD3zdy8Z19DuvMfTNmtcBNxIukVvr8KEhepdH57QhEQb2/5g9zQMNZNsFXu8yHCIm+cPseECJEnqVIaYWD9gM6/iLeILQTfAFgcScT/b/Y/dbQu8TrHo+u8F6RND7xlbf2NhroclzZUvkawc+Qz7Qz5XWDDEEhkax7Yw1x4Dkkp2dzzPSKupUV8yYSgd7Lj2js7ww8URcYcg3N/CJjdOINPp7m4npQYVdGIxIJUtCkJy36IP+MuGc/odhLto07HEqwa5OZ7DKduBRh7CUHD7S383TcNUpCpU4JxyU6csDIAgjCudyOgwTasdIe9Fw2VHp9ZVgFR9RCXdaPncDPJviXwvj540sTwsPXwIfACwnpwESJZuUvPWVNYymrxGlnmcvXnTU4dHqxlRvZ85EoTqrrUVIQknqFKm/fHNy7evmgpzA1b7U3FSlznprm3PmrEpHmRf+3DRDW4UNFfuqIw+tBT2EwVv6pZKgW9A9klg0EgvzLshoqxQ7UEy62MeuV+HDn2m4qt1cWwDYoYq7SsvxAes0AbNYFBHOL/WfFDsu7Q2OkFE7au78p2dqc2gjbDvCWnc8wbFqp3xW3PUQ5RFaKj7Bd4DCjKEHrBz4GH9OrcW7C0fKuPCDsEcIFFfUrJcwgQxtruDyX0OxP20ZP7BiZQ2DPbJq0/NPNeV1eh6Ahis7jmP1ZXjkJdxmiQdMR91ck+4Y2+s7C68E0wB7f0glvpDq+Har0C1Y3hH3Rpq9Lw62o7+PHDK9m5nIiTxcjA4DoItBXuXURz3ZybPnTWqeh13Wjx2dYS4mf6nL3krRpBU3y2bMBlfQKqUUBA4N0CCVavt6z+otLTzwAEHfVWKVSSbdtiOOdwDGnJVahrEiDRYu+HUdK+T37WQ5YJkxyOujrmHP5DrKK3jMk2VzSkofLZmb6jHDeWYixb9BH+NJjyRuFTIqq/Rnw0K7mNBNd2gXLf/IA9m3HkW4Mv5GzeTaT0TeEFT1Y7slMk84W+jtp3i9Bi1jEzEBAUrtYMYYA4fk2/cS4eEjKCFfbOMJIYtF2VVV4KsdWxQMXcKqlAecNRQfufip5MCNVtjB0Wb3MJtAwwsDSIhduydUvE4WFP18W8DOgHmQeR0dj/hX7HQfxHJG+SXFcykdgcw1iu9wGGvA+1Wfa3tJNwhFtqrBg2noubIpUWhePRuR+tQCxCCZZhVtRaJdr+E71quV5x8ILbismDjNlZJbc3K9nhSLV4Ew4P4dpRs5Ow/2V8u1gWvQExoHd4zMFcq5VPZzvarVvMrMzo432Xg6Qwl3OFZI1Mk6j+kgSYrzxTveXWmer95aOjXrKi6Cecm4bvuodXBVOVHgzogJcklUsFYIpE2GXWnZVZzH0SO48KMevf6xPjFIFS9IUq1F6MV6qPdAG5a15POLVLSuapSvvY5rVthKrg1kBwTaxjI+HWRYLFeeiCrhvTgIuWI/wSVFUo+8eECRLcRQXh5DxAIJvuyM8IT+QVHHr5RW/cGOItpTXWKMRj0CeL+I9ifsSfKEKfdKDyAb3RaoaSAXbU1IGJhlaRuNPHwBhuf53JVzSgULO0On++Ua+REQKzzG9T7/O0AT4vbMEw3braSILtCu0ksMzT5g2APL1IzcOr4DadfsSf0gLpRK/K9Syua6S5sZIOrX5Bt9B8Irt3xKjVdfjtTke9Ef2KaKe4gb+Q6h3lhdZDyjD8poxarsKWLdXR407mfxzTEeYEWYjd+eqLT76Cg9gOvqE+2LPCZimpDkwj3layxHAW7cJBfPEtewiw0jzvx4EuRrcr+kYJztnOtlNyC8u6b9aV5n0v/ygrY68B4C7Zoo+AAM0WfqjtSbnhSeYfxiKYcXMg1C25Ad38PALIvbIhio1YFeCGdHQ+WObu8RgEkOGghMWJVequvAXcKquuZCoFZCIDyGTvZZG8qH4jQYE12sJA/BpQ+vR/F/bnhQskxlTgoOYYIl4ECVnvhJYiZ8wrC5AN4fvGls1b9vB4bmVlCVzzm7b7MQI/sIWlp2+nFmoKfU1AQ1bmR61UnaZ6X70lLRQSKXcFINT5GsvAUgkI4exJTajDle0eel+SiWA7BRWgduV/ndtbcQAjskLaP8aBAYdIcJgaA7bXjXMVDAOLdzi2Q+lYfwq+UG5kyu1XLqeJieDh3pVsyy+MojpUqJvNfaqtu+U9tWg6d/K7voWNVKZ+JuoGCDZAoRrx2nl2CmBZ2uAztGJEYBVw8gsbBM99LAP6G8rOrZF5bcRv+eGduukdBgdAHJLkhssYQ7thgUE4wLXQElmklhinbAPCGItXrJQL7z/aCdVUlY8+LHcPwN84AIS9LwbG+UP5m2CQU3SI8rAVkxgpf92uunprxlH97KVcPS33DnnV4PNyLZrpC9Ef3Vz3b7Cgk3Jv3AAAAAA=" alt=""></span>
+      <span>
+        <span class="rw-peek-meta">Rupam · usually replies within a day</span>
+        <span class="rw-peek-text">Hi, how can I help you?</span>
+      </span>
+    </button>
+    <button type="button" class="rw-peek-x" data-rw="dismiss" aria-label="Dismiss greeting">
+      <svg width="10" height="10" viewBox="0 0 10 10" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" aria-hidden="true"><path d="M1.5 1.5l7 7M8.5 1.5l-7 7"/></svg>
+    </button>
+  </div>
+
+  <section class="rw-panel rw-pop rw-hidden" data-rw="panel" aria-label="Send Rupam a message">
+    <header class="rw-head">
+      <span class="rw-avatar" aria-hidden="true"><img src="data:image/webp;base64,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" alt=""></span>
+      <div class="rw-head-text">
+        <span class="rw-name">Rupam Gumber</span>
+        <span class="rw-sub">Founding designer at Atlabs · replies within a day</span>
+      </div>
+      <button type="button" class="rw-icon-btn" data-rw="close" aria-label="Close messages">
+        <svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" aria-hidden="true"><path d="M2 2l10 10M12 2L2 12"/></svg>
+      </button>
+    </header>
+    <div class="rw-thread" data-rw="thread" aria-live="polite"></div>
+    <div class="rw-foot">
+      <form class="rw-composer" data-rw="composer">
+        <label for="rw-msg" class="rw-sr">Message</label>
+        <textarea id="rw-msg" rows="2" placeholder="Write a message…" data-rw="input"></textarea>
+        <button type="submit" class="rw-send" data-rw="send" aria-label="Send message" disabled>
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 13V3M3.5 7.5L8 3l4.5 4.5"/></svg>
+        </button>
+      </form>
+      <div class="rw-actions">
+        <button type="button" class="rw-ghost" data-rw="copy">
+          <svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round" aria-hidden="true"><rect x="4.5" y="4.5" width="8" height="8" rx="1.8"/><path d="M9.5 4.5V3.3c0-1-.8-1.8-1.8-1.8H3.3c-1 0-1.8.8-1.8 1.8v4.4c0 1 .8 1.8 1.8 1.8h1.2"/></svg>
+          <span data-rw="copy-label">Copy email</span>
+        </button>
+        <a class="rw-ghost" data-rw="calendly" href="#" target="_blank" rel="noopener">
+          <svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" aria-hidden="true"><rect x="1.5" y="2.5" width="11" height="10" rx="2"/><path d="M1.5 6h11M4.5 1v3M9.5 1v3"/></svg>
+          <span>Book a 30-min call</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <button type="button" class="rw-launch" data-rw="launch">
+    <span class="rw-avatar" aria-hidden="true"><img src="data:image/webp;base64,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" alt=""></span>
+    <span>Send a message</span>
+    <span class="rw-badge" data-rw="badge" aria-label="1 new message">1</span>
+  </button>
+  <button type="button" class="rw-close-fab rw-hidden" data-rw="fab-close" aria-label="Close messages">
+    <svg width="18" height="18" viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4.5 7l4.5 4.5L13.5 7"/></svg>
+  </button>
+</div>
+
+<footer class="site-foot" aria-label="Footer">
+    <a class="sf-fill fe" href="mailto:rupamuxdesign@gmail.com" tabindex="-1" aria-hidden="true"><b>Email me <svg viewBox="0 0 24 24"><path d="M7 17 17 7M8 7h9v9"/></svg></b><small>rupamuxdesign@gmail.com</small></a>
+    <a class="sf-fill fs" href="https://calendly.com/rupam_g-ma/30min" tabindex="-1" aria-hidden="true"><b>Schedule a call <svg viewBox="0 0 24 24"><path d="M7 17 17 7M8 7h9v9"/></svg></b><small>30 minutes, on Calendly</small></a>
+    <div class="sf-cta">
+      <div class="sf-lead"><p class="sf-big">Still reading? That's a good sign.</p>
+        <nav class="sf-social" aria-label="Social"><a href="https://x.com/rupam_gumber" target="_blank" rel="noopener">X<svg viewBox="0 0 20 20" aria-hidden="true"><path d="M6 14 14 6M7 6h7v7"/></svg></a><a href="https://www.linkedin.com/in/rupam-gumber-120252204/" target="_blank" rel="noopener">LinkedIn<svg viewBox="0 0 20 20" aria-hidden="true"><path d="M6 14 14 6M7 6h7v7"/></svg></a><a href="https://medium.com/@rupamgumber38" target="_blank" rel="noopener">Medium<svg viewBox="0 0 20 20" aria-hidden="true"><path d="M6 14 14 6M7 6h7v7"/></svg></a></nav></div>
+      <div class="sf-btns">
+        <a class="sf-btn primary" href="mailto:rupamuxdesign@gmail.com">Email me</a>
+        <a class="sf-btn alt" href="https://calendly.com/rupam_g-ma/30min">Schedule a call</a>
+      </div>
+    </div>
+    <section class="bookshelf bsp-wrap" aria-labelledby="bs-title">
+      <div class="bsp-head"><p class="bs-title" id="bs-title">Currently on my bookshelf</p><button type="button" class="bsp-tidy" id="bsp-tidy" hidden>Tidy up</button></div>
+      <div class="bsp" id="bsp" role="group" aria-label="Bookshelf. Drag and throw the books."></div>
+    </section>
+  </footer>
+</div>
+
+
+<script src="/assets/js0.js"></script>
+<script src="/assets/js1.js"></script>
+<script src="/assets/js2.js"></script>
+<script src="/assets/js3.js"></script>
+<script src="/assets/js4.js"></script>
+<script src="/assets/js5.js"></script>
+<script src="/assets/js6.js"></script>
+<script src="/assets/js7.js"></script>
+<script src="/assets/js8.js"></script>
+<script src="/assets/js9.js"></script>
+</body>
+</html>
