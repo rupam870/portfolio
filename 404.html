@@ -1,0 +1,404 @@
+<!doctype html>
+<html lang="en" data-theme="light">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<link rel="apple-touch-icon" href="data:image/png;base64,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">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Geist:wght@400;500;600&family=Caveat:wght@500;700&family=Geist+Mono:wght@400;500&display=swap">
+<title>Rupam Gumber — Founding Product Designer at Atlabs AI</title>
+<meta name="description" content="Founding designer at Atlabs AI. I design and ship AI video creation tools: the video teaser, the AI video editor and Create Image.">
+<meta name="author" content="Rupam Gumber">
+<meta name="robots" content="noindex">
+<meta property="og:type" content="profile">
+<meta property="og:site_name" content="Rupam Gumber">
+<meta property="og:title" content="Rupam Gumber — Founding Product Designer at Atlabs AI">
+<meta property="og:description" content="Founding designer at Atlabs AI. I design and ship AI video creation tools: the video teaser, the AI video editor and Create Image.">
+<meta property="og:url" content="https://rupam.work/">
+<meta property="og:image" content="https://rupam.work/og/home.jpg">
+<meta property="og:image:width" content="1200"><meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="A product designer who has a vision, executes fast and takes the team ahead.">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:site" content="@rupam_gumber"><meta name="twitter:creator" content="@rupam_gumber">
+<meta name="twitter:title" content="Rupam Gumber — Founding Product Designer at Atlabs AI">
+<meta name="twitter:description" content="Founding designer at Atlabs AI. I design and ship AI video creation tools: the video teaser, the AI video editor and Create Image.">
+<meta name="twitter:image" content="https://rupam.work/og/home.jpg">
+<meta name="theme-color" content="#FAFAF8">
+<link rel="icon" href="/favicon.ico" sizes="48x48">
+<link rel="icon" href="/icon-32.png" type="image/png" sizes="32x32">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="manifest" href="/site.webmanifest">
+<link rel="stylesheet" href="/assets/app.css">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "ProfilePage", "name": "Rupam Gumber \u2014 Founding Product Designer at Atlabs AI", "url": "https://rupam.work/", "description": "Founding designer at Atlabs AI. I design and ship AI video creation tools: the video teaser, the AI video editor and Create Image.", "author": {"@type": "Person", "name": "Rupam Gumber", "url": "https://rupam.work/"}, "mainEntity": {"@context": "https://schema.org", "@type": "Person", "name": "Rupam Gumber", "url": "https://rupam.work/", "image": "https://rupam.work/og/home.jpg", "jobTitle": "Founding Product Designer", "description": "Founding designer at Atlabs AI, designing and shipping AI video creation tools.", "worksFor": {"@type": "Organization", "name": "Atlabs AI", "url": "https://www.atlabs.ai"}, "alumniOf": {"@type": "CollegeOrUniversity", "name": "IIT Roorkee"}, "knowsAbout": ["Product design", "AI video tools", "AI image generation", "Design systems", "Prototyping", "Claude Code", "Product analytics"], "sameAs": ["https://x.com/rupam_gumber", "https://www.linkedin.com/in/rupam-gumber-120252204/", "https://github.com/rupam870", "https://medium.com/@rupamgumber38"]}}</script>
+<script src="/assets/router.js"></script>
+</head>
+<body>
+
+
+<div class="wrap">
+  <header class="top">
+    <a class="name" href="#/">Rupam Gumber</a>
+    <nav aria-label="Main">
+      <a href="#/about" data-r="about">About</a>
+      <a href="#/resume" data-resume>Resume</a>
+      <button class="theme-btn" type="button" id="theme-btn" aria-label="Switch to dark mode">
+        <svg viewBox="0 0 24 24" aria-hidden="true">
+          <mask id="bite-mask"><rect x="-6" y="-6" width="36" height="36" fill="#fff"/><circle class="bite" cx="25" cy="-1" r="6" fill="#000"/></mask>
+          <circle class="core" cx="12" cy="12" r="5" fill="currentColor" mask="url(#bite-mask)"/>
+          <g class="rays" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M12 1.5v2.2M12 20.3v2.2M1.5 12h2.2M20.3 12h2.2M4.6 4.6l1.5 1.5M17.9 17.9l1.5 1.5M4.6 19.4l1.5-1.5M17.9 6.1l1.5-1.5"/></g>
+        </svg>
+      </button>
+    </nav>
+  </header>
+  <div id="app"><main>
+<section class="intro">
+  <span class="now"><i></i>Founding designer at Atlabs</span>
+  <h1 class="lead">A <span class="nw"><span class="hw" style="--mk:rgba(123,97,255,.16)">product <span class="nw">designer <span class="ico i-pen fx-btn" role="button" tabindex="0" aria-label="Play: designer"><svg viewBox="0 0 24 24"><path class="ink" d="M3.5 20.5h8"></path><path d="M5 19l3.5-1 9.8-9.8a2.1 2.1 0 0 0-3-3L5.5 15 5 19z"></path><path d="M13.8 6.7l3 3" stroke-linecap="butt"></path></svg></span></span></span> who has a <span class="hw" style="--mk:rgba(47,91,211,.14)"><span class="nw">vision <span class="ico i-eye fx-btn" role="button" tabindex="0" aria-label="Play: vision"><svg viewBox="0 0 24 24"><g class="lid"><path d="M2.5 12S6 5.5 12 5.5 21.5 12 21.5 12 18 18.5 12 18.5 2.5 12 2.5 12z"></path><circle cx="12" cy="12" r="3"></circle></g></svg></span></span></span>,</span> <span class="nw"><span class="hw" style="--mk:rgba(224,112,58,.18)">executes <span class="nw">fast <span class="ico i-bolt fx-btn" role="button" tabindex="0" aria-label="Play: executes fast"><svg viewBox="0 0 24 24"><path d="M13 2.5 5 13.5h6l-1 8 8-11h-6z"></path></svg></span></span></span> and <span class="hw" style="--mk:rgba(59,165,107,.18)">takes the team <span class="nw">ahead <span class="ico i-team fx-btn" role="button" tabindex="0" aria-label="Play: takes the team ahead"><svg viewBox="0 0 24 24"><g class="ppl"><circle cx="8" cy="8" r="2.6"></circle><path d="M3.5 18c.6-2.8 2.4-4.4 4.5-4.4s3.9 1.6 4.5 4.4"></path><circle cx="15" cy="9" r="2.1"></circle></g><path class="go" d="M15.5 16.5h5M18.5 14l2.5 2.5-2.5 2.5"></path></svg></span></span></span>.</span></h1>
+  <ul class="proof" aria-label="Highlights">
+    <li><b>Founding designer</b><span>Atlabs, AI video creation. Product, site and growth.</span></li>
+    <li><b>5 startups</b><span>Atlabs, Xalts, ClearFeed, Curelink, Explorin</span></li>
+    <li><b>1st runner-up</b><span>Adobe Designathon '24</span></li>
+    <li><b>IIT Roorkee</b><span>JEE Advanced, top 0.5 percentile</span></li>
+  </ul>
+</section>
+<section class="work" aria-label="Work">
+  <div class="tabs-wrap"><nav class="tabs" aria-label="Selected work"><button type="button" id="tab-atlabs" data-tab="atlabs" aria-controls="panel-atlabs" aria-current="true">Atlabs<span class="ct" aria-hidden="true">4</span></button><button type="button" id="tab-previous" data-tab="previous" aria-controls="panel-previous" aria-current="false">Previous companies<span class="ct" aria-hidden="true">3</span></button><button type="button" id="tab-side" data-tab="side" aria-controls="panel-side" aria-current="false">Side projects<span class="ct" aria-hidden="true">4</span></button><button type="button" id="tab-ui" data-tab="ui" aria-controls="panel-ui" aria-current="false">Dribbble explorations<span class="ct" aria-hidden="true">14</span></button></nav><div class="tcat" aria-hidden="true" title="" style="transform: translate(260.992px, -10px);"><div class="tc-in"><svg viewBox="0 0 40 30" fill="currentColor">
+   <g class="sit">
+    <path class="stail" d="M14 27.5c-6 .4-8.6-3.2-7.6-6.4" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"></path>
+    <path d="M13 28.5c-.8-7.4 2-12.6 7.4-12.8 5.3-.2 8 5 7.4 12.8z"></path>
+    <path class="ear l" d="M15.4 7.2l.4-6 4.2 3.8z"></path><path class="ear r" d="M24.6 7.2l-.4-6-4.2 3.8z"></path>
+    <circle cx="20" cy="10" r="6.6"></circle>
+    <ellipse class="eye" cx="17.6" cy="9.8" rx="1.05" ry="1.25"></ellipse><ellipse class="eye" cx="22.4" cy="9.8" rx="1.05" ry="1.25"></ellipse>
+    <path class="nose" d="M19.2 12h1.6l-.8.9z"></path>
+    <ellipse cx="17.2" cy="28.4" rx="2.1" ry="1.3"></ellipse><ellipse cx="22.8" cy="28.4" rx="2.1" ry="1.3"></ellipse>
+   </g>
+   <g class="walk">
+    <path class="wtail" d="M8.5 15.5C4 14.6 2.6 9.6 4.6 6.6" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"></path>
+    <rect class="lg a" x="9.4" y="19.5" width="3" height="8.6" rx="1.5"></rect><rect class="lg b" x="13.4" y="19.5" width="3" height="8.6" rx="1.5"></rect>
+    <rect class="lg b" x="21" y="19.5" width="3" height="8.6" rx="1.5"></rect><rect class="lg a" x="25" y="19.5" width="3" height="8.6" rx="1.5"></rect>
+    <g class="wbody"><rect x="7.5" y="12.6" width="22.5" height="10.4" rx="5.2"></rect>
+    <path class="ear" d="M26.6 7.6l.6-5.6 3.6 3.6z"></path><path class="ear r" d="M33.4 7.8l1.4-5.4-4.6 2.8z"></path>
+    <circle cx="30.6" cy="11" r="6.2"></circle>
+    <ellipse class="eye" cx="29.6" cy="10.4" rx="1" ry="1.2"></ellipse><ellipse class="eye" cx="33.4" cy="10.4" rx="1" ry="1.2"></ellipse>
+    <path class="nose" d="M34.6 12.4h1.4l-.7.8z"></path></g>
+   </g></svg></div><span class="tc-pop">mew <i>♥</i></span></div></div>
+  <section class="panel" id="panel-atlabs" data-panel="atlabs" aria-label="Atlabs"><p class="plead"><span>Founding designer. The editor, the creation flows, and the moments that decide whether someone stays.</span></p><div class="wgrid"><a class="card wtile" href="#/video-teaser" data-label="Video teaser · where people upgrade" data-color="#C2410C" aria-label="Video teaser. Free users watch the first 25 seconds of their story; the rest stays blurred. It became the main place people upgrade."><div class="mock m-shot"><img loading="lazy" decoding="async" src="/img/vt_teaser.webp" width="1512" height="805" alt=""></div><span class="tlabel" aria-hidden="true" style="background:#C2410C">Video teaser</span></a><a class="card wtile" href="#/create-image" data-label="Create Image" data-color="#C2410C" aria-label="Create Image. One calm surface for 24 AI models. ~55k images from ~6.8k creators, as of Oct 2026."><div class="mock m-shot"><img loading="lazy" decoding="async" src="/m/823e2bd8defb.webp" width="2000" height="1139" alt=""></div><span class="tlabel" aria-hidden="true" style="background:#C2410C">Create Image</span></a><a class="card wtile" href="#/editing-experience" data-label="Editing experience · 3 levels, 9 tools" data-color="#23734A" aria-label="Editing experience. Story page, scene editor, timeline, credits, export and publishing: one editor where every story gets finished."><div class="mock m-shot"><img loading="lazy" decoding="async" src="/img/ed_story.webp" width="1800" height="1024" alt=""></div><span class="tlabel" aria-hidden="true" style="background:#23734A">Editing experience</span></a><a class="card wtile" href="#/designing-in-production" data-label="Designing in production" data-color="#2F5BD3" aria-label="Designing in production. 68 merged PRs into production, written with Claude Code and shipped through CI. As of Oct 2026."><div class="mock m-shot"><img loading="lazy" decoding="async" src="/m/d775ea3862d3.webp" width="1200" height="800" alt=""></div><span class="tlabel" aria-hidden="true" style="background:#2F5BD3">Designing in production</span></a></div><section class="tn pinned" aria-labelledby="tn-h"><div class="tn-pin" data-tnpin="" style="--n:4">
+ <div class="tn-stick">
+  <div class="tn-top"><h3 id="tn-h">The app I joined, and the app today</h3>
+   <div class="tn-tabs" role="tablist" aria-label="Compare screens"><button type="button" role="tab" aria-selected="true" tabindex="0" data-tn="0"><span class="tn-tn">01</span>Home</button><button type="button" role="tab" aria-selected="false" tabindex="-1" data-tn="1"><span class="tn-tn">02</span>Creation flow</button><button type="button" role="tab" aria-selected="false" tabindex="-1" data-tn="2"><span class="tn-tn">03</span>Story</button><button type="button" role="tab" aria-selected="false" tabindex="-1" data-tn="3"><span class="tn-tn">04</span>Editing</button></div></div>
+  <div class="tn-view"><div class="tn-track" data-tntrack="" style="transform: translateX(0%);"><div class="tn-slide" data-slide="0" aria-hidden="false">
+   <div class="tn-cmp" data-tncmp="" style="--p: 100.00%;">
+    <img class="tn-new" src="/img/tn_home_new.webp" alt="Atlabs in October 2026: the home screen" loading="lazy">
+    <div class="tn-oldwrap"><img class="tn-old" src="/img/tn_home_old.webp" alt="Atlabs in December 2024: the home screen" loading="lazy"></div>
+    <span class="tn-lab l">Dec 2024</span><span class="tn-lab r">Oct 2026</span>
+    <span class="tn-handle" aria-hidden="true"><i></i></span>
+    <input class="tn-range" type="range" min="0" max="100" value="100" aria-label="Drag to compare December 2024 and October 2026: the home screen">
+   </div>
+   <dl class="tn-notes"><div class="tn-n"><dt>Then</dt><dd>Five fixed cards and a website-URL box. You picked a format before you had an idea.</dd></div><div class="tn-n"><dt>Now</dt><dd>One prompt box first, then nine workflows to start from, led by what people actually make.</dd></div></dl>
+  </div><div class="tn-slide" data-slide="1" aria-hidden="true">
+   <div class="tn-cmp" data-tncmp="" style="--p:100%">
+    <img class="tn-new" src="/m/6381349989ce.webp#at_music" alt="Atlabs in October 2026: the creation wizard" loading="lazy">
+    <div class="tn-oldwrap"><img class="tn-old" src="/img/tn_wiz_old2.webp" alt="Atlabs in December 2024: the creation wizard" loading="lazy"></div>
+    <span class="tn-lab l">Dec 2024</span><span class="tn-lab r">Oct 2026</span>
+    <span class="tn-handle" aria-hidden="true"><i></i></span>
+    <input class="tn-range" type="range" min="0" max="100" value="100" aria-label="Drag to compare December 2024 and October 2026: the creation wizard">
+   </div>
+   <dl class="tn-notes"><div class="tn-n"><dt>Then</dt><dd>A generic three-step wizard: write a script, pick a style, finalise the cast. Same steps for every kind of video.</dd></div><div class="tn-n"><dt>Now</dt><dd>A wizard per workflow. A music video starts from your song, with sample tracks, a Suno tip and tutorials right on the first step.</dd></div></dl>
+  </div><div class="tn-slide" data-slide="2" aria-hidden="true">
+   <div class="tn-cmp" data-tncmp="" style="--p:100%">
+    <img class="tn-new" src="/img/tn_ed_new.webp" alt="Atlabs in October 2026: the story page" loading="lazy">
+    <div class="tn-oldwrap"><img class="tn-old" src="/img/tn_ed_old.webp" alt="Atlabs in December 2024: the story page" loading="lazy"></div>
+    <span class="tn-lab l">Dec 2024</span><span class="tn-lab r">Oct 2026</span>
+    <span class="tn-handle" aria-hidden="true"><i></i></span>
+    <input class="tn-range" type="range" min="0" max="100" value="100" aria-label="Drag to compare December 2024 and October 2026: the story page">
+   </div>
+   <dl class="tn-notes"><div class="tn-n"><dt>Then</dt><dd>A story was a list of still images. Writing, editing and preview all lived on this one page.</dd></div><div class="tn-n"><dt>Now</dt><dd>Each scene can be an image, a full video, or a video teaser.</dd></div><div class="tn-n hl"><dt>Free plan</dt><dd>Free users see a teaser: the first scenes play, the rest stay blurred until they upgrade.</dd></div></dl>
+  </div><div class="tn-slide" data-slide="3" aria-hidden="true">
+   <div class="tn-cmp" data-tncmp="" style="--p:100%">
+    <img class="tn-new" src="/img/tn_edit_new.webp" alt="Atlabs in October 2026: the editing view" loading="lazy">
+    <div class="tn-oldwrap"><img class="tn-old" src="/img/tn_ed_old.webp" alt="Atlabs in December 2024: the editing view" loading="lazy"></div>
+    <span class="tn-lab l">Dec 2024</span><span class="tn-lab r">Oct 2026</span>
+    <span class="tn-handle" aria-hidden="true"><i></i></span>
+    <input class="tn-range" type="range" min="0" max="100" value="100" aria-label="Drag to compare December 2024 and October 2026: the editing view">
+   </div>
+   <dl class="tn-notes"><div class="tn-n"><dt>Then</dt><dd>No separate editor. A row of small tool icons sat under each scene on the story page.</dd></div><div class="tn-n"><dt>Now</dt><dd>A dedicated scene editor with nine panels: visual, motion, voiceover, lip sync, AI Edit, split, B-roll, captions, settings.</dd></div></dl>
+  </div></div></div>
+  <div class="tn-prog" aria-hidden="true"><i data-tnbar="" style="transform: scaleX(0);"></i></div>
+ </div></div></section></section><section class="panel" id="panel-previous" data-panel="previous" aria-label="Previous companies"><p class="plead"><span>Before Atlabs: Xalts, Curelink and ClearFeed.</span></p><div class="bento">
+  <figure class="tile comp-tile full" style="--bg:#1E3A5F" data-label="Read case study" data-color="#1E3A5F"><div class="stage"><div class="comp comp-x">
+     <button class="pc" type="button" data-zoom="x1" aria-label="Enlarge Xalts connect custodian screen" style="left:2%;top:2%;width:64%;z-index:1;--hx:-2%;--hy:-3%"><span class="webframe"><span class="bbar" aria-hidden="true"><i></i><i></i><i></i><em></em></span><img loading="lazy" decoding="async" class="shot-web" src="/m/f26ee8e195a1.webp#x1" width="1200" height="775" alt="Xalts connect custodian screen"></span></button>
+     <button class="pc" type="button" data-zoom="x2" aria-label="Enlarge Xalts user wallets console" style="left:34%;top:30%;width:64%;z-index:2;--hx:2%;--hy:3%"><span class="webframe"><span class="bbar" aria-hidden="true"><i></i><i></i><i></i><em></em></span><img loading="lazy" decoding="async" class="shot-web" src="/m/b518b99ac3b8.webp#x2" width="1200" height="813" alt="Xalts user wallets console"></span></button>
+   </div></div><figcaption><b>Xalts</b><span class="cl"> · Letting banks bring their own vault</span></figcaption><a class="case" href="#/xalts">Case study</a></figure>
+  <figure class="tile comp-tile" style="--bg:#1F7AE8" data-label="Read case study" data-color="#1F7AE8"><div class="stage"><div class="comp comp-c">
+     <button class="pc side" type="button" data-zoom="cp1" aria-label="Enlarge Curelink rewards dashboard" style="left:1%;top:13%;width:36%;z-index:1;--hx:-3%"><span class="device"><img loading="lazy" decoding="async" src="/m/fbebeff72722.webp#cp1" width="528" height="1177" alt="Curelink rewards dashboard"></span></button>
+     <button class="pc side" type="button" data-zoom="cp3" aria-label="Enlarge Curelink reward won" style="left:63%;top:13%;width:36%;z-index:1;--hx:3%"><span class="device"><img loading="lazy" decoding="async" src="/m/825b8911fbb8.webp#cp3" width="528" height="1179" alt="Curelink reward won"></span></button>
+     <button class="pc" type="button" data-zoom="cp2" aria-label="Enlarge Curelink scratch card" style="left:28%;top:3%;width:44%;z-index:2;--hy:-2%"><span class="device"><img loading="lazy" decoding="async" src="/m/6115c64d5cf4.webp#cp2" width="528" height="1179" alt="Curelink scratch card"></span></button>
+   </div></div><figcaption><b>Curelink</b><span class="cl"> · Scratch-card rewards for doctors</span></figcaption><a class="case" href="#/curelink">Case study</a></figure>
+  <figure class="tile comp-tile" style="--bg:#5B44F2" data-label="Read case study" data-color="#5B44F2"><div class="stage"><div class="comp comp-f">
+     <button class="pc" type="button" data-zoom="cf1" aria-label="Enlarge ClearFeed automated answers intro" style="left:0;top:6%;width:78%;z-index:1;--hx:-3%;--hy:-2%"><span class="webframe"><span class="bbar" aria-hidden="true"><i></i><i></i><i></i><em></em></span><img loading="lazy" decoding="async" class="shot-web" src="/m/dff04fa0be54.webp#cf1" width="2000" height="1192" alt="ClearFeed automated answers intro"></span></button>
+     <button class="pc" type="button" data-zoom="cf3" aria-label="Enlarge ClearFeed indexing state" style="left:24%;top:46%;width:76%;z-index:2;--hx:3%;--hy:2%"><span class="webframe"><span class="bbar" aria-hidden="true"><i></i><i></i><i></i><em></em></span><img loading="lazy" decoding="async" class="shot-web" src="/m/1abcd12c6be8.webp#cf3" width="1950" height="980" alt="ClearFeed indexing state"></span></button>
+   </div></div><figcaption><b>ClearFeed</b><span class="cl"> · GPT answers for Slack support</span></figcaption><a class="case" href="#/clearfeed">Case study</a></figure>
+</div></section><section class="panel" id="panel-side" data-panel="side" aria-label="Side projects"><p class="plead"><span>Things I made for myself.</span></p><div class="bento">
+    <figure class="tile comp-tile full fl-tile" style="--bg:#EADBC8" data-newtab="1" data-label="Try it ↗" data-color="#7A3E2B">
+  <div class="stage"><div class="comp fl-stage">
+    <span class="webframe fl-frame"><span class="fl-bar" aria-hidden="true"><i></i><i></i><i></i></span>
+    <video class="fl-vid" src="/corner-florist-v3.mp4" poster="/corner-florist-v3.jpg" muted="" loop="" playsinline="" autoplay="" preload="auto" aria-label="The Corner Florist launch video: picking stems from buckets, wrapping them in kraft paper, adding a gift tag"></video><button type="button" class="fl-snd" data-flsnd="" aria-label="Turn sound on"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 9v6h4l5 4V5L8 9z"></path><path class="off" d="M17 9l5 5M22 9l-5 5"></path><path class="on" d="M16.5 8.5a5 5 0 010 7M19 6a8.5 8.5 0 010 12"></path></svg></button>
+    </span>
+  </div></div>
+  <figcaption><b>The Corner Florist</b><span class="cl"> · Pick stems from the buckets, wrap them in kraft paper, send a bouquet.</span></figcaption>
+  <a class="case fl-cta" href="https://rupam870.github.io/corner-florist/" target="_blank" rel="noopener">Try now ↗</a>
+</figure>
+    <figure class="tile comp-tile full" style="--bg:#CDBDEB" data-label="Read case study" data-color="#17171A"><div class="stage"><div class="comp comp-a">
+       <button class="pc" type="button" data-zoom="al1" aria-label="Enlarge Alphy hanging on the Mac desktop" style="left:1%;top:3%;width:62%;z-index:1;--hx:-2%;--hy:-3%"><span class="webframe"><span class="bbar" aria-hidden="true"><i></i><i></i><i></i><em></em></span><img loading="lazy" decoding="async" class="shot-web" src="/m/352aaac0ebd3.webp#al1" width="1440" height="900" alt="Alphy hanging on the Mac desktop"></span></button>
+       <button class="pc" type="button" data-zoom="al2" aria-label="Enlarge Alphy moods: thriving, content, thirsty, drooping, wilted, sleeping" style="left:40%;top:38%;width:58%;z-index:2;--hx:2%;--hy:3%"><span class="webframe"><span class="bbar" aria-hidden="true"><i></i><i></i><i></i><em></em></span><img loading="lazy" decoding="async" class="shot-web" src="/m/11b2250dc324.webp#al2" width="1628" height="888" alt="Alphy moods: thriving, content, thirsty, drooping, wilted, sleeping"></span></button>
+     </div></div><figcaption><b>Alphy</b><span class="cl"> · A menu-bar plant that wilts if I skip water</span></figcaption><a class="case" href="#/alphy">Case study</a></figure>
+    <figure class="tile comp-tile" style="--bg:#F4C9D8" data-label="Open on Behance ↗" data-color="#17171A"><div class="stage"><div class="comp comp-p">
+       <button class="pc" type="button" data-zoom="tn1" aria-label="Enlarge Tinder concept: caption your pics" style="left:5%;top:3%;width:41%;z-index:2;--hx:-4%;--hy:-2%"><span class="device"><img loading="lazy" decoding="async" src="/m/fe59b06317e5.webp#tn1" width="602" height="1308" alt="Tinder concept: caption your pics"></span></button>
+       <button class="pc" type="button" data-zoom="tn2" aria-label="Enlarge Tinder concept: personality guesses" style="left:54%;top:11%;width:41%;z-index:1;--hx:4%;--hy:2%"><span class="device"><img loading="lazy" decoding="async" src="/m/f0cead439d0d.webp#tn2" width="602" height="1307" alt="Tinder concept: personality guesses"></span></button>
+     </div></div><figcaption><b>Tinder concept</b><span class="cl"> · Personality before photos</span></figcaption><a class="case" href="https://www.behance.net/gallery/204867193/Deeper-Connections-via-Tinder-a-design-case-study">Case study</a></figure>
+    <figure class="tile comp-tile" style="--bg:#E9824A" data-label="Read case study" data-color="#E9824A"><div class="stage"><div class="comp comp-p">
+       <button class="pc" type="button" data-zoom="ns2" aria-label="Enlarge Night Schedule: tonight list" style="left:5%;top:3%;width:41%;z-index:2;--hx:-4%;--hy:-2%"><span class="device"><img loading="lazy" decoding="async" src="/m/f0e73f8be245.webp#ns2" width="700" height="1523" alt="Night Schedule: tonight list"></span></button>
+       <button class="pc" type="button" data-zoom="ns1" aria-label="Enlarge Night Schedule: storytelling timer" style="left:54%;top:11%;width:41%;z-index:1;--hx:4%;--hy:2%"><span class="device"><img loading="lazy" decoding="async" src="/m/4c9d4891e161.webp#ns1" width="700" height="1523" alt="Night Schedule: storytelling timer"></span></button>
+     </div></div><figcaption><b>Night Schedule</b><span class="cl"> · Four timers, every night</span></figcaption><a class="case" href="#/night-schedule">Case study</a></figure>
+  </div></section><section class="panel" id="panel-ui" data-panel="ui" aria-label="Dribbble explorations"><div class="hs-wrap"><div class="hs" id="hs" style="height: 5030px;"><div class="hs-sticky">
+  <div class="ui-note" id="ui-note"><span class="tag">Dribbble recreations · 2022</span>
+  <p>I recreated shots by designers I admired, pixel by pixel, to train my eye for layout, type and detail. It taught me more than any course. Thank you to every designer for sharing work I could learn from.</p></div>
+  <div class="hs-view"><div class="hs-track" id="hs-track" style="transform: translate3d(0px, 0px, 0px);"><div class="uicard"><div class="uitile p" style="--bg:#DE7B5E"><button class="zoom" type="button" data-zoom="6" aria-label="Enlarge FM radio"><span class="device"><img src="/m/c92c9f3bbf45.webp#6" alt="FM radio recreation"></span></button></div>
+</div><div class="uicard"><div class="uitile w" style="--bg:#E8A93E"><button class="zoom" type="button" data-zoom="10" aria-label="Enlarge Analytics dashboard"><img src="/m/46dc912e6165.webp#10" alt="Analytics dashboard recreation"></button></div>
+</div><div class="uicard"><div class="uitile p" style="--bg:#EFE8DC"><button class="zoom" type="button" data-zoom="1" aria-label="Enlarge Crypto wallet"><span class="device"><img src="/m/2c23a70ecaa5.webp#1" alt="Crypto wallet recreation"></span></button></div>
+</div><div class="uicard"><div class="uitile p" style="--bg:#C9C3F0"><button class="zoom" type="button" data-zoom="11" aria-label="Enlarge Meditation"><span class="device"><img src="/m/76777d423a3c.webp#11" alt="Meditation recreation"></span></button></div>
+</div><div class="uicard"><div class="uitile w" style="--bg:#A9D8F5"><button class="zoom" type="button" data-zoom="12" aria-label="Enlarge Payments landing page"><img src="/m/1960dcd6472d.webp#12" alt="Payments landing page recreation"></button></div>
+</div><div class="uicard"><div class="uitile p" style="--bg:#1F3F8F"><button class="zoom" type="button" data-zoom="8" aria-label="Enlarge Bank onboarding"><span class="device"><img src="/m/6ff8d50cd481.webp#8" alt="Bank onboarding recreation"></span></button></div>
+</div><div class="uicard"><div class="uitile p" style="--bg:#2F66F0"><button class="zoom" type="button" data-zoom="13" aria-label="Enlarge Finance sign-up"><span class="device"><img src="/m/ab8e40a3e1e2.webp#13" alt="Finance sign-up recreation"></span></button></div>
+</div><div class="uicard"><div class="uitile w" style="--bg:#D8E6D0"><button class="zoom" type="button" data-zoom="7" aria-label="Enlarge Ad platform landing"><img src="/m/d49f59b2fd91.webp#7" alt="Ad platform landing recreation"></button></div>
+</div><div class="uicard"><div class="uitile p" style="--bg:#BFD297"><button class="zoom" type="button" data-zoom="2" aria-label="Enlarge Taxi booking"><span class="device"><img src="/m/050a211f5314.webp#2" alt="Taxi booking recreation"></span></button></div>
+</div><div class="uicard"><div class="uitile p" style="--bg:#F4C07A"><button class="zoom" type="button" data-zoom="0" aria-label="Enlarge Banking home"><span class="device"><img src="/m/e1be96ccf0b5.webp#0" alt="Banking home recreation"></span></button></div>
+</div><div class="uicard"><div class="uitile w" style="--bg:#F2D7E0"><button class="zoom" type="button" data-zoom="3" aria-label="Enlarge Design assets marketplace"><img src="/m/02e16e25fcae.webp#3" alt="Design assets marketplace recreation"></button></div>
+</div><div class="uicard"><div class="uitile p" style="--bg:#D9E8F5"><button class="zoom" type="button" data-zoom="4" aria-label="Enlarge Spending statistics"><span class="device"><img src="/m/34f70bc0b627.webp#4" alt="Spending statistics recreation"></span></button></div>
+</div><div class="uicard"><div class="uitile p" style="--bg:#F4C07A"><button class="zoom" type="button" data-zoom="9" aria-label="Enlarge Payments onboarding"><span class="device"><img src="/m/3120a0f3368d.webp#9" alt="Payments onboarding recreation"></span></button></div>
+</div><div class="uicard"><div class="uitile w" style="--bg:#9FC3E6"><button class="zoom" type="button" data-zoom="5" aria-label="Enlarge Cleaning services"><img src="/m/bb631e6fb04d.webp#5" alt="Cleaning services recreation"></button></div>
+</div></div></div></div></div></div></section>
+</section><section class="desk-sec" aria-labelledby="desk-h">
+ <div class="dk-copy"><h2 id="desk-h">Get to know me.</h2>
+  <p>The story behind the work, or my résumé on one page.</p>
+  <div class="dk-hint" aria-hidden="true"><span>pick one up</span>
+   <svg width="58" height="22" viewBox="0 0 58 22" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M2 15C16 5 36 4 53 11"></path><path d="M45 5.5l8 5.5-8.5 5"></path></svg></div>
+ </div>
+ <div class="dk-desk" id="desk">
+  <a class="dk-obj dk-pol dk-pre" href="#/about" draggable="false" data-k="story" aria-label="Read my story, 2 minute read">
+   <div class="dk-inner"><span class="dk-seen" aria-hidden="true">✓</span><div class="dk-body"><span class="dk-tape"></span>
+    <div class="dk-flip">
+     <div class="dk-face"><div class="dk-ph"><img alt="Rupam" draggable="false" src="/m/47f174aa4ff4.webp#abPortrait"></div><em>my story</em></div>
+     <div class="dk-face dk-back"><p>How an engineer from IIT Roorkee ended up designing AI video tools.</p><span>Read it →</span></div>
+    </div></div></div>
+   <span class="dk-lbl">My story <i>· 2 min read</i></span></a>
+  <a class="dk-obj dk-sheet dk-pre" href="#/resume" data-resume="" draggable="false" data-k="resume" aria-label="Open résumé, one page PDF">
+   <div class="dk-inner"><span class="dk-seen" aria-hidden="true">✓</span><div class="dk-body">
+    <svg class="dk-clip" width="22" height="52" viewBox="0 0 22 52" fill="none" stroke="#9C9B96" stroke-width="2" stroke-linecap="round"><path d="M16 14v26a5 5 0 0 1-10 0V8a4 4 0 0 1 8 0v30a2 2 0 0 1-4 0V14"></path></svg>
+    <h4>Rupam</h4><div class="dk-r">Founding Designer · Atlabs AI</div>
+    <div class="dk-row"><span>Atlabs AI</span><span>Now</span></div><div class="dk-row"><span>Xalts</span><span>2024</span></div>
+    <div class="dk-row"><span>ClearFeed</span><span>2023</span></div><div class="dk-row"><span>IIT Roorkee</span><span>Int. MSc</span></div>
+    <div class="dk-bars"><div style="width:90%"></div><div style="width:70%"></div><div style="width:80%"></div></div>
+    <span class="dk-stamp">1 PAGE</span>
+    <div class="dk-dl"><b>Open résumé ↗</b></div></div></div>
+   <span class="dk-lbl">Résumé <i>· PDF</i></span></a>
+ </div>
+</section></main></div>
+  <dialog class="lb" id="lb"><img alt=""><form method="dialog"><button>Close</button></form></dialog>
+  <dialog class="rvd" id="rvd" aria-labelledby="rvd-t">
+    <div class="rvd-bar"><p id="rvd-t">Resume</p><div class="rvd-acts"><button type="button" class="sf-btn primary" id="rvd-dl"><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M10 3v10M5.5 8.5 10 13l4.5-4.5M4 16.5h12"/></svg><span>Download PDF</span></button><button type="button" class="rvd-x" id="rvd-x" aria-label="Close resume"><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M5 5l10 10M15 5 5 15"/></svg></button></div></div>
+    <div class="rvd-body"><img id="rvd-img" alt="Rupam Gumber's resume, Oct 2026: Founding Designer at Atlabs AI; earlier at Xalts and ClearFeed; IIT Roorkee; Adobe Designathon 2024 first runner-up and Best CSS Site of the Day." width="1600" height="2262"></div>
+    <p class="rvd-note" id="rvd-note" aria-live="polite"></p>
+  </dialog>
+  <div class="rprog" id="rprog" aria-hidden="true"></div>
+  <button type="button" class="rchip" id="rchip" hidden aria-label="Reading progress. Jump to the end"><span class="ring" aria-hidden="true"></span><span class="t"><b></b><span class="sec-name"></span></span><span class="left"></span></button>
+<!-- rupam.work chat widget (v2) — from claude/chat-widget.html, replaces the old "Contact me" button + menu -->
+<style>
+  #rw-chat, #rw-chat * { box-sizing: border-box; }
+  #rw-chat {
+    --ink: #191917; --muted: #6B6862; --soft: #4A4743; --line: #E6E3DD; --line-2: #DAD6CF;
+    --bubble: #F1EFEA; --panel: #FFFFFF; --online: #2F9E55; --badge: #D93F3F; --error: #B42318;
+    position: fixed; right: 24px; bottom: 24px; z-index: 2147483000;
+    font-family: var(--sans, 'Geist'), system-ui, -apple-system, sans-serif; font-size: 14px; line-height: 1.45; color: var(--ink);
+  }
+  #rw-chat button, #rw-chat input, #rw-chat textarea { font: inherit; color: inherit; }
+  @keyframes rwPop { from { opacity: 0; transform: translateY(8px) scale(.96); } to { opacity: 1; transform: none; } }
+  @keyframes rwDot { 0%,80%,100% { opacity: .25; transform: translateY(0); } 40% { opacity: 1; transform: translateY(-2px); } }
+  .rw-pop { animation: rwPop .32s cubic-bezier(.2,.8,.2,1) both; transform-origin: bottom right; }
+  @media (prefers-reduced-motion: reduce) { .rw-pop, .rw-dot { animation: none !important; } }
+  .rw-hidden { display: none !important; }
+
+  .rw-avatar { position: relative; flex: none; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 600; background: var(--ink); color: #fff; }
+  .rw-avatar::after { content: ""; position: absolute; right: -1px; bottom: -1px; width: 10px; height: 10px; border-radius: 50%; background: var(--online); border: 2px solid #fff; }
+
+  /* launcher */
+  .rw-launch { position: relative; display: flex; align-items: center; gap: 10px; height: 52px; padding: 0 20px 0 8px; margin-left: auto;
+    background: var(--ink); color: #fff; border: 0; border-radius: 26px; cursor: pointer; font-size: 15px; font-weight: 500;
+    box-shadow: 0 12px 30px -10px rgba(25,25,23,.55); }
+  .rw-launch:hover, .rw-close-fab:hover, .rw-primary:hover { background: #2E2E2B; }
+  .rw-launch .rw-avatar { width: 36px; height: 36px; font-size: 14px; background: #fff; color: var(--ink); }
+  .rw-launch .rw-avatar::after { border-color: var(--ink); }
+  .rw-badge { position: absolute; top: -5px; right: -3px; min-width: 20px; height: 20px; padding: 0 5px; border-radius: 10px; background: var(--badge);
+    color: #fff; font-size: 11px; font-weight: 600; display: flex; align-items: center; justify-content: center; border: 2px solid var(--paper, #F5F3EF); }
+  .rw-close-fab { width: 52px; height: 52px; margin-left: auto; border-radius: 26px; border: 0; background: var(--ink); color: #fff; display: flex;
+    align-items: center; justify-content: center; cursor: pointer; box-shadow: 0 12px 30px -10px rgba(25,25,23,.55); }
+
+  /* greeting peek */
+  .rw-peek { position: absolute; right: 0; bottom: 68px; width: 280px; }
+  .rw-peek-card { display: flex; gap: 12px; align-items: flex-start; width: 100%; text-align: left; padding: 14px 16px; background: #fff;
+    border: 1px solid var(--line); border-radius: 18px 18px 4px 18px; cursor: pointer;
+    box-shadow: 0 1px 2px rgba(25,25,23,.06), 0 16px 36px -10px rgba(25,25,23,.22); }
+  .rw-peek-card .rw-avatar { width: 34px; height: 34px; font-size: 14px; }
+  .rw-peek-meta { font-size: 12px; color: var(--muted); display: block; }
+  .rw-peek-text { font-size: 16px; font-weight: 500; display: block; }
+  .rw-peek-x { position: absolute; top: -12px; left: -12px; width: 28px; height: 28px; border-radius: 50%; background: #fff; border: 1px solid var(--line);
+    display: flex; align-items: center; justify-content: center; cursor: pointer; padding: 0; color: var(--muted); box-shadow: 0 2px 6px rgba(25,25,23,.08); }
+
+  /* panel */
+  .rw-panel { position: absolute; right: 0; bottom: 68px; width: 372px; height: 560px; max-height: calc(100vh - 120px); display: flex; flex-direction: column;
+    background: var(--panel); border: 1px solid var(--line); border-radius: 22px; overflow: hidden;
+    box-shadow: 0 1px 2px rgba(25,25,23,.06), 0 24px 60px -16px rgba(25,25,23,.28); }
+  .rw-head { display: flex; align-items: center; gap: 12px; padding: 16px 12px 16px 18px; border-bottom: 1px solid #EFECE6; }
+  .rw-head .rw-avatar { width: 40px; height: 40px; font-size: 16px; }
+  .rw-head-text { display: flex; flex-direction: column; flex: 1; min-width: 0; }
+  .rw-name { font-size: 15px; font-weight: 600; }
+  .rw-sub { font-size: 12px; color: var(--muted); }
+  .rw-icon-btn { flex: none; width: 36px; height: 36px; border-radius: 10px; border: 0; background: transparent; color: var(--muted);
+    display: flex; align-items: center; justify-content: center; cursor: pointer; padding: 0; }
+  .rw-icon-btn:hover, .rw-ghost:hover, .rw-chip:hover { background: var(--bubble); }
+
+  .rw-thread { flex: 1; overflow-y: auto; padding: 16px 16px 12px; display: flex; flex-direction: column; gap: 8px; }
+  .rw-day { align-self: center; font-size: 12px; color: var(--muted); padding-bottom: 4px; }
+  .rw-msg { max-width: 82%; padding: 10px 14px; white-space: pre-wrap; word-wrap: break-word; }
+  .rw-them { align-self: flex-start; background: var(--bubble); border-radius: 18px 18px 18px 4px; }
+  .rw-me { align-self: flex-end; background: var(--ink); color: #fff; border-radius: 18px 18px 4px 18px; }
+  .rw-typing { align-self: flex-start; display: flex; gap: 4px; padding: 14px 16px; background: var(--bubble); border-radius: 18px 18px 18px 4px; }
+  .rw-dot { width: 6px; height: 6px; border-radius: 3px; background: var(--muted); animation: rwDot 1s infinite; }
+  .rw-dot:nth-child(2) { animation-delay: .15s; } .rw-dot:nth-child(3) { animation-delay: .3s; }
+
+  .rw-chips { display: flex; flex-wrap: wrap; justify-content: flex-end; gap: 6px; padding-top: 6px; }
+  .rw-chip { height: 34px; padding: 0 14px; border: 1px solid var(--line-2); border-radius: 17px; background: #fff; font-size: 13px; cursor: pointer; }
+
+  .rw-email { display: flex; flex-direction: column; gap: 8px; margin-top: 4px; padding: 12px; border: 1px solid var(--line); border-radius: 14px; background: #FBFAF8; }
+  .rw-email label { font-size: 12px; color: var(--muted); }
+  .rw-email-row { display: flex; gap: 8px; }
+  .rw-email input { flex: 1; min-width: 0; height: 40px; padding: 0 12px; border: 1px solid var(--line-2); border-radius: 10px; font-size: 14px; background: #fff; }
+  .rw-primary { flex: none; height: 40px; padding: 0 16px; background: var(--ink); color: #fff; border: 0; border-radius: 10px; font-size: 14px; font-weight: 500; cursor: pointer; }
+  .rw-error { font-size: 12px; color: var(--error); }
+
+  .rw-foot { border-top: 1px solid #EFECE6; }
+  .rw-composer { position: relative; display: flex; align-items: flex-end; gap: 8px; margin: 12px 12px 6px; padding: 6px 6px 6px 14px;
+    border: 1px solid var(--line-2); border-radius: 14px; background: #fff; }
+  .rw-composer textarea { flex: 1; resize: none; border: 0; outline: none; font-size: 14px; line-height: 1.45; background: transparent; padding: 7px 0; min-height: 44px; max-height: 120px; }
+  .rw-send { flex: none; width: 38px; height: 38px; border-radius: 11px; border: 0; background: #C9C5BE; color: #fff; display: flex; align-items: center; justify-content: center; cursor: pointer; padding: 0; }
+  .rw-send.is-ready { background: var(--ink); }
+  .rw-actions { display: flex; align-items: center; gap: 2px; padding: 4px 8px 10px; }
+  .rw-ghost { display: flex; align-items: center; gap: 6px; height: 36px; padding: 0 10px; border: 0; border-radius: 9px; background: transparent;
+    color: var(--soft); font-size: 13px; cursor: pointer; text-decoration: none; }
+  .rw-sr { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+
+  @media (max-width: 480px) {
+    #rw-chat { right: 16px; bottom: 16px; left: 16px; }
+    .rw-panel { width: 100%; height: calc(100vh - 100px); }
+    .rw-peek { width: min(280px, 100%); }
+  }
+
+  /* portfolio fit: keep the launcher visible on the dark theme, and let clicks pass through the empty part of the full-width mobile container */
+  #rw-chat .rw-launch, #rw-chat .rw-close-fab, #rw-chat .rw-send, #rw-chat .rw-primary, #rw-chat .rw-me { color: #fff; }
+  :root[data-theme="dark"] #rw-chat .rw-launch, :root[data-theme="dark"] #rw-chat .rw-close-fab { background: #FAFAF8; color: #191917; }
+  :root[data-theme="dark"] #rw-chat .rw-launch:hover, :root[data-theme="dark"] #rw-chat .rw-close-fab:hover { background: #ECECE8; }
+  :root[data-theme="dark"] .rw-launch .rw-avatar { background: #191917; color: #fff; }
+  :root[data-theme="dark"] .rw-launch .rw-avatar::after { border-color: #FAFAF8; }
+  #rw-chat { pointer-events: none; }
+  #rw-chat > * { pointer-events: auto; }
+</style>
+
+<div id="rw-chat">
+  <div class="rw-peek rw-pop rw-hidden" data-rw="peek">
+    <button type="button" class="rw-peek-card" data-rw="open">
+      <span class="rw-avatar" aria-hidden="true"><img src="data:image/webp;base64,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" alt=""></span>
+      <span>
+        <span class="rw-peek-meta">Rupam · usually replies within a day</span>
+        <span class="rw-peek-text">Hi, how can I help you?</span>
+      </span>
+    </button>
+    <button type="button" class="rw-peek-x" data-rw="dismiss" aria-label="Dismiss greeting">
+      <svg width="10" height="10" viewBox="0 0 10 10" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" aria-hidden="true"><path d="M1.5 1.5l7 7M8.5 1.5l-7 7"/></svg>
+    </button>
+  </div>
+
+  <section class="rw-panel rw-pop rw-hidden" data-rw="panel" aria-label="Send Rupam a message">
+    <header class="rw-head">
+      <span class="rw-avatar" aria-hidden="true"><img src="data:image/webp;base64,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" alt=""></span>
+      <div class="rw-head-text">
+        <span class="rw-name">Rupam Gumber</span>
+        <span class="rw-sub">Founding designer at Atlabs · replies within a day</span>
+      </div>
+      <button type="button" class="rw-icon-btn" data-rw="close" aria-label="Close messages">
+        <svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" aria-hidden="true"><path d="M2 2l10 10M12 2L2 12"/></svg>
+      </button>
+    </header>
+    <div class="rw-thread" data-rw="thread" aria-live="polite"></div>
+    <div class="rw-foot">
+      <form class="rw-composer" data-rw="composer">
+        <label for="rw-msg" class="rw-sr">Message</label>
+        <textarea id="rw-msg" rows="2" placeholder="Write a message…" data-rw="input"></textarea>
+        <button type="submit" class="rw-send" data-rw="send" aria-label="Send message" disabled>
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 13V3M3.5 7.5L8 3l4.5 4.5"/></svg>
+        </button>
+      </form>
+      <div class="rw-actions">
+        <button type="button" class="rw-ghost" data-rw="copy">
+          <svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round" aria-hidden="true"><rect x="4.5" y="4.5" width="8" height="8" rx="1.8"/><path d="M9.5 4.5V3.3c0-1-.8-1.8-1.8-1.8H3.3c-1 0-1.8.8-1.8 1.8v4.4c0 1 .8 1.8 1.8 1.8h1.2"/></svg>
+          <span data-rw="copy-label">Copy email</span>
+        </button>
+        <a class="rw-ghost" data-rw="calendly" href="#" target="_blank" rel="noopener">
+          <svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" aria-hidden="true"><rect x="1.5" y="2.5" width="11" height="10" rx="2"/><path d="M1.5 6h11M4.5 1v3M9.5 1v3"/></svg>
+          <span>Book a 30-min call</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <button type="button" class="rw-launch" data-rw="launch">
+    <span class="rw-avatar" aria-hidden="true"><img src="data:image/webp;base64,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" alt=""></span>
+    <span>Send a message</span>
+    <span class="rw-badge" data-rw="badge" aria-label="1 new message">1</span>
+  </button>
+  <button type="button" class="rw-close-fab rw-hidden" data-rw="fab-close" aria-label="Close messages">
+    <svg width="18" height="18" viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4.5 7l4.5 4.5L13.5 7"/></svg>
+  </button>
+</div>
+
+<footer class="site-foot" aria-label="Footer">
+    <a class="sf-fill fe" href="mailto:rupamuxdesign@gmail.com" tabindex="-1" aria-hidden="true"><b>Email me <svg viewBox="0 0 24 24"><path d="M7 17 17 7M8 7h9v9"/></svg></b><small>rupamuxdesign@gmail.com</small></a>
+    <a class="sf-fill fs" href="https://calendly.com/rupam_g-ma/30min" tabindex="-1" aria-hidden="true"><b>Schedule a call <svg viewBox="0 0 24 24"><path d="M7 17 17 7M8 7h9v9"/></svg></b><small>30 minutes, on Calendly</small></a>
+    <div class="sf-cta">
+      <div class="sf-lead"><p class="sf-big">Still reading? That's a good sign.</p>
+        <nav class="sf-social" aria-label="Social"><a href="https://x.com/rupam_gumber" target="_blank" rel="noopener">X<svg viewBox="0 0 20 20" aria-hidden="true"><path d="M6 14 14 6M7 6h7v7"/></svg></a><a href="https://www.linkedin.com/in/rupam-gumber-120252204/" target="_blank" rel="noopener">LinkedIn<svg viewBox="0 0 20 20" aria-hidden="true"><path d="M6 14 14 6M7 6h7v7"/></svg></a><a href="https://medium.com/@rupamgumber38" target="_blank" rel="noopener">Medium<svg viewBox="0 0 20 20" aria-hidden="true"><path d="M6 14 14 6M7 6h7v7"/></svg></a></nav></div>
+      <div class="sf-btns">
+        <a class="sf-btn primary" href="mailto:rupamuxdesign@gmail.com">Email me</a>
+        <a class="sf-btn alt" href="https://calendly.com/rupam_g-ma/30min">Schedule a call</a>
+      </div>
+    </div>
+    <section class="bookshelf bsp-wrap" aria-labelledby="bs-title">
+      <div class="bsp-head"><p class="bs-title" id="bs-title">Currently on my bookshelf</p><button type="button" class="bsp-tidy" id="bsp-tidy" hidden>Tidy up</button></div>
+      <div class="bsp" id="bsp" role="group" aria-label="Bookshelf. Drag and throw the books."></div>
+    </section>
+  </footer>
+</div>
+
+
+<script src="/assets/js0.js"></script>
+<script src="/assets/js1.js"></script>
+<script src="/assets/js2.js"></script>
+<script src="/assets/js3.js"></script>
+<script src="/assets/js4.js"></script>
+<script src="/assets/js5.js"></script>
+<script src="/assets/js6.js"></script>
+<script src="/assets/js7.js"></script>
+<script src="/assets/js8.js"></script>
+<script src="/assets/js9.js"></script>
+</body>
+</html>
