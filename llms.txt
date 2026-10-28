@@ -1,0 +1,33 @@
+# Rupam Gumber
+
+> Rupam Gumber (she/her) is a product designer and the founding designer at Atlabs AI, a startup building AI video creation tools. She designs and ships product end to end, and ships her own designs into production code with Claude Code. She is an IIT Roorkee graduate.
+
+## About Rupam
+- Pronouns: she/her
+- Role: Founding Designer at Atlabs AI (since June 2025); product design intern at Atlabs before that
+- Earlier: product design intern at Xalts (fintech, 2024) and ClearFeed (B2B SaaS, 2023); freelance for Curelink (health tech); led platform design at Explorin (edtech)
+- Education: IIT Roorkee
+- Recognition: 1st runner-up, Adobe Designathon 2024
+- Site: https://rupam.work/
+- X: https://x.com/rupam_gumber
+- LinkedIn: https://www.linkedin.com/in/rupam-gumber-120252204/
+- GitHub: https://github.com/rupam870
+- Medium: https://medium.com/@rupamgumber38
+
+## Work at Atlabs AI
+- [Video teaser](https://rupam.work/work/video-teaser/): free users watch the first 25 seconds of their own AI video while the rest stays blurred; it became the main place people upgrade to a paid plan. Rupam owned product and design end to end.
+- [Editing experience](https://rupam.work/work/editing-experience/): the AI video editor where every Atlabs video is finished — scenes, motion, voice, B-roll, captions, credits, export and publishing. Rupam designed all of it.
+- [Create Image](https://rupam.work/work/create-image/): one surface for 24 AI image models, later reused as the shell for every Atlabs mini tool.
+- [Designing in production](https://rupam.work/work/designing-in-production/): Rupam ships her own designs into Atlabs' production React and TypeScript code with Claude Code — 68 merged pull requests as of October 2026.
+
+## Earlier work
+- [Xalts](https://rupam.work/work/xalts/): how banks connect their own Fireblocks custody and see every wallet in one console.
+- [ClearFeed](https://rupam.work/work/clearfeed/): setup, test and activation flows for GPT answers in Slack support.
+- [Curelink](https://rupam.work/work/curelink/): scratch-card rewards that got doctors enrolling patients.
+
+## Side projects
+- [Alphy](https://rupam.work/work/alphy/): a macOS menu-bar plant that wilts when she skips water.
+- [Night Schedule](https://rupam.work/work/night-schedule/): a mobile night routine with four timers.
+
+## More
+- [About](https://rupam.work/about/)

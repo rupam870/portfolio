@@ -426,7 +426,7 @@ home: () => `
 </section>`,
 
 about: () => `
-<section class="ph"><a class="back" href="#/">Back to home</a><h1>About</h1><p class="ab-id">Rupam Gumber <span>·</span> she/her <span>·</span> Product designer <span>·</span> IIT Roorkee</p>
+<section class="ph"><a class="back" href="#/">Back to home</a><h1>About</h1>
   <div class="ab-open"><p class="ab-lead">I’m the founding designer at Atlabs, making AI video creation easy for everyone.</p>
   <figure class="ab-portrait"><button class="zoom" type="button" data-zoom="abPortrait" aria-label="Enlarge Rupam in front of a doodle wall"><img loading="lazy" decoding="async" src="${IMG.abPortrait.src}" width="${IMG.abPortrait.w}" height="${IMG.abPortrait.h}" alt=""></button><figcaption>Hi, that's me</figcaption></figure></div>
 </section>
