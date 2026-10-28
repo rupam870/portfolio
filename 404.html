@@ -40,8 +40,15 @@ nav a:hover{color:var(--ink)}
 .eyebrow code{font-family:var(--mono);font-size:13px}
 h1{font-family:var(--serif);font-weight:400;font-size:clamp(40px,7vw,64px);line-height:1.06;letter-spacing:-.015em;margin:0;text-wrap:balance}
 h1 em{font-style:italic}
-.chipicon{display:inline-grid;place-items:center;width:.82em;height:.82em;vertical-align:.04em;margin-inline:.08em;border-radius:12px;background:var(--card);border:1px solid var(--line);box-shadow:0 1px 2px rgba(23,23,26,.06)}
+.chipicon{appearance:none;padding:0;color:inherit;font:inherit;line-height:1;box-sizing:border-box;cursor:pointer;transition:transform .2s;display:inline-grid;place-items:center;width:.82em;height:.82em;vertical-align:.04em;margin-inline:.08em;border-radius:12px;background:var(--card);border:1px solid var(--line);box-shadow:0 1px 2px rgba(23,23,26,.06)}
 .chipicon svg{width:.42em;height:.42em}
+.chipicon:hover{transform:translateY(-2px) rotate(-4deg)}
+.chipicon:focus-visible{outline:2px solid var(--focus);outline-offset:3px}
+.chipicon.go{animation:wvPop .6s cubic-bezier(.3,1.6,.5,1)}
+.chipicon.go svg path{animation:wvRun .6s ease}
+.chipicon.go svg path+path{animation-delay:.08s}
+@keyframes wvPop{0%{transform:scale(1)}35%{transform:scale(.86) rotate(-6deg)}100%{transform:scale(1)}}
+@keyframes wvRun{0%{transform:translateX(0)}50%{transform:translateX(3px)}100%{transform:translateX(0)}}
 .lede{margin:0;color:var(--muted);font-size:16px;line-height:1.65;max-width:52ch}
 .actions{display:flex;flex-wrap:wrap;gap:10px;margin-top:6px}
 .btn{display:inline-flex;align-items:center;gap:8px;font:500 14px/1 var(--sans);text-decoration:none;border-radius:99px;padding:12px 18px;border:1px solid var(--btn);transition:transform .15s}
@@ -49,10 +56,10 @@ h1 em{font-style:italic}
 .btn.ghost{color:var(--ink);border-color:var(--line);background:transparent}
 .btn:hover{transform:translateY(-1px)}
 .btn:focus-visible,nav a:focus-visible,.name:focus-visible{outline:2px solid var(--focus);outline-offset:3px}
-.stage{position:relative;width:100%;max-width:880px;margin:8px auto 0;aspect-ratio:4/3;touch-action:none}
+.stage{position:relative;width:100%;max-width:880px;margin:8px 0 0;aspect-ratio:4/3;touch-action:none}
 .stage canvas{display:block;width:100%;height:100%;cursor:pointer}
-.under{display:flex;flex-direction:column;align-items:center;gap:14px;margin-top:14px}
-.hint{margin:0;font:400 12.5px/1.4 var(--mono);color:var(--faint);text-align:center}
+.under{display:flex;flex-direction:column;align-items:flex-start;max-width:880px;gap:14px;margin-top:14px}
+.hint{margin:0;font:400 12.5px/1.4 var(--mono);color:var(--faint);text-align:left}
 .tray{display:flex;align-items:center;gap:8px;padding:7px;border-radius:14px;background:var(--card);border:1px solid var(--line);box-shadow:0 6px 22px rgba(23,23,26,.08)}
 .thumb{appearance:none;border:0;padding:0;background:none;cursor:pointer;border-radius:6px;position:relative;width:56px;height:42px;opacity:.55;transition:opacity .2s}
 .thumb canvas{width:100%;height:100%;display:block}
@@ -62,13 +69,13 @@ h1 em{font-style:italic}
 .pause:hover{background:var(--chip)}
 .thumb:focus-visible,.pause:focus-visible{outline:2px solid var(--focus);outline-offset:2px}
 .count{margin:0;font:400 12.5px/1.4 var(--mono);color:var(--faint);font-variant-numeric:tabular-nums}
-.full{position:absolute;left:50%;bottom:40px;transform:translate(-50%,12px);opacity:0;pointer-events:none;transition:.35s;display:flex;align-items:center;gap:12px;
+.full{position:absolute;left:24px;bottom:40px;transform:translate(0,12px);opacity:0;pointer-events:none;transition:.35s;display:flex;align-items:center;gap:12px;
   background:#17171a;color:#fafaf8;border-radius:99px;padding:8px 8px 8px 18px;font-size:14px;white-space:nowrap;box-shadow:0 8px 28px rgba(0,0,0,.25)}
-.full.show{opacity:1;transform:translate(-50%,0);pointer-events:auto}
+.full.show{opacity:1;transform:translate(0,0);pointer-events:auto}
 .full a{background:#fafaf8;color:#17171a;text-decoration:none;border-radius:99px;padding:8px 14px;font-weight:500}
 .meta-unused{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;margin-top:12px;font:400 12.5px/1.4 var(--mono);color:var(--faint)}
 @media (max-width:560px){.full{font-size:12.5px;padding-left:14px;bottom:24px;white-space:normal;width:max-content;max-width:calc(100% - 40px)}.full a{white-space:nowrap}nav{gap:16px}}
-@media (prefers-reduced-motion: reduce){.btn,.full{transition:none}}
+@media (prefers-reduced-motion: reduce){.btn,.full,.chipicon{transition:none}.chipicon.go,.chipicon.go svg path{animation:none}}
 </style>
 <script>window.__route=function(){return '404'};</script>
 <script src="/assets/js0.js"></script>
@@ -84,16 +91,16 @@ h1 em{font-style:italic}
 
   <section class="hero">
     <div class="eyebrow"><i></i><span>Error <code>404</code> · page not found</span></div>
-    <h1>Nothing here but <em>ducks</em><span class="chipicon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 9c2-2 4-2 6 0s4 2 6 0 4-2 6 0"/><path d="M2 15c2-2 4-2 6 0s4 2 6 0 4-2 6 0"/></svg></span>.</h1>
+    <h1>Nothing here but <em>ducks</em><button type="button" class="chipicon" id="waves" aria-label="Make a splash in the pond"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 9c2-2 4-2 6 0s4 2 6 0 4-2 6 0"/><path d="M2 15c2-2 4-2 6 0s4 2 6 0 4-2 6 0"/></svg></button>.</h1>
     <p class="lede">The page you’re looking for doesn’t exist. Feed the ducks for a bit, then head back home.</p>
     <div class="actions">
-      <a class="btn primary" href="/">Back to home <span aria-hidden="true">→</span></a>
+      <a class="btn primary" href="/">Back to home</a>
       <a class="btn ghost" href="/about/">About me</a>
     </div>
   </section>
 
   <div class="stage"><canvas id="pond" aria-label="A pond with ducks. Tap the water to toss bread."></canvas>
-    <div class="full" id="full" role="status"><span>The ducks are full. Thanks for stopping by.</span><a href="/">Back to home →</a></div>
+    <div class="full" id="full" role="status"><span>The ducks are full. Thanks for stopping by.</span><a href="/">Back to home</a></div>
   </div>
   <div class="under">
     <p class="hint">Tap the water to toss bread · drag to scatter a trail</p>
@@ -498,6 +505,19 @@ cv.addEventListener('pointerdown',e=>{down=true;onFeed();cv.setPointerCapture(e.
 cv.addEventListener('pointermove',e=>{if(!down)return;const n=performance.now();if(n-lastDrop>85){const[x,y]=toLocal(e);toss(x,y,1,8);lastDrop=n}});
 const up=()=>down=false;cv.addEventListener('pointerup',up);cv.addEventListener('pointercancel',up);
 
+/* the waves chip in the headline: splash the pond */
+const wv=document.getElementById('waves');
+wv.addEventListener('click',()=>{
+  wv.classList.remove('go');void wv.offsetWidth;wv.classList.add('go');
+  const st=cv.getBoundingClientRect();if(st.top>innerHeight*.6||st.bottom<0)cv.scrollIntoView({behavior:reduce?'auto':'smooth',block:'center'});
+  if(paused)setPaused(false);onFeed();
+  const cx=rand(260,560),cy=rand(180,420);
+  [0,140,280].forEach((d,i)=>setTimeout(()=>ripple(cx,cy,60+i*30,1.6,2.2),d));
+  for(let k=0;k<10;k++)drops.push({x:cx,y:cy,vx:(R()-.5)*120,vy:-rand(30,80),z:0,vz:rand(60,120),life:.7});
+  setTimeout(()=>toss(cx,cy,8,46),300);
+  ducks.forEach(d=>{if(d.type!=='baby'&&R()<.6)quacks.push({x:d.x,y:d.y-d.size*1.4,age:0,text:'quack!'})});
+  if(window.rwTrack)rwTrack('Pond Splashed');
+});
 /* opening state: a handful already on the water so the ducks are mid-rush */
 toss(470,300,5,30);crumbs.forEach(c=>{c.age=c.fall;c.landed=true;c.landT=-1});
 setTimeout(()=>toss(330,200,3,20),2600);
