@@ -1,404 +1,508 @@
 <!doctype html>
-<html lang="en" data-theme="light">
+<html lang="en">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<link rel="apple-touch-icon" href="data:image/png;base64,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">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Geist:wght@400;500;600&family=Caveat:wght@500;700&family=Geist+Mono:wght@400;500&display=swap">
-<title>Rupam Gumber — Founding Product Designer at Atlabs AI</title>
-<meta name="description" content="Founding designer at Atlabs AI. I design and ship AI video creation tools: the video teaser, the AI video editor and Create Image.">
-<meta name="author" content="Rupam Gumber">
+<title>Page not found — Rupam Gumber</title>
+<meta name="description" content="This page doesn't exist. Feed the ducks, then head back to rupam.work.">
 <meta name="robots" content="noindex">
-<meta property="og:type" content="profile">
-<meta property="og:site_name" content="Rupam Gumber">
-<meta property="og:title" content="Rupam Gumber — Founding Product Designer at Atlabs AI">
-<meta property="og:description" content="Founding designer at Atlabs AI. I design and ship AI video creation tools: the video teaser, the AI video editor and Create Image.">
-<meta property="og:url" content="https://rupam.work/">
-<meta property="og:image" content="https://rupam.work/og/home.jpg">
-<meta property="og:image:width" content="1200"><meta property="og:image:height" content="630">
-<meta property="og:image:alt" content="A product designer who has a vision, executes fast and takes the team ahead.">
-<meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:site" content="@rupam_gumber"><meta name="twitter:creator" content="@rupam_gumber">
-<meta name="twitter:title" content="Rupam Gumber — Founding Product Designer at Atlabs AI">
-<meta name="twitter:description" content="Founding designer at Atlabs AI. I design and ship AI video creation tools: the video teaser, the AI video editor and Create Image.">
-<meta name="twitter:image" content="https://rupam.work/og/home.jpg">
 <meta name="theme-color" content="#FAFAF8">
 <link rel="icon" href="/favicon.ico" sizes="48x48">
 <link rel="icon" href="/icon-32.png" type="image/png" sizes="32x32">
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
-<link rel="manifest" href="/site.webmanifest">
-<link rel="stylesheet" href="/assets/app.css">
-<script type="application/ld+json">{"@context": "https://schema.org", "@type": "ProfilePage", "name": "Rupam Gumber \u2014 Founding Product Designer at Atlabs AI", "url": "https://rupam.work/", "description": "Founding designer at Atlabs AI. I design and ship AI video creation tools: the video teaser, the AI video editor and Create Image.", "author": {"@type": "Person", "name": "Rupam Gumber", "url": "https://rupam.work/"}, "mainEntity": {"@context": "https://schema.org", "@type": "Person", "name": "Rupam Gumber", "url": "https://rupam.work/", "image": "https://rupam.work/og/home.jpg", "jobTitle": "Founding Product Designer", "description": "Founding designer at Atlabs AI, designing and shipping AI video creation tools.", "worksFor": {"@type": "Organization", "name": "Atlabs AI", "url": "https://www.atlabs.ai"}, "alumniOf": {"@type": "CollegeOrUniversity", "name": "IIT Roorkee"}, "knowsAbout": ["Product design", "AI video tools", "AI image generation", "Design systems", "Prototyping", "Claude Code", "Product analytics"], "sameAs": ["https://x.com/rupam_gumber", "https://www.linkedin.com/in/rupam-gumber-120252204/", "https://github.com/rupam870", "https://medium.com/@rupamgumber38"]}}</script>
-<script src="/assets/router.js"></script>
+<script>try{var t=localStorage.getItem('theme');if(t)document.documentElement.setAttribute('data-theme',t)}catch(e){}</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500&family=Geist+Mono:wght@400;500&family=Instrument+Serif:ital@0;1&display=swap">
+<style>
+/* Layout: rupam.work chrome (name left, About / Resume right), a serif headline with a way home, then the pond as a quiet card below. */
+:root{
+  --bg:#fafaf8;--ink:#17171a;--muted:#5f5f5b;--faint:#8f8f89;--line:#e3e3de;--chip:#f2f2f0;--card:#ffffff;--dot:#3ba56b;
+  --btn:#17171a;--btn-ink:#fafaf8;--focus:#2f5bd3;
+  --serif:"Instrument Serif",Georgia,"Times New Roman",serif;
+  --sans:"Geist",system-ui,-apple-system,"Segoe UI",sans-serif;
+  --mono:"Geist Mono",ui-monospace,SFMono-Regular,Menlo,monospace;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){--bg:#0e0e10;--ink:#f2f2f0;--muted:#a3a39d;--faint:#77776f;--line:#2a2a2e;--chip:#1c1c20;--card:#16161a;--btn:#f2f2f0;--btn-ink:#0e0e10;--focus:#7aa2ff;color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#0e0e10;--ink:#f2f2f0;--muted:#a3a39d;--faint:#77776f;--line:#2a2a2e;--chip:#1c1c20;--card:#16161a;--btn:#f2f2f0;--btn-ink:#0e0e10;--focus:#7aa2ff;color-scheme:dark}
+html,body{min-height:100%}
+body{background:var(--bg);color:var(--ink);font-family:var(--sans);font-size:17px;line-height:1.65;
+  padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));padding-block:0 48px;box-sizing:border-box}
+a{color:inherit}
+.wrap{max-width:1000px;margin:0 auto}
+header{display:flex;justify-content:space-between;align-items:center;padding-block:28px}
+.name{font-weight:500;text-decoration:none}
+nav{display:flex;gap:24px}
+nav a{color:var(--muted);text-decoration:none;font-size:16px}
+nav a:hover{color:var(--ink)}
+.hero{padding-block:56px 36px;display:flex;flex-direction:column;gap:18px;max-width:760px}
+.eyebrow{display:flex;align-items:center;gap:8px;font-size:14px;color:var(--muted)}
+.eyebrow i{width:7px;height:7px;border-radius:50%;background:var(--dot);box-shadow:0 0 0 3px color-mix(in srgb,var(--dot) 20%,transparent)}
+.eyebrow code{font-family:var(--mono);font-size:13px}
+h1{font-family:var(--serif);font-weight:400;font-size:clamp(40px,7vw,64px);line-height:1.06;letter-spacing:-.015em;margin:0;text-wrap:balance}
+h1 em{font-style:italic}
+.chipicon{display:inline-grid;place-items:center;width:.82em;height:.82em;vertical-align:.04em;margin-inline:.08em;border-radius:12px;background:var(--card);border:1px solid var(--line);box-shadow:0 1px 2px rgba(23,23,26,.06)}
+.chipicon svg{width:.42em;height:.42em}
+.lede{margin:0;color:var(--muted);font-size:16px;line-height:1.65;max-width:52ch}
+.actions{display:flex;flex-wrap:wrap;gap:10px;margin-top:6px}
+.btn{display:inline-flex;align-items:center;gap:8px;font:500 14px/1 var(--sans);text-decoration:none;border-radius:99px;padding:12px 18px;border:1px solid var(--btn);transition:transform .15s}
+.btn.primary{background:var(--btn);color:var(--btn-ink)}
+.btn.ghost{color:var(--ink);border-color:var(--line);background:transparent}
+.btn:hover{transform:translateY(-1px)}
+.btn:focus-visible,nav a:focus-visible,.name:focus-visible{outline:2px solid var(--focus);outline-offset:3px}
+.stage{position:relative;width:100%;max-width:880px;margin:8px auto 0;aspect-ratio:4/3;touch-action:none}
+.stage canvas{display:block;width:100%;height:100%;cursor:pointer}
+.under{display:flex;flex-direction:column;align-items:center;gap:14px;margin-top:14px}
+.hint{margin:0;font:400 12.5px/1.4 var(--mono);color:var(--faint);text-align:center}
+.tray{display:flex;align-items:center;gap:8px;padding:7px;border-radius:14px;background:var(--card);border:1px solid var(--line);box-shadow:0 6px 22px rgba(23,23,26,.08)}
+.thumb{appearance:none;border:0;padding:0;background:none;cursor:pointer;border-radius:6px;position:relative;width:56px;height:42px;opacity:.55;transition:opacity .2s}
+.thumb canvas{width:100%;height:100%;display:block}
+.thumb:hover{opacity:.85}.thumb[aria-pressed="true"]{opacity:1}
+.thumb[aria-pressed="true"]::after{content:"";position:absolute;left:50%;bottom:-5px;width:16px;height:2px;margin-left:-8px;border-radius:2px;background:var(--ink)}
+.pause{appearance:none;border:0;background:none;cursor:pointer;width:34px;height:34px;border-radius:99px;color:var(--ink);display:grid;place-items:center}
+.pause:hover{background:var(--chip)}
+.thumb:focus-visible,.pause:focus-visible{outline:2px solid var(--focus);outline-offset:2px}
+.count{margin:0;font:400 12.5px/1.4 var(--mono);color:var(--faint);font-variant-numeric:tabular-nums}
+.full{position:absolute;left:50%;bottom:40px;transform:translate(-50%,12px);opacity:0;pointer-events:none;transition:.35s;display:flex;align-items:center;gap:12px;
+  background:#17171a;color:#fafaf8;border-radius:99px;padding:8px 8px 8px 18px;font-size:14px;white-space:nowrap;box-shadow:0 8px 28px rgba(0,0,0,.25)}
+.full.show{opacity:1;transform:translate(-50%,0);pointer-events:auto}
+.full a{background:#fafaf8;color:#17171a;text-decoration:none;border-radius:99px;padding:8px 14px;font-weight:500}
+.meta-unused{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;margin-top:12px;font:400 12.5px/1.4 var(--mono);color:var(--faint)}
+@media (max-width:560px){.full{font-size:12.5px;padding-left:14px;bottom:24px;white-space:normal;width:max-content;max-width:calc(100% - 40px)}.full a{white-space:nowrap}nav{gap:16px}}
+@media (prefers-reduced-motion: reduce){.btn,.full{transition:none}}
+</style>
+<script>window.__route=function(){return '404'};</script>
+<script src="/assets/js0.js"></script>
 </head>
 <body>
 
 
 <div class="wrap">
-  <header class="top">
-    <a class="name" href="#/">Rupam Gumber</a>
-    <nav aria-label="Main">
-      <a href="#/about" data-r="about">About</a>
-      <a href="#/resume" data-resume>Resume</a>
-      <button class="theme-btn" type="button" id="theme-btn" aria-label="Switch to dark mode">
-        <svg viewBox="0 0 24 24" aria-hidden="true">
-          <mask id="bite-mask"><rect x="-6" y="-6" width="36" height="36" fill="#fff"/><circle class="bite" cx="25" cy="-1" r="6" fill="#000"/></mask>
-          <circle class="core" cx="12" cy="12" r="5" fill="currentColor" mask="url(#bite-mask)"/>
-          <g class="rays" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M12 1.5v2.2M12 20.3v2.2M1.5 12h2.2M20.3 12h2.2M4.6 4.6l1.5 1.5M17.9 17.9l1.5 1.5M4.6 19.4l1.5-1.5M17.9 6.1l1.5-1.5"/></g>
-        </svg>
-      </button>
-    </nav>
+  <header>
+    <a class="name" href="/">Rupam Gumber</a>
+    <nav><a href="/">Home</a><a href="/about/">About</a></nav>
   </header>
-  <div id="app"><main>
-<section class="intro">
-  <span class="now"><i></i>Founding designer at Atlabs</span>
-  <h1 class="lead">A <span class="nw"><span class="hw" style="--mk:rgba(123,97,255,.16)">product <span class="nw">designer <span class="ico i-pen fx-btn" role="button" tabindex="0" aria-label="Play: designer"><svg viewBox="0 0 24 24"><path class="ink" d="M3.5 20.5h8"></path><path d="M5 19l3.5-1 9.8-9.8a2.1 2.1 0 0 0-3-3L5.5 15 5 19z"></path><path d="M13.8 6.7l3 3" stroke-linecap="butt"></path></svg></span></span></span> who has a <span class="hw" style="--mk:rgba(47,91,211,.14)"><span class="nw">vision <span class="ico i-eye fx-btn" role="button" tabindex="0" aria-label="Play: vision"><svg viewBox="0 0 24 24"><g class="lid"><path d="M2.5 12S6 5.5 12 5.5 21.5 12 21.5 12 18 18.5 12 18.5 2.5 12 2.5 12z"></path><circle cx="12" cy="12" r="3"></circle></g></svg></span></span></span>,</span> <span class="nw"><span class="hw" style="--mk:rgba(224,112,58,.18)">executes <span class="nw">fast <span class="ico i-bolt fx-btn" role="button" tabindex="0" aria-label="Play: executes fast"><svg viewBox="0 0 24 24"><path d="M13 2.5 5 13.5h6l-1 8 8-11h-6z"></path></svg></span></span></span> and <span class="hw" style="--mk:rgba(59,165,107,.18)">takes the team <span class="nw">ahead <span class="ico i-team fx-btn" role="button" tabindex="0" aria-label="Play: takes the team ahead"><svg viewBox="0 0 24 24"><g class="ppl"><circle cx="8" cy="8" r="2.6"></circle><path d="M3.5 18c.6-2.8 2.4-4.4 4.5-4.4s3.9 1.6 4.5 4.4"></path><circle cx="15" cy="9" r="2.1"></circle></g><path class="go" d="M15.5 16.5h5M18.5 14l2.5 2.5-2.5 2.5"></path></svg></span></span></span>.</span></h1>
-  <ul class="proof" aria-label="Highlights">
-    <li><b>Founding designer</b><span>Atlabs, AI video creation. Product, site and growth.</span></li>
-    <li><b>5 startups</b><span>Atlabs, Xalts, ClearFeed, Curelink, Explorin</span></li>
-    <li><b>1st runner-up</b><span>Adobe Designathon '24</span></li>
-    <li><b>IIT Roorkee</b><span>JEE Advanced, top 0.5 percentile</span></li>
-  </ul>
-</section>
-<section class="work" aria-label="Work">
-  <div class="tabs-wrap"><nav class="tabs" aria-label="Selected work"><button type="button" id="tab-atlabs" data-tab="atlabs" aria-controls="panel-atlabs" aria-current="true">Atlabs<span class="ct" aria-hidden="true">4</span></button><button type="button" id="tab-previous" data-tab="previous" aria-controls="panel-previous" aria-current="false">Previous companies<span class="ct" aria-hidden="true">3</span></button><button type="button" id="tab-side" data-tab="side" aria-controls="panel-side" aria-current="false">Side projects<span class="ct" aria-hidden="true">4</span></button><button type="button" id="tab-ui" data-tab="ui" aria-controls="panel-ui" aria-current="false">Dribbble explorations<span class="ct" aria-hidden="true">14</span></button></nav><div class="tcat blink" aria-hidden="true" title="" style="transform: translate(260.992px, -10px);"><div class="tc-in"><svg viewBox="0 0 40 30" fill="currentColor">
-   <g class="sit">
-    <path class="stail" d="M14 27.5c-6 .4-8.6-3.2-7.6-6.4" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"></path>
-    <path d="M13 28.5c-.8-7.4 2-12.6 7.4-12.8 5.3-.2 8 5 7.4 12.8z"></path>
-    <path class="ear l" d="M15.4 7.2l.4-6 4.2 3.8z"></path><path class="ear r" d="M24.6 7.2l-.4-6-4.2 3.8z"></path>
-    <circle cx="20" cy="10" r="6.6"></circle>
-    <ellipse class="eye" cx="17.6" cy="9.8" rx="1.05" ry="1.25"></ellipse><ellipse class="eye" cx="22.4" cy="9.8" rx="1.05" ry="1.25"></ellipse>
-    <path class="nose" d="M19.2 12h1.6l-.8.9z"></path>
-    <ellipse cx="17.2" cy="28.4" rx="2.1" ry="1.3"></ellipse><ellipse cx="22.8" cy="28.4" rx="2.1" ry="1.3"></ellipse>
-   </g>
-   <g class="walk">
-    <path class="wtail" d="M8.5 15.5C4 14.6 2.6 9.6 4.6 6.6" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"></path>
-    <rect class="lg a" x="9.4" y="19.5" width="3" height="8.6" rx="1.5"></rect><rect class="lg b" x="13.4" y="19.5" width="3" height="8.6" rx="1.5"></rect>
-    <rect class="lg b" x="21" y="19.5" width="3" height="8.6" rx="1.5"></rect><rect class="lg a" x="25" y="19.5" width="3" height="8.6" rx="1.5"></rect>
-    <g class="wbody"><rect x="7.5" y="12.6" width="22.5" height="10.4" rx="5.2"></rect>
-    <path class="ear" d="M26.6 7.6l.6-5.6 3.6 3.6z"></path><path class="ear r" d="M33.4 7.8l1.4-5.4-4.6 2.8z"></path>
-    <circle cx="30.6" cy="11" r="6.2"></circle>
-    <ellipse class="eye" cx="29.6" cy="10.4" rx="1" ry="1.2"></ellipse><ellipse class="eye" cx="33.4" cy="10.4" rx="1" ry="1.2"></ellipse>
-    <path class="nose" d="M34.6 12.4h1.4l-.7.8z"></path></g>
-   </g></svg></div><span class="tc-pop">mew <i>♥</i></span></div></div>
-  <section class="panel" id="panel-atlabs" data-panel="atlabs" aria-label="Atlabs"><p class="plead"><span>Founding designer. The editor, the creation flows, and the moments that decide whether someone stays.</span></p><div class="wgrid"><a class="card wtile" href="#/video-teaser" data-label="Video teaser · where people upgrade" data-color="#C2410C" aria-label="Video teaser. Free users watch the first 25 seconds of their story; the rest stays blurred. It became the main place people upgrade."><div class="mock m-shot"><img loading="lazy" decoding="async" src="/img/vt_teaser.webp" width="1512" height="805" alt=""></div><span class="tlabel" aria-hidden="true" style="background:#C2410C">Video teaser</span></a><a class="card wtile" href="#/create-image" data-label="Create Image" data-color="#C2410C" aria-label="Create Image. One calm surface for 24 AI models. ~55k images from ~6.8k creators, as of Oct 2026."><div class="mock m-shot"><img loading="lazy" decoding="async" src="/m/823e2bd8defb.webp" width="2000" height="1139" alt=""></div><span class="tlabel" aria-hidden="true" style="background:#C2410C">Create Image</span></a><a class="card wtile" href="#/editing-experience" data-label="Editing experience · 3 levels, 9 tools" data-color="#23734A" aria-label="Editing experience. Story page, scene editor, timeline, credits, export and publishing: one editor where every story gets finished."><div class="mock m-shot"><img loading="lazy" decoding="async" src="/img/ed_story.webp" width="1800" height="1024" alt=""></div><span class="tlabel" aria-hidden="true" style="background:#23734A">Editing experience</span></a><a class="card wtile" href="#/designing-in-production" data-label="Designing in production" data-color="#2F5BD3" aria-label="Designing in production. 68 merged PRs into production, written with Claude Code and shipped through CI. As of Oct 2026."><div class="mock m-shot"><img loading="lazy" decoding="async" src="/m/d775ea3862d3.webp" width="1200" height="800" alt=""></div><span class="tlabel" aria-hidden="true" style="background:#2F5BD3">Designing in production</span></a></div><section class="tn pinned" aria-labelledby="tn-h"><div class="tn-pin" data-tnpin="" style="--n:4">
- <div class="tn-stick">
-  <div class="tn-top"><h3 id="tn-h">The app I joined, and the app today</h3>
-   <div class="tn-tabs" role="tablist" aria-label="Compare screens"><button type="button" role="tab" aria-selected="true" tabindex="0" data-tn="0"><span class="tn-tn">01</span>Home</button><button type="button" role="tab" aria-selected="false" tabindex="-1" data-tn="1"><span class="tn-tn">02</span>Creation flow</button><button type="button" role="tab" aria-selected="false" tabindex="-1" data-tn="2"><span class="tn-tn">03</span>Story</button><button type="button" role="tab" aria-selected="false" tabindex="-1" data-tn="3"><span class="tn-tn">04</span>Editing</button></div></div>
-  <div class="tn-view"><div class="tn-track" data-tntrack="" style="transform: translateX(0%);"><div class="tn-slide" data-slide="0" aria-hidden="false">
-   <div class="tn-cmp" data-tncmp="" style="--p: 100.00%;">
-    <img class="tn-new" src="/img/tn_home_new.webp" alt="Atlabs in October 2026: the home screen" loading="lazy">
-    <div class="tn-oldwrap"><img class="tn-old" src="/img/tn_home_old.webp" alt="Atlabs in December 2024: the home screen" loading="lazy"></div>
-    <span class="tn-lab l">Dec 2024</span><span class="tn-lab r">Oct 2026</span>
-    <span class="tn-handle" aria-hidden="true"><i></i></span>
-    <input class="tn-range" type="range" min="0" max="100" value="100" aria-label="Drag to compare December 2024 and October 2026: the home screen">
-   </div>
-   <dl class="tn-notes"><div class="tn-n"><dt>Then</dt><dd>Five fixed cards and a website-URL box. You picked a format before you had an idea.</dd></div><div class="tn-n"><dt>Now</dt><dd>One prompt box first, then nine workflows to start from, led by what people actually make.</dd></div></dl>
-  </div><div class="tn-slide" data-slide="1" aria-hidden="true">
-   <div class="tn-cmp" data-tncmp="" style="--p:100%">
-    <img class="tn-new" src="/m/acd6146a7a14.webp" alt="Atlabs in October 2026: the creation wizard" loading="lazy">
-    <div class="tn-oldwrap"><img class="tn-old" src="/img/tn_wiz_old2.webp" alt="Atlabs in December 2024: the creation wizard" loading="lazy"></div>
-    <span class="tn-lab l">Dec 2024</span><span class="tn-lab r">Oct 2026</span>
-    <span class="tn-handle" aria-hidden="true"><i></i></span>
-    <input class="tn-range" type="range" min="0" max="100" value="100" aria-label="Drag to compare December 2024 and October 2026: the creation wizard">
-   </div>
-   <dl class="tn-notes"><div class="tn-n"><dt>Then</dt><dd>A generic three-step wizard: write a script, pick a style, finalise the cast. Same steps for every kind of video.</dd></div><div class="tn-n"><dt>Now</dt><dd>A wizard per workflow. A music video starts from your song, with sample tracks, a Suno tip and tutorials right on the first step.</dd></div></dl>
-  </div><div class="tn-slide" data-slide="2" aria-hidden="true">
-   <div class="tn-cmp" data-tncmp="" style="--p:100%">
-    <img class="tn-new" src="/img/tn_ed_new.webp" alt="Atlabs in October 2026: the story page" loading="lazy">
-    <div class="tn-oldwrap"><img class="tn-old" src="/img/tn_ed_old.webp" alt="Atlabs in December 2024: the story page" loading="lazy"></div>
-    <span class="tn-lab l">Dec 2024</span><span class="tn-lab r">Oct 2026</span>
-    <span class="tn-handle" aria-hidden="true"><i></i></span>
-    <input class="tn-range" type="range" min="0" max="100" value="100" aria-label="Drag to compare December 2024 and October 2026: the story page">
-   </div>
-   <dl class="tn-notes"><div class="tn-n"><dt>Then</dt><dd>A story was a list of still images. Writing, editing and preview all lived on this one page.</dd></div><div class="tn-n"><dt>Now</dt><dd>Each scene can be an image, a full video, or a video teaser.</dd></div><div class="tn-n hl"><dt>Free plan</dt><dd>Free users see a teaser: the first scenes play, the rest stay blurred until they upgrade.</dd></div></dl>
-  </div><div class="tn-slide" data-slide="3" aria-hidden="true">
-   <div class="tn-cmp" data-tncmp="" style="--p:100%">
-    <img class="tn-new" src="/img/tn_edit_new.webp" alt="Atlabs in October 2026: the editing view" loading="lazy">
-    <div class="tn-oldwrap"><img class="tn-old" src="/img/tn_ed_old.webp" alt="Atlabs in December 2024: the editing view" loading="lazy"></div>
-    <span class="tn-lab l">Dec 2024</span><span class="tn-lab r">Oct 2026</span>
-    <span class="tn-handle" aria-hidden="true"><i></i></span>
-    <input class="tn-range" type="range" min="0" max="100" value="100" aria-label="Drag to compare December 2024 and October 2026: the editing view">
-   </div>
-   <dl class="tn-notes"><div class="tn-n"><dt>Then</dt><dd>No separate editor. A row of small tool icons sat under each scene on the story page.</dd></div><div class="tn-n"><dt>Now</dt><dd>A dedicated scene editor with nine panels: visual, motion, voiceover, lip sync, AI Edit, split, B-roll, captions, settings.</dd></div></dl>
-  </div></div></div>
-  <div class="tn-prog" aria-hidden="true"><i data-tnbar="" style="transform: scaleX(0);"></i></div>
- </div></div></section></section><section class="panel" id="panel-previous" data-panel="previous" aria-label="Previous companies"><p class="plead"><span>Before Atlabs: Xalts, Curelink and ClearFeed.</span></p><div class="bento">
-  <figure class="tile comp-tile full" style="--bg:#1E3A5F" data-label="Read case study" data-color="#1E3A5F"><div class="stage"><div class="comp comp-x">
-     <button class="pc" type="button" data-zoom="x1" aria-label="Enlarge Xalts connect custodian screen" style="left:2%;top:2%;width:64%;z-index:1;--hx:-2%;--hy:-3%"><span class="webframe"><span class="bbar" aria-hidden="true"><i></i><i></i><i></i><em></em></span><img loading="lazy" decoding="async" class="shot-web" src="/m/09bff8004d99.webp" width="1200" height="775" alt="Xalts connect custodian screen"></span></button>
-     <button class="pc" type="button" data-zoom="x2" aria-label="Enlarge Xalts user wallets console" style="left:34%;top:30%;width:64%;z-index:2;--hx:2%;--hy:3%"><span class="webframe"><span class="bbar" aria-hidden="true"><i></i><i></i><i></i><em></em></span><img loading="lazy" decoding="async" class="shot-web" src="/m/7694d60061eb.webp" width="1200" height="813" alt="Xalts user wallets console"></span></button>
-   </div></div><figcaption><b>Xalts</b><span class="cl"> · Letting banks bring their own vault</span></figcaption><a class="case" href="#/xalts">Case study</a></figure>
-  <figure class="tile comp-tile" style="--bg:#1F7AE8" data-label="Read case study" data-color="#1F7AE8"><div class="stage"><div class="comp comp-c">
-     <button class="pc side" type="button" data-zoom="cp1" aria-label="Enlarge Curelink rewards dashboard" style="left:1%;top:13%;width:36%;z-index:1;--hx:-3%"><span class="device"><img loading="lazy" decoding="async" src="/m/cd4fd0ee9fe8.webp" width="528" height="1177" alt="Curelink rewards dashboard"></span></button>
-     <button class="pc side" type="button" data-zoom="cp3" aria-label="Enlarge Curelink reward won" style="left:63%;top:13%;width:36%;z-index:1;--hx:3%"><span class="device"><img loading="lazy" decoding="async" src="/m/3b434a52d9c5.webp" width="528" height="1179" alt="Curelink reward won"></span></button>
-     <button class="pc" type="button" data-zoom="cp2" aria-label="Enlarge Curelink scratch card" style="left:28%;top:3%;width:44%;z-index:2;--hy:-2%"><span class="device"><img loading="lazy" decoding="async" src="/m/96eaac6e342b.webp" width="528" height="1179" alt="Curelink scratch card"></span></button>
-   </div></div><figcaption><b>Curelink</b><span class="cl"> · Scratch-card rewards for doctors</span></figcaption><a class="case" href="#/curelink">Case study</a></figure>
-  <figure class="tile comp-tile" style="--bg:#5B44F2" data-label="Read case study" data-color="#5B44F2"><div class="stage"><div class="comp comp-f">
-     <button class="pc" type="button" data-zoom="cf1" aria-label="Enlarge ClearFeed automated answers intro" style="left:0;top:6%;width:78%;z-index:1;--hx:-3%;--hy:-2%"><span class="webframe"><span class="bbar" aria-hidden="true"><i></i><i></i><i></i><em></em></span><img loading="lazy" decoding="async" class="shot-web" src="/m/7fec8f71dea1.webp" width="2000" height="1192" alt="ClearFeed automated answers intro"></span></button>
-     <button class="pc" type="button" data-zoom="cf3" aria-label="Enlarge ClearFeed indexing state" style="left:24%;top:46%;width:76%;z-index:2;--hx:3%;--hy:2%"><span class="webframe"><span class="bbar" aria-hidden="true"><i></i><i></i><i></i><em></em></span><img loading="lazy" decoding="async" class="shot-web" src="/m/fa51834f7ff6.webp" width="1950" height="980" alt="ClearFeed indexing state"></span></button>
-   </div></div><figcaption><b>ClearFeed</b><span class="cl"> · GPT answers for Slack support</span></figcaption><a class="case" href="#/clearfeed">Case study</a></figure>
-</div></section><section class="panel" id="panel-side" data-panel="side" aria-label="Side projects"><p class="plead"><span>Things I made for myself.</span></p><div class="bento">
-    <figure class="tile comp-tile full fl-tile" style="--bg:#EADBC8" data-newtab="1" data-label="Try it ↗" data-color="#7A3E2B">
-  <div class="stage"><div class="comp fl-stage">
-    <span class="webframe fl-frame"><span class="fl-bar" aria-hidden="true"><i></i><i></i><i></i></span>
-    <video class="fl-vid" src="/corner-florist-v3.mp4" poster="/corner-florist-v3.jpg" muted="" loop="" playsinline="" autoplay="" preload="auto" aria-label="The Corner Florist launch video: picking stems from buckets, wrapping them in kraft paper, adding a gift tag"></video><button type="button" class="fl-snd" data-flsnd="" aria-label="Turn sound on"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 9v6h4l5 4V5L8 9z"></path><path class="off" d="M17 9l5 5M22 9l-5 5"></path><path class="on" d="M16.5 8.5a5 5 0 010 7M19 6a8.5 8.5 0 010 12"></path></svg></button>
-    </span>
-  </div></div>
-  <figcaption><b>The Corner Florist</b><span class="cl"> · Pick stems from the buckets, wrap them in kraft paper, send a bouquet.</span></figcaption>
-  <a class="case fl-cta" href="https://rupam870.github.io/corner-florist/" target="_blank" rel="noopener">Try now ↗</a>
-</figure>
-    <figure class="tile comp-tile full" style="--bg:#CDBDEB" data-label="Read case study" data-color="#17171A"><div class="stage"><div class="comp comp-a">
-       <button class="pc" type="button" data-zoom="al1" aria-label="Enlarge Alphy hanging on the Mac desktop" style="left:1%;top:3%;width:62%;z-index:1;--hx:-2%;--hy:-3%"><span class="webframe"><span class="bbar" aria-hidden="true"><i></i><i></i><i></i><em></em></span><img loading="lazy" decoding="async" class="shot-web" src="/m/9c999ab7dd96.webp" width="1440" height="900" alt="Alphy hanging on the Mac desktop"></span></button>
-       <button class="pc" type="button" data-zoom="al2" aria-label="Enlarge Alphy moods: thriving, content, thirsty, drooping, wilted, sleeping" style="left:40%;top:38%;width:58%;z-index:2;--hx:2%;--hy:3%"><span class="webframe"><span class="bbar" aria-hidden="true"><i></i><i></i><i></i><em></em></span><img loading="lazy" decoding="async" class="shot-web" src="/m/4f25af1f8954.webp" width="1628" height="888" alt="Alphy moods: thriving, content, thirsty, drooping, wilted, sleeping"></span></button>
-     </div></div><figcaption><b>Alphy</b><span class="cl"> · A menu-bar plant that wilts if I skip water</span></figcaption><a class="case" href="#/alphy">Case study</a></figure>
-    <figure class="tile comp-tile" style="--bg:#F4C9D8" data-label="Open on Behance ↗" data-color="#17171A"><div class="stage"><div class="comp comp-p">
-       <button class="pc" type="button" data-zoom="tn1" aria-label="Enlarge Tinder concept: caption your pics" style="left:5%;top:3%;width:41%;z-index:2;--hx:-4%;--hy:-2%"><span class="device"><img loading="lazy" decoding="async" src="/m/4a8596909035.webp" width="602" height="1308" alt="Tinder concept: caption your pics"></span></button>
-       <button class="pc" type="button" data-zoom="tn2" aria-label="Enlarge Tinder concept: personality guesses" style="left:54%;top:11%;width:41%;z-index:1;--hx:4%;--hy:2%"><span class="device"><img loading="lazy" decoding="async" src="/m/3accd1617eec.webp" width="602" height="1307" alt="Tinder concept: personality guesses"></span></button>
-     </div></div><figcaption><b>Tinder concept</b><span class="cl"> · Personality before photos</span></figcaption><a class="case" href="https://www.behance.net/gallery/204867193/Deeper-Connections-via-Tinder-a-design-case-study">Case study</a></figure>
-    <figure class="tile comp-tile" style="--bg:#E9824A" data-label="Read case study" data-color="#E9824A"><div class="stage"><div class="comp comp-p">
-       <button class="pc" type="button" data-zoom="ns2" aria-label="Enlarge Night Schedule: tonight list" style="left:5%;top:3%;width:41%;z-index:2;--hx:-4%;--hy:-2%"><span class="device"><img loading="lazy" decoding="async" src="/m/514fe404903e.webp" width="700" height="1523" alt="Night Schedule: tonight list"></span></button>
-       <button class="pc" type="button" data-zoom="ns1" aria-label="Enlarge Night Schedule: storytelling timer" style="left:54%;top:11%;width:41%;z-index:1;--hx:4%;--hy:2%"><span class="device"><img loading="lazy" decoding="async" src="/m/303a77059d96.webp" width="700" height="1523" alt="Night Schedule: storytelling timer"></span></button>
-     </div></div><figcaption><b>Night Schedule</b><span class="cl"> · Four timers, every night</span></figcaption><a class="case" href="#/night-schedule">Case study</a></figure>
-  </div></section><section class="panel" id="panel-ui" data-panel="ui" aria-label="Dribbble explorations"><div class="hs-wrap"><div class="hs" id="hs" style="height: 5030px;"><div class="hs-sticky">
-  <div class="ui-note" id="ui-note"><span class="tag">Dribbble recreations · 2022</span>
-  <p>I recreated shots by designers I admired, pixel by pixel, to train my eye for layout, type and detail. It taught me more than any course. Thank you to every designer for sharing work I could learn from.</p></div>
-  <div class="hs-view"><div class="hs-track" id="hs-track" style="transform: translate3d(0px, 0px, 0px);"><div class="uicard"><div class="uitile p" style="--bg:#DE7B5E"><button class="zoom" type="button" data-zoom="6" aria-label="Enlarge FM radio"><span class="device"><img src="/m/4ae97a19a4fa.webp" alt="FM radio recreation"></span></button></div>
-</div><div class="uicard"><div class="uitile w" style="--bg:#E8A93E"><button class="zoom" type="button" data-zoom="10" aria-label="Enlarge Analytics dashboard"><img src="/m/91b286efd3bd.webp" alt="Analytics dashboard recreation"></button></div>
-</div><div class="uicard"><div class="uitile p" style="--bg:#EFE8DC"><button class="zoom" type="button" data-zoom="1" aria-label="Enlarge Crypto wallet"><span class="device"><img src="/m/dd1a9e7fcb2d.webp" alt="Crypto wallet recreation"></span></button></div>
-</div><div class="uicard"><div class="uitile p" style="--bg:#C9C3F0"><button class="zoom" type="button" data-zoom="11" aria-label="Enlarge Meditation"><span class="device"><img src="/m/0a0b38be21ad.webp" alt="Meditation recreation"></span></button></div>
-</div><div class="uicard"><div class="uitile w" style="--bg:#A9D8F5"><button class="zoom" type="button" data-zoom="12" aria-label="Enlarge Payments landing page"><img src="/m/e0b8b03ee6a8.webp" alt="Payments landing page recreation"></button></div>
-</div><div class="uicard"><div class="uitile p" style="--bg:#1F3F8F"><button class="zoom" type="button" data-zoom="8" aria-label="Enlarge Bank onboarding"><span class="device"><img src="/m/ae35c1ac4de7.webp" alt="Bank onboarding recreation"></span></button></div>
-</div><div class="uicard"><div class="uitile p" style="--bg:#2F66F0"><button class="zoom" type="button" data-zoom="13" aria-label="Enlarge Finance sign-up"><span class="device"><img src="/m/edc32de49643.webp" alt="Finance sign-up recreation"></span></button></div>
-</div><div class="uicard"><div class="uitile w" style="--bg:#D8E6D0"><button class="zoom" type="button" data-zoom="7" aria-label="Enlarge Ad platform landing"><img src="/m/ee2723e4106d.webp" alt="Ad platform landing recreation"></button></div>
-</div><div class="uicard"><div class="uitile p" style="--bg:#BFD297"><button class="zoom" type="button" data-zoom="2" aria-label="Enlarge Taxi booking"><span class="device"><img src="/m/03d6c25be4c7.webp" alt="Taxi booking recreation"></span></button></div>
-</div><div class="uicard"><div class="uitile p" style="--bg:#F4C07A"><button class="zoom" type="button" data-zoom="0" aria-label="Enlarge Banking home"><span class="device"><img src="/m/2f06d6669407.webp" alt="Banking home recreation"></span></button></div>
-</div><div class="uicard"><div class="uitile w" style="--bg:#F2D7E0"><button class="zoom" type="button" data-zoom="3" aria-label="Enlarge Design assets marketplace"><img src="/m/a9a6c4556e66.webp" alt="Design assets marketplace recreation"></button></div>
-</div><div class="uicard"><div class="uitile p" style="--bg:#D9E8F5"><button class="zoom" type="button" data-zoom="4" aria-label="Enlarge Spending statistics"><span class="device"><img src="/m/30440b53955b.webp" alt="Spending statistics recreation"></span></button></div>
-</div><div class="uicard"><div class="uitile p" style="--bg:#F4C07A"><button class="zoom" type="button" data-zoom="9" aria-label="Enlarge Payments onboarding"><span class="device"><img src="/m/9a78e47bac29.webp" alt="Payments onboarding recreation"></span></button></div>
-</div><div class="uicard"><div class="uitile w" style="--bg:#9FC3E6"><button class="zoom" type="button" data-zoom="5" aria-label="Enlarge Cleaning services"><img src="/m/7491ac3515a1.webp" alt="Cleaning services recreation"></button></div>
-</div></div></div></div></div></div></section>
-</section><section class="desk-sec" aria-labelledby="desk-h">
- <div class="dk-copy"><h2 id="desk-h">Get to know me.</h2>
-  <p>The story behind the work, or my résumé on one page.</p>
-  <div class="dk-hint" aria-hidden="true"><span>pick one up</span>
-   <svg width="58" height="22" viewBox="0 0 58 22" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M2 15C16 5 36 4 53 11"></path><path d="M45 5.5l8 5.5-8.5 5"></path></svg></div>
- </div>
- <div class="dk-desk" id="desk">
-  <a class="dk-obj dk-pol dk-pre" href="#/about" draggable="false" data-k="story" aria-label="Read my story, 2 minute read">
-   <div class="dk-inner"><span class="dk-seen" aria-hidden="true">✓</span><div class="dk-body"><span class="dk-tape"></span>
-    <div class="dk-flip">
-     <div class="dk-face"><div class="dk-ph"><img alt="Rupam" draggable="false" src="/m/ac0e9aef0b19.webp"></div><em>my story</em></div>
-     <div class="dk-face dk-back"><p>How an engineer from IIT Roorkee ended up designing AI video tools.</p><span>Read it →</span></div>
-    </div></div></div>
-   <span class="dk-lbl">My story <i>· 2 min read</i></span></a>
-  <a class="dk-obj dk-sheet dk-pre" href="#/resume" data-resume="" draggable="false" data-k="resume" aria-label="Open résumé, one page PDF">
-   <div class="dk-inner"><span class="dk-seen" aria-hidden="true">✓</span><div class="dk-body">
-    <svg class="dk-clip" width="22" height="52" viewBox="0 0 22 52" fill="none" stroke="#9C9B96" stroke-width="2" stroke-linecap="round"><path d="M16 14v26a5 5 0 0 1-10 0V8a4 4 0 0 1 8 0v30a2 2 0 0 1-4 0V14"></path></svg>
-    <h4>Rupam</h4><div class="dk-r">Founding Designer · Atlabs AI</div>
-    <div class="dk-row"><span>Atlabs AI</span><span>Now</span></div><div class="dk-row"><span>Xalts</span><span>2024</span></div>
-    <div class="dk-row"><span>ClearFeed</span><span>2023</span></div><div class="dk-row"><span>IIT Roorkee</span><span>Int. MSc</span></div>
-    <div class="dk-bars"><div style="width:90%"></div><div style="width:70%"></div><div style="width:80%"></div></div>
-    <span class="dk-stamp">1 PAGE</span>
-    <div class="dk-dl"><b>Open résumé ↗</b></div></div></div>
-   <span class="dk-lbl">Résumé <i>· PDF</i></span></a>
- </div>
-</section></main></div>
-  <dialog class="lb" id="lb"><img alt=""><form method="dialog"><button>Close</button></form></dialog>
-  <dialog class="rvd" id="rvd" aria-labelledby="rvd-t">
-    <div class="rvd-bar"><p id="rvd-t">Resume</p><div class="rvd-acts"><button type="button" class="sf-btn primary" id="rvd-dl"><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M10 3v10M5.5 8.5 10 13l4.5-4.5M4 16.5h12"/></svg><span>Download PDF</span></button><button type="button" class="rvd-x" id="rvd-x" aria-label="Close resume"><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M5 5l10 10M15 5 5 15"/></svg></button></div></div>
-    <div class="rvd-body"><img id="rvd-img" alt="Rupam Gumber's resume, Oct 2026: Founding Designer at Atlabs AI; earlier at Xalts and ClearFeed; IIT Roorkee; Adobe Designathon 2024 first runner-up and Best CSS Site of the Day." width="1600" height="2262"></div>
-    <p class="rvd-note" id="rvd-note" aria-live="polite"></p>
-  </dialog>
-  <div class="rprog" id="rprog" aria-hidden="true"></div>
-  <button type="button" class="rchip" id="rchip" hidden aria-label="Reading progress. Jump to the end"><span class="ring" aria-hidden="true"></span><span class="t"><b></b><span class="sec-name"></span></span><span class="left"></span></button>
-<!-- rupam.work chat widget (v2) — from claude/chat-widget.html, replaces the old "Contact me" button + menu -->
-<style>
-  #rw-chat, #rw-chat * { box-sizing: border-box; }
-  #rw-chat {
-    --ink: #191917; --muted: #6B6862; --soft: #4A4743; --line: #E6E3DD; --line-2: #DAD6CF;
-    --bubble: #F1EFEA; --panel: #FFFFFF; --online: #2F9E55; --badge: #D93F3F; --error: #B42318;
-    position: fixed; right: 24px; bottom: 24px; z-index: 2147483000;
-    font-family: var(--sans, 'Geist'), system-ui, -apple-system, sans-serif; font-size: 14px; line-height: 1.45; color: var(--ink);
-  }
-  #rw-chat button, #rw-chat input, #rw-chat textarea { font: inherit; color: inherit; }
-  @keyframes rwPop { from { opacity: 0; transform: translateY(8px) scale(.96); } to { opacity: 1; transform: none; } }
-  @keyframes rwDot { 0%,80%,100% { opacity: .25; transform: translateY(0); } 40% { opacity: 1; transform: translateY(-2px); } }
-  .rw-pop { animation: rwPop .32s cubic-bezier(.2,.8,.2,1) both; transform-origin: bottom right; }
-  @media (prefers-reduced-motion: reduce) { .rw-pop, .rw-dot { animation: none !important; } }
-  .rw-hidden { display: none !important; }
 
-  .rw-avatar { position: relative; flex: none; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 600; background: var(--ink); color: #fff; }
-  .rw-avatar::after { content: ""; position: absolute; right: -1px; bottom: -1px; width: 10px; height: 10px; border-radius: 50%; background: var(--online); border: 2px solid #fff; }
-
-  /* launcher */
-  .rw-launch { position: relative; display: flex; align-items: center; gap: 10px; height: 52px; padding: 0 20px 0 8px; margin-left: auto;
-    background: var(--ink); color: #fff; border: 0; border-radius: 26px; cursor: pointer; font-size: 15px; font-weight: 500;
-    box-shadow: 0 12px 30px -10px rgba(25,25,23,.55); }
-  .rw-launch:hover, .rw-close-fab:hover, .rw-primary:hover { background: #2E2E2B; }
-  .rw-launch .rw-avatar { width: 36px; height: 36px; font-size: 14px; background: #fff; color: var(--ink); }
-  .rw-launch .rw-avatar::after { border-color: var(--ink); }
-  .rw-badge { position: absolute; top: -5px; right: -3px; min-width: 20px; height: 20px; padding: 0 5px; border-radius: 10px; background: var(--badge);
-    color: #fff; font-size: 11px; font-weight: 600; display: flex; align-items: center; justify-content: center; border: 2px solid var(--paper, #F5F3EF); }
-  .rw-close-fab { width: 52px; height: 52px; margin-left: auto; border-radius: 26px; border: 0; background: var(--ink); color: #fff; display: flex;
-    align-items: center; justify-content: center; cursor: pointer; box-shadow: 0 12px 30px -10px rgba(25,25,23,.55); }
-
-  /* greeting peek */
-  .rw-peek { position: absolute; right: 0; bottom: 68px; width: 280px; }
-  .rw-peek-card { display: flex; gap: 12px; align-items: flex-start; width: 100%; text-align: left; padding: 14px 16px; background: #fff;
-    border: 1px solid var(--line); border-radius: 18px 18px 4px 18px; cursor: pointer;
-    box-shadow: 0 1px 2px rgba(25,25,23,.06), 0 16px 36px -10px rgba(25,25,23,.22); }
-  .rw-peek-card .rw-avatar { width: 34px; height: 34px; font-size: 14px; }
-  .rw-peek-meta { font-size: 12px; color: var(--muted); display: block; }
-  .rw-peek-text { font-size: 16px; font-weight: 500; display: block; }
-  .rw-peek-x { position: absolute; top: -12px; left: -12px; width: 28px; height: 28px; border-radius: 50%; background: #fff; border: 1px solid var(--line);
-    display: flex; align-items: center; justify-content: center; cursor: pointer; padding: 0; color: var(--muted); box-shadow: 0 2px 6px rgba(25,25,23,.08); }
-
-  /* panel */
-  .rw-panel { position: absolute; right: 0; bottom: 68px; width: 372px; height: 560px; max-height: calc(100vh - 120px); display: flex; flex-direction: column;
-    background: var(--panel); border: 1px solid var(--line); border-radius: 22px; overflow: hidden;
-    box-shadow: 0 1px 2px rgba(25,25,23,.06), 0 24px 60px -16px rgba(25,25,23,.28); }
-  .rw-head { display: flex; align-items: center; gap: 12px; padding: 16px 12px 16px 18px; border-bottom: 1px solid #EFECE6; }
-  .rw-head .rw-avatar { width: 40px; height: 40px; font-size: 16px; }
-  .rw-head-text { display: flex; flex-direction: column; flex: 1; min-width: 0; }
-  .rw-name { font-size: 15px; font-weight: 600; }
-  .rw-sub { font-size: 12px; color: var(--muted); }
-  .rw-icon-btn { flex: none; width: 36px; height: 36px; border-radius: 10px; border: 0; background: transparent; color: var(--muted);
-    display: flex; align-items: center; justify-content: center; cursor: pointer; padding: 0; }
-  .rw-icon-btn:hover, .rw-ghost:hover, .rw-chip:hover { background: var(--bubble); }
-
-  .rw-thread { flex: 1; overflow-y: auto; padding: 16px 16px 12px; display: flex; flex-direction: column; gap: 8px; }
-  .rw-day { align-self: center; font-size: 12px; color: var(--muted); padding-bottom: 4px; }
-  .rw-msg { max-width: 82%; padding: 10px 14px; white-space: pre-wrap; word-wrap: break-word; }
-  .rw-them { align-self: flex-start; background: var(--bubble); border-radius: 18px 18px 18px 4px; }
-  .rw-me { align-self: flex-end; background: var(--ink); color: #fff; border-radius: 18px 18px 4px 18px; }
-  .rw-typing { align-self: flex-start; display: flex; gap: 4px; padding: 14px 16px; background: var(--bubble); border-radius: 18px 18px 18px 4px; }
-  .rw-dot { width: 6px; height: 6px; border-radius: 3px; background: var(--muted); animation: rwDot 1s infinite; }
-  .rw-dot:nth-child(2) { animation-delay: .15s; } .rw-dot:nth-child(3) { animation-delay: .3s; }
-
-  .rw-chips { display: flex; flex-wrap: wrap; justify-content: flex-end; gap: 6px; padding-top: 6px; }
-  .rw-chip { height: 34px; padding: 0 14px; border: 1px solid var(--line-2); border-radius: 17px; background: #fff; font-size: 13px; cursor: pointer; }
-
-  .rw-email { display: flex; flex-direction: column; gap: 8px; margin-top: 4px; padding: 12px; border: 1px solid var(--line); border-radius: 14px; background: #FBFAF8; }
-  .rw-email label { font-size: 12px; color: var(--muted); }
-  .rw-email-row { display: flex; gap: 8px; }
-  .rw-email input { flex: 1; min-width: 0; height: 40px; padding: 0 12px; border: 1px solid var(--line-2); border-radius: 10px; font-size: 14px; background: #fff; }
-  .rw-primary { flex: none; height: 40px; padding: 0 16px; background: var(--ink); color: #fff; border: 0; border-radius: 10px; font-size: 14px; font-weight: 500; cursor: pointer; }
-  .rw-error { font-size: 12px; color: var(--error); }
-
-  .rw-foot { border-top: 1px solid #EFECE6; }
-  .rw-composer { position: relative; display: flex; align-items: flex-end; gap: 8px; margin: 12px 12px 6px; padding: 6px 6px 6px 14px;
-    border: 1px solid var(--line-2); border-radius: 14px; background: #fff; }
-  .rw-composer textarea { flex: 1; resize: none; border: 0; outline: none; font-size: 14px; line-height: 1.45; background: transparent; padding: 7px 0; min-height: 44px; max-height: 120px; }
-  .rw-send { flex: none; width: 38px; height: 38px; border-radius: 11px; border: 0; background: #C9C5BE; color: #fff; display: flex; align-items: center; justify-content: center; cursor: pointer; padding: 0; }
-  .rw-send.is-ready { background: var(--ink); }
-  .rw-actions { display: flex; align-items: center; gap: 2px; padding: 4px 8px 10px; }
-  .rw-ghost { display: flex; align-items: center; gap: 6px; height: 36px; padding: 0 10px; border: 0; border-radius: 9px; background: transparent;
-    color: var(--soft); font-size: 13px; cursor: pointer; text-decoration: none; }
-  .rw-sr { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
-
-  @media (max-width: 480px) {
-    #rw-chat { right: 16px; bottom: 16px; left: 16px; }
-    .rw-panel { width: 100%; height: calc(100vh - 100px); }
-    .rw-peek { width: min(280px, 100%); }
-  }
-
-  /* portfolio fit: keep the launcher visible on the dark theme, and let clicks pass through the empty part of the full-width mobile container */
-  #rw-chat .rw-launch, #rw-chat .rw-close-fab, #rw-chat .rw-send, #rw-chat .rw-primary, #rw-chat .rw-me { color: #fff; }
-  :root[data-theme="dark"] #rw-chat .rw-launch, :root[data-theme="dark"] #rw-chat .rw-close-fab { background: #FAFAF8; color: #191917; }
-  :root[data-theme="dark"] #rw-chat .rw-launch:hover, :root[data-theme="dark"] #rw-chat .rw-close-fab:hover { background: #ECECE8; }
-  :root[data-theme="dark"] .rw-launch .rw-avatar { background: #191917; color: #fff; }
-  :root[data-theme="dark"] .rw-launch .rw-avatar::after { border-color: #FAFAF8; }
-  #rw-chat { pointer-events: none; }
-  #rw-chat > * { pointer-events: auto; }
-</style>
-
-<div id="rw-chat">
-  <div class="rw-peek rw-pop rw-hidden" data-rw="peek">
-    <button type="button" class="rw-peek-card" data-rw="open">
-      <span class="rw-avatar" aria-hidden="true"><img src="data:image/webp;base64,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" alt=""></span>
-      <span>
-        <span class="rw-peek-meta">Rupam · usually replies within a day</span>
-        <span class="rw-peek-text">Hi, how can I help you?</span>
-      </span>
-    </button>
-    <button type="button" class="rw-peek-x" data-rw="dismiss" aria-label="Dismiss greeting">
-      <svg width="10" height="10" viewBox="0 0 10 10" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" aria-hidden="true"><path d="M1.5 1.5l7 7M8.5 1.5l-7 7"/></svg>
-    </button>
-  </div>
-
-  <section class="rw-panel rw-pop rw-hidden" data-rw="panel" aria-label="Send Rupam a message">
-    <header class="rw-head">
-      <span class="rw-avatar" aria-hidden="true"><img src="data:image/webp;base64,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" alt=""></span>
-      <div class="rw-head-text">
-        <span class="rw-name">Rupam Gumber</span>
-        <span class="rw-sub">Founding designer at Atlabs · replies within a day</span>
-      </div>
-      <button type="button" class="rw-icon-btn" data-rw="close" aria-label="Close messages">
-        <svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" aria-hidden="true"><path d="M2 2l10 10M12 2L2 12"/></svg>
-      </button>
-    </header>
-    <div class="rw-thread" data-rw="thread" aria-live="polite"></div>
-    <div class="rw-foot">
-      <form class="rw-composer" data-rw="composer">
-        <label for="rw-msg" class="rw-sr">Message</label>
-        <textarea id="rw-msg" rows="2" placeholder="Write a message…" data-rw="input"></textarea>
-        <button type="submit" class="rw-send" data-rw="send" aria-label="Send message" disabled>
-          <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 13V3M3.5 7.5L8 3l4.5 4.5"/></svg>
-        </button>
-      </form>
-      <div class="rw-actions">
-        <button type="button" class="rw-ghost" data-rw="copy">
-          <svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round" aria-hidden="true"><rect x="4.5" y="4.5" width="8" height="8" rx="1.8"/><path d="M9.5 4.5V3.3c0-1-.8-1.8-1.8-1.8H3.3c-1 0-1.8.8-1.8 1.8v4.4c0 1 .8 1.8 1.8 1.8h1.2"/></svg>
-          <span data-rw="copy-label">Copy email</span>
-        </button>
-        <a class="rw-ghost" data-rw="calendly" href="#" target="_blank" rel="noopener">
-          <svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" aria-hidden="true"><rect x="1.5" y="2.5" width="11" height="10" rx="2"/><path d="M1.5 6h11M4.5 1v3M9.5 1v3"/></svg>
-          <span>Book a 30-min call</span>
-        </a>
-      </div>
+  <section class="hero">
+    <div class="eyebrow"><i></i><span>Error <code>404</code> · page not found</span></div>
+    <h1>Nothing here but <em>ducks</em><span class="chipicon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 9c2-2 4-2 6 0s4 2 6 0 4-2 6 0"/><path d="M2 15c2-2 4-2 6 0s4 2 6 0 4-2 6 0"/></svg></span>.</h1>
+    <p class="lede">The page you’re looking for doesn’t exist. Feed the ducks for a bit, then head back home.</p>
+    <div class="actions">
+      <a class="btn primary" href="/">Back to home <span aria-hidden="true">→</span></a>
+      <a class="btn ghost" href="/about/">About me</a>
     </div>
   </section>
 
-  <button type="button" class="rw-launch" data-rw="launch">
-    <span class="rw-avatar" aria-hidden="true"><img src="data:image/webp;base64,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" alt=""></span>
-    <span>Send a message</span>
-    <span class="rw-badge" data-rw="badge" aria-label="1 new message">1</span>
-  </button>
-  <button type="button" class="rw-close-fab rw-hidden" data-rw="fab-close" aria-label="Close messages">
-    <svg width="18" height="18" viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4.5 7l4.5 4.5L13.5 7"/></svg>
-  </button>
-</div>
-
-<footer class="site-foot" aria-label="Footer">
-    <a class="sf-fill fe" href="mailto:rupamuxdesign@gmail.com" tabindex="-1" aria-hidden="true"><b>Email me <svg viewBox="0 0 24 24"><path d="M7 17 17 7M8 7h9v9"/></svg></b><small>rupamuxdesign@gmail.com</small></a>
-    <a class="sf-fill fs" href="https://calendly.com/rupam_g-ma/30min" tabindex="-1" aria-hidden="true"><b>Schedule a call <svg viewBox="0 0 24 24"><path d="M7 17 17 7M8 7h9v9"/></svg></b><small>30 minutes, on Calendly</small></a>
-    <div class="sf-cta">
-      <div class="sf-lead"><p class="sf-big">Still reading? That's a good sign.</p>
-        <nav class="sf-social" aria-label="Social"><a href="https://x.com/rupam_gumber" target="_blank" rel="noopener">X<svg viewBox="0 0 20 20" aria-hidden="true"><path d="M6 14 14 6M7 6h7v7"/></svg></a><a href="https://www.linkedin.com/in/rupam-gumber-120252204/" target="_blank" rel="noopener">LinkedIn<svg viewBox="0 0 20 20" aria-hidden="true"><path d="M6 14 14 6M7 6h7v7"/></svg></a><a href="https://medium.com/@rupamgumber38" target="_blank" rel="noopener">Medium<svg viewBox="0 0 20 20" aria-hidden="true"><path d="M6 14 14 6M7 6h7v7"/></svg></a></nav></div>
-      <div class="sf-btns">
-        <a class="sf-btn primary" href="mailto:rupamuxdesign@gmail.com">Email me</a>
-        <a class="sf-btn alt" href="https://calendly.com/rupam_g-ma/30min">Schedule a call</a>
-      </div>
+  <div class="stage"><canvas id="pond" aria-label="A pond with ducks. Tap the water to toss bread."></canvas>
+    <div class="full" id="full" role="status"><span>The ducks are full. Thanks for stopping by.</span><a href="/">Back to home →</a></div>
+  </div>
+  <div class="under">
+    <p class="hint">Tap the water to toss bread · drag to scatter a trail</p>
+    <div class="tray" role="group" aria-label="Scenes">
+      <button class="thumb" data-i="0" aria-pressed="true" aria-label="Duck pond"><canvas width="112" height="84"></canvas></button>
+      <button class="thumb" data-i="1" aria-pressed="false" aria-label="Golden hour"><canvas width="112" height="84"></canvas></button>
+      <button class="thumb" data-i="2" aria-pressed="false" aria-label="Autumn pond"><canvas width="112" height="84"></canvas></button>
+      <button class="pause" id="pause" aria-label="Pause"><svg width="12" height="14" viewBox="0 0 12 14" aria-hidden="true"><g id="pIcon" fill="currentColor"><rect x="1" y="1" width="3.2" height="12" rx="1"/><rect x="7.8" y="1" width="3.2" height="12" rx="1"/></g></svg></button>
     </div>
-    <section class="bookshelf bsp-wrap" aria-labelledby="bs-title">
-      <div class="bsp-head"><p class="bs-title" id="bs-title">Currently on my bookshelf</p><button type="button" class="bsp-tidy" id="bsp-tidy" hidden>Tidy up</button></div>
-      <div class="bsp" id="bsp" role="group" aria-label="Bookshelf. Drag and throw the books."></div>
-    </section>
-  </footer>
+    <p class="count" id="count">0 crumbs eaten</p>
+  </div>
 </div>
 
+<script>
+(()=>{
+const W=800,H=600;
+const reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
+function rng(seed){return function(){seed|=0;seed=seed+0x6D2B79F5|0;let t=Math.imul(seed^seed>>>15,1|seed);t=t+Math.imul(t^t>>>7,61|t)^t;return((t^t>>>14)>>>0)/4294967296}}
+const R=Math.random, rand=(a,b)=>a+R()*(b-a), clamp=(v,a,b)=>Math.max(a,Math.min(b,v));
 
-<script src="/assets/js0.js"></script>
-<script src="/assets/js1.js"></script>
-<script src="/assets/js2.js"></script>
-<script src="/assets/js3.js"></script>
-<script src="/assets/js4.js"></script>
-<script src="/assets/js5.js"></script>
-<script src="/assets/js6.js"></script>
-<script src="/assets/js7.js"></script>
-<script src="/assets/js8.js"></script>
-<script src="/assets/js9.js"></script>
+const SCENES=[
+ {name:'Duck pond',sub:'Spring · clouds drifting under the ducks',
+  water:['#1557c2','#2a7fe3','#58a8f3'],cloud:[255,255,255],shade:[196,214,240],cloudA:.92,
+  reed:['#1f6e2a','#4fae3b','#a6e36a'],rock:['#f1f3f6','#aab3bf','#6d7785'],moss:'#7cc35a',
+  pad:['#2f8a37','#77c955'],bloom:'#f6a3c0',ripple:'255,255,255',leaves:false,tint:null},
+ {name:'Golden hour',sub:'Evening · the sky turns peach on the water',
+  water:['#2c4f9c','#c98183','#f7c48e'],cloud:[255,236,220],shade:[240,168,150],cloudA:.85,
+  reed:['#2f4f22','#6f8f2e','#d7c26a'],rock:['#f6e3d4','#c39a8a','#7a5b55'],moss:'#a9a043',
+  pad:['#4a6f2c','#a6b552'],bloom:'#ffd1a8',ripple:'255,240,225',leaves:false,tint:'rgba(255,170,90,0.10)'},
+ {name:'Autumn pond',sub:'Autumn · leaves floating on cold water',
+  water:['#164f66','#2b7f8f','#79bdb9'],cloud:[240,246,246],shade:[180,205,208],cloudA:.8,
+  reed:['#6b4d16','#c08a2a','#f0cf6a'],rock:['#e7e4df','#a39d93','#6c665e'],moss:'#b08a3a',
+  pad:['#6b7a2e','#b2a647'],bloom:'#f2e6c8',ripple:'235,250,250',leaves:true,tint:null},
+];
+
+/* ---------- canvas setup ---------- */
+const cv=document.getElementById('pond'), ctx=cv.getContext('2d');
+let DPR=1;
+function resize(){
+  const r=cv.getBoundingClientRect();
+  DPR=Math.min(2,window.devicePixelRatio||1);
+  cv.width=Math.round((r.width||W)*DPR);
+  cv.height=Math.round(cv.width*H/W);
+}
+resize(); addEventListener('resize',resize);
+
+/* ---------- torn paper mask ---------- */
+function makeMask(w,h,seed){
+  const c=document.createElement('canvas');c.width=w;c.height=h;const g=c.getContext('2d');
+  const r=rng(seed), k=w/W;
+  const ph=[...Array(6)].map(()=>r()*6.28);
+  const n=s=>Math.sin(s*.013+ph[0])*3.2+Math.sin(s*.047+ph[1])*1.8+Math.sin(s*.17+ph[2])*1.1;
+  const m=14*k, pts=[];
+  const per=2*(w+h-4*m); const step=2*k;
+  for(let s=0;s<per;s+=step){
+    let x,y,nx,ny,q=s;
+    const tw=w-2*m, th=h-2*m;
+    if(q<tw){x=m+q;y=m;nx=0;ny=-1}
+    else if((q-=tw)<th){x=w-m;y=m+q;nx=1;ny=0}
+    else if((q-=th)<tw){x=w-m-q;y=h-m;nx=0;ny=1}
+    else{q-=tw;x=m;y=h-m-q;nx=-1;ny=0}
+    const o=(n(s/k)+ (r()-.5)*3.2)*k;
+    pts.push([x+nx*o,y+ny*o,nx,ny]);
+  }
+  g.fillStyle='#000';g.beginPath();pts.forEach((p,i)=>i?g.lineTo(p[0],p[1]):g.moveTo(p[0],p[1]));g.closePath();g.fill();
+  // dry-brush specks outside the edge
+  for(let i=0;i<1800;i++){
+    const p=pts[(r()*pts.length)|0], d=(r()**2)*12*k+1*k, sz=(r()*1.6+.5)*k;
+    g.globalAlpha=r()*.9+.1; g.fillRect(p[0]+p[2]*d+(r()-.5)*3*k,p[1]+p[3]*d+(r()-.5)*3*k,sz,sz);
+  }
+  // bitten specks inside
+  g.globalCompositeOperation='destination-out';
+  for(let i=0;i<500;i++){
+    const p=pts[(r()*pts.length)|0], d=r()*7*k, sz=(r()*1.6+.4)*k;
+    g.globalAlpha=r()*.8; g.fillRect(p[0]-p[2]*d,p[1]-p[3]*d,sz,sz);
+  }
+  return c;
+}
+
+/* ---------- noise grain ---------- */
+const grain=(()=>{const c=document.createElement('canvas');c.width=c.height=160;const g=c.getContext('2d');const d=g.createImageData(160,160);
+  for(let i=0;i<d.data.length;i+=4){const v=R()*255;d.data[i]=d.data[i+1]=d.data[i+2]=v;d.data[i+3]=255}g.putImageData(d,0,0);return c})();
+let grainPat=null;
+
+/* ---------- clouds ---------- */
+const clouds=[]; {const r=rng(7);
+  for(let i=0;i<7;i++)clouds.push({x:r()*(W+300)-150,y:40+r()*(H-80),s:.7+r()*.8,v:4+r()*5,seed:11+i*31});}
+const cloudCache={};
+function cloudSprite(si,ci){
+  const key=si+':'+ci; if(cloudCache[key])return cloudCache[key];
+  const S=SCENES[si], cl=clouds[ci], r=rng(cl.seed);
+  const c=document.createElement('canvas');c.width=520;c.height=360;const g=c.getContext('2d');
+  const puffs=[];for(let i=0;i<22;i++){const a=r()*6.28,d=Math.sqrt(r());puffs.push([260+Math.cos(a)*d*130,180+Math.sin(a)*d*55,28+r()*40])}
+  const puff=(x,y,rad,col,a)=>{const gr=g.createRadialGradient(x,y,0,x,y,rad);gr.addColorStop(0,`rgba(${col},${a})`);gr.addColorStop(.55,`rgba(${col},${a*.75})`);gr.addColorStop(1,`rgba(${col},0)`);g.fillStyle=gr;g.beginPath();g.arc(x,y,rad,0,7);g.fill()};
+  puffs.forEach(p=>puff(p[0]+10,p[1]+12,p[2]*1.1,S.shade.join(','),.55));
+  puffs.forEach(p=>puff(p[0],p[1],p[2],S.cloud.join(','),.85));
+  puffs.slice(0,8).forEach(p=>puff(p[0]-8,p[1]-10,p[2]*.6,'255,255,255',.5));
+  return cloudCache[key]=c;
+}
+
+/* ---------- static layers: pads, rocks ---------- */
+const pads=[{x:600,y:120,r:30,a:.6},{x:640,y:160,r:20,a:2.2},{x:215,y:470,r:26,a:4.1},{x:520,y:505,r:18,a:1.4},{x:250,y:110,r:16,a:5.3}];
+const rocks=[{x:20,y:40,rx:120,ry:95,seed:3},{x:-10,y:175,rx:55,ry:60,seed:5},{x:15,y:560,rx:110,ry:85,seed:9},{x:150,y:610,rx:70,ry:40,seed:12}];
+const obstacles=[{x:20,y:40,r:150},{x:-10,y:175,r:85},{x:15,y:560,r:140},{x:150,y:610,r:80}];
+function blob(g,cx,cy,rx,ry,seed,pts=22){const r=rng(seed);const out=[];for(let i=0;i<pts;i++){const a=i/pts*6.283,k=.82+r()*.22;out.push([cx+Math.cos(a)*rx*k,cy+Math.sin(a)*ry*k])}
+  g.beginPath();out.forEach((p,i)=>{const q=out[(i+1)%pts];const mx=(p[0]+q[0])/2,my=(p[1]+q[1])/2;i?g.quadraticCurveTo(p[0],p[1],mx,my):g.moveTo(mx,my)});
+  const p=out[0],q=out[1];g.quadraticCurveTo(p[0],p[1],(p[0]+q[0])/2,(p[1]+q[1])/2);g.closePath();}
+const layerCache={};
+function layers(si){
+  if(layerCache[si])return layerCache[si];
+  const S=SCENES[si];
+  const padC=document.createElement('canvas');padC.width=W;padC.height=H;let g=padC.getContext('2d');
+  pads.forEach((p,i)=>{
+    g.save();g.translate(p.x,p.y);g.rotate(p.a);
+    g.fillStyle='rgba(0,30,60,.18)';g.beginPath();g.ellipse(3,4,p.r,p.r*.86,0,0,7);g.fill();
+    const gr=g.createRadialGradient(-p.r*.3,-p.r*.3,2,0,0,p.r);gr.addColorStop(0,S.pad[1]);gr.addColorStop(1,S.pad[0]);
+    g.fillStyle=gr;g.beginPath();g.moveTo(0,0);g.arc(0,0,p.r,.18,6.1);g.closePath();g.fill();
+    g.strokeStyle='rgba(255,255,255,.18)';g.lineWidth=1;for(let k=0;k<7;k++){const a=.4+k*.82;g.beginPath();g.moveTo(0,0);g.lineTo(Math.cos(a)*p.r*.85,Math.sin(a)*p.r*.85);g.stroke()}
+    if(i===0||i===2){g.translate(p.r*.15,-p.r*.1);for(let k=0;k<8;k++){g.save();g.rotate(k*.785);g.fillStyle=S.bloom;g.beginPath();g.ellipse(7,0,8,4,0,0,7);g.fill();g.restore()}
+      g.fillStyle='#ffe27a';g.beginPath();g.arc(0,0,3.5,0,7);g.fill()}
+    g.restore();
+  });
+  const rockC=document.createElement('canvas');rockC.width=W;rockC.height=H;g=rockC.getContext('2d');
+  rocks.forEach(o=>{
+    g.save();g.fillStyle='rgba(0,25,50,.25)';blob(g,o.x+10,o.y+12,o.rx,o.ry,o.seed);g.fill();g.restore();
+    const gr=g.createLinearGradient(o.x-o.rx,o.y-o.ry,o.x+o.rx*.6,o.y+o.ry);gr.addColorStop(0,S.rock[0]);gr.addColorStop(.55,S.rock[1]);gr.addColorStop(1,S.rock[2]);
+    g.fillStyle=gr;blob(g,o.x,o.y,o.rx,o.ry,o.seed);g.fill();
+    g.save();blob(g,o.x,o.y,o.rx,o.ry,o.seed);g.clip();
+    const r=rng(o.seed+100);
+    g.strokeStyle='rgba(255,255,255,.55)';g.lineWidth=2;for(let k=0;k<4;k++){const x=o.x-o.rx*.6+r()*o.rx*.8,y=o.y-o.ry*.6+r()*o.ry*.6;g.beginPath();g.moveTo(x,y);g.quadraticCurveTo(x+12,y-4,x+26+r()*14,y+r()*6);g.stroke()}
+    g.strokeStyle='rgba(40,40,50,.25)';g.lineWidth=1.2;for(let k=0;k<3;k++){const x=o.x-o.rx*.2+r()*o.rx*.6,y=o.y+r()*o.ry*.5;g.beginPath();g.moveTo(x,y);g.lineTo(x+8+r()*10,y+6+r()*10);g.lineTo(x+4+r()*18,y+18+r()*10);g.stroke()}
+    g.fillStyle=S.moss;for(let k=0;k<26;k++){g.globalAlpha=.35+r()*.4;g.beginPath();g.arc(o.x+(r()-.5)*o.rx*1.6,o.y+o.ry*(.3+r()*.6),1.5+r()*3,0,7);g.fill()}
+    g.restore();
+  });
+  // reeds geometry (dynamic sway drawn per frame)
+  return layerCache[si]={padC,rockC};
+}
+const reeds=[];{const r=rng(42);
+  for(let i=0;i<16;i++){const y=-20+r()*(H*.85);reeds.push({bx:W+30,by:y+60,L:140+r()*170,a:Math.PI+(-.55+r()*.9)+(y<H/2?.25:-.1),w:9+r()*9,ph:r()*6.28,bend:(r()-.5)*.6,shade:r()})}
+  for(let i=0;i<6;i++){reeds.push({bx:W-80-r()*120,by:-30,L:90+r()*90,a:Math.PI/2+(r()-.5)*.9,w:7+r()*6,ph:r()*6.28,bend:(r()-.5)*.5,shade:r()})}
+}
+function drawReeds(g,S,t){
+  reeds.forEach(b=>{
+    const sw=reduce?0:Math.sin(t*.9+b.ph)*.045+Math.sin(t*2.1+b.ph*2)*.012;
+    const a=b.a+sw, a2=a+b.bend;
+    const mx=b.bx+Math.cos(a)*b.L*.5, my=b.by+Math.sin(a)*b.L*.5;
+    const tx=mx+Math.cos(a2)*b.L*.5, ty=my+Math.sin(a2)*b.L*.5;
+    const px=-Math.sin(a), py=Math.cos(a);
+    const gr=g.createLinearGradient(b.bx,b.by,tx,ty);
+    const lo=b.shade<.5?S.reed[0]:S.reed[1];
+    gr.addColorStop(0,lo);gr.addColorStop(.6,S.reed[1]);gr.addColorStop(1,S.reed[2]);
+    g.fillStyle='rgba(0,25,40,.16)';g.beginPath();
+    g.moveTo(b.bx+px*b.w+8,b.by+py*b.w+10);g.quadraticCurveTo(mx+px*b.w*.8+8,my+py*b.w*.8+10,tx+8,ty+10);g.quadraticCurveTo(mx-px*b.w*.8+8,my-py*b.w*.8+10,b.bx-px*b.w+8,b.by-py*b.w+10);g.fill();
+    g.fillStyle=gr;g.beginPath();
+    g.moveTo(b.bx+px*b.w,b.by+py*b.w);g.quadraticCurveTo(mx+px*b.w*.85,my+py*b.w*.85,tx,ty);g.quadraticCurveTo(mx-px*b.w*.85,my-py*b.w*.85,b.bx-px*b.w,b.by-py*b.w);g.fill();
+    g.strokeStyle='rgba(255,255,255,.35)';g.lineWidth=1.2;g.beginPath();g.moveTo(b.bx,b.by);g.quadraticCurveTo(mx,my,tx,ty);g.stroke();
+  });
+}
+
+/* ---------- autumn leaves ---------- */
+const leaves=[];{const r=rng(77);for(let i=0;i<9;i++)leaves.push({x:120+r()*560,y:80+r()*440,a:r()*6.28,s:9+r()*7,c:['#d9541e','#e88a2a','#c43a22','#f0b23a'][i%4],vx:(r()-.5)*4,va:(r()-.5)*.2})}
+function drawLeaf(g,l){g.save();g.translate(l.x,l.y);g.rotate(l.a);g.fillStyle='rgba(0,30,40,.2)';g.beginPath();g.ellipse(2,3,l.s,l.s*.5,0,0,7);g.fill();
+  g.fillStyle=l.c;g.beginPath();g.moveTo(-l.s,0);g.quadraticCurveTo(0,-l.s*.75,l.s,0);g.quadraticCurveTo(0,l.s*.75,-l.s,0);g.fill();
+  g.strokeStyle='rgba(255,230,180,.6)';g.lineWidth=1;g.beginPath();g.moveTo(-l.s*1.2,0);g.lineTo(l.s*.9,0);g.stroke();g.restore()}
+
+/* ---------- world state ---------- */
+const DUCKS={
+  drake:{body:'#d8d0c2',bodyHi:'#f3eee4',bodyLo:'#a99f90',wing:'#8a6b4c',wingLo:'#5d4632',head:'#17663a',headHi:'#3fa860',chest:'#7a4a2e',bill:'#e9c43c',ring:true,spec:'#2b56c9',tail:'#2a2a2e'},
+  hen:{body:'#b48a5c',bodyHi:'#d8b48a',bodyLo:'#8a6640',wing:'#8a6440',wingLo:'#5e4228',head:'#a07a52',headHi:'#c9a27a',chest:null,bill:'#e48a2c',ring:false,spec:'#2b56c9',tail:'#7a5a3a'},
+  white:{body:'#f7f5ef',bodyHi:'#ffffff',bodyLo:'#d9d3c6',wing:'#ebe6da',wingLo:'#cfc8b8',head:'#fbfaf6',headHi:'#ffffff',chest:null,bill:'#f39a2b',ring:false,spec:null,tail:'#e6e0d2'},
+  baby:{body:'#f6d55c',bodyHi:'#fff0a6',bodyLo:'#d8ad34',wing:'#e7bf45',wingLo:'#c79a2b',head:'#f8dc6a',headHi:'#fff3b0',chest:null,bill:'#5a4630',ring:false,spec:null,tail:'#e2b843',stripe:'#b88a2a'},
+};
+const ducks=[];
+function addDuck(type,x,y,size,extra={}){ducks.push(Object.assign({type,x,y,a:R()*6.28,v:0,size,ph:R()*6,tx:x,ty:y,wanderT:0,peck:0,react:rand(.15,.7),trail:[],target:null,quack:0},extra))}
+addDuck('drake',380,260,30);addDuck('hen',480,380,28);addDuck('white',290,400,31);addDuck('white',570,250,30);addDuck('drake',430,160,28);
+const mom=ducks[1];
+for(let i=0;i<3;i++)addDuck('baby',480-34*(i+1),390+8*i,14,{mother:mom,slot:i});
+let crumbs=[], ripples=[], drops=[], sparks=[], quacks=[];
+let eaten=0;
+const countEl=document.getElementById('count');
+function setCount(){countEl.textContent=eaten+(eaten===1?' crumb eaten':' crumbs eaten')}
+/* after the third feed, give the ducks a moment to eat, then offer the way home */
+let feeds=0,nudged=false;const fullEl=document.getElementById('full');
+function onFeed(){feeds++;if(feeds===1&&window.rwTrack)rwTrack('Ducks Fed');if(feeds>=3&&!nudged){nudged=true;setTimeout(()=>fullEl.classList.add('show'),2400)}}
+
+function inWater(x,y){if(x<40||x>W-110||y<40||y>H-40)return false;for(const o of obstacles){if(Math.hypot(x-o.x,y-o.y)<o.r-10)return false}return true}
+function toss(x,y,n,spread=26){
+  for(let i=0;i<n;i++){
+    const cx=x+(R()-.5)*spread*2, cy=y+(R()-.5)*spread*2;
+    const pts=[];const k=5+((R()*3)|0);const s=rand(4,7);for(let j=0;j<k;j++){const a=j/k*6.28;pts.push([Math.cos(a)*s*rand(.7,1.15),Math.sin(a)*s*rand(.7,1.15)])}
+    crumbs.push({x:cx,y:cy,age:-i*0.05,fall:rand(.38,.55),landed:false,landT:0,rot:R()*6.28,pts,s,dead:false,sink:0,vx:(R()-.5)*3,vy:(R()-.5)*3});
+  }
+}
+function ripple(x,y,max=40,life=1.4,w=2){ripples.push({x,y,r:2,max,age:0,life,w})}
+
+/* ---------- update ---------- */
+function update(dt,t){
+  clouds.forEach(c=>{c.x+=c.v*dt*(reduce?.3:1);if(c.x-260*c.s>W+40){c.x=-260*c.s;c.y=40+R()*(H-80)}});
+  if(SCENES[scene].leaves||SCENES[next]?.leaves)leaves.forEach(l=>{l.x+=l.vx*dt;l.a+=l.va*dt;if(l.x<60)l.vx=Math.abs(l.vx);if(l.x>W-130)l.vx=-Math.abs(l.vx)});
+  // crumbs
+  for(const c of crumbs){
+    c.age+=dt;
+    if(!c.landed&&c.age>=c.fall){c.landed=true;c.landT=t;
+      if(inWater(c.x,c.y)){ripple(c.x,c.y,26,1.1,1.6);for(let k=0;k<5;k++)drops.push({x:c.x,y:c.y,vx:(R()-.5)*60,vy:-rand(20,60),z:0,vz:rand(40,80),life:.5})}
+      else{c.dead=true}}
+    if(c.landed){c.x+=c.vx*dt;c.y+=c.vy*dt;c.vx*=.995;c.vy*=.995;c.rot+=dt*.1;if(t-c.landT>45){c.sink+=dt*.4;if(c.sink>=1)c.dead=true}}
+  }
+  // ducks
+  const live=crumbs.filter(c=>c.landed&&!c.dead);
+  const claims=new Map();
+  for(const d of ducks){
+    const s=d.size;
+    let best=null,bs=1e9;
+    const sense=d.type==='baby'?160:420;
+    for(const c of live){if(t-c.landT<d.react)continue;const dist=Math.hypot(c.x-d.x,c.y-d.y);if(dist>sense)continue;const sc=dist+(claims.get(c)||0)*55;if(sc<bs){bs=sc;best=c}}
+    d.target=best;
+    if(best)claims.set(best,(claims.get(best)||0)+1);
+    let tx,ty,maxV,turn;
+    if(best){tx=best.x;ty=best.y;maxV=d.type==='baby'?75:85;turn=3.4}
+    else if(d.mother){const m=d.mother;const back=m.a+Math.PI;const off=(d.slot+1)*32;tx=m.x+Math.cos(back)*off+Math.cos(back+1.57)*Math.sin(t*.8+d.slot)*6;ty=m.y+Math.sin(back)*off+Math.sin(back+1.57)*Math.sin(t*.8+d.slot)*6;
+      const dd=Math.hypot(tx-d.x,ty-d.y);maxV=clamp(dd*1.4,0,55);turn=3}
+    else{d.wanderT-=dt;if(d.wanderT<=0||Math.hypot(d.tx-d.x,d.ty-d.y)<20){let k=0;do{d.tx=rand(110,W-150);d.ty=rand(90,H-90);k++}while(!inWater(d.tx,d.ty)&&k<20);d.wanderT=rand(5,10)}
+      tx=d.tx;ty=d.ty;maxV=14;turn=1}
+    // steering vector
+    let vx=tx-d.x,vy=ty-d.y;const L=Math.hypot(vx,vy)||1;vx/=L;vy/=L;
+    for(const o of ducks){if(o===d)continue;const dx=d.x-o.x,dy=d.y-o.y,dd=Math.hypot(dx,dy),min=(s+o.size)*1.05;if(dd<min&&dd>0){vx+=dx/dd*(min-dd)/min*1.6;vy+=dy/dd*(min-dd)/min*1.6}}
+    for(const o of obstacles){const dx=d.x-o.x,dy=d.y-o.y,dd=Math.hypot(dx,dy),min=o.r+s;if(dd<min){vx+=dx/dd*2.2;vy+=dy/dd*2.2}}
+    if(d.x<70)vx+=1.5;if(d.x>W-140)vx-=1.5;if(d.y<60)vy+=1.5;if(d.y>H-60)vy-=1.5;
+    const want=Math.atan2(vy,vx);let diff=((want-d.a+Math.PI*3)%(Math.PI*2))-Math.PI;
+    d.a+=clamp(diff,-turn*dt,turn*dt);
+    const align=Math.max(0,Math.cos(diff));
+    const targetV=(d.peck>0?8:maxV*(.35+.65*align))*(best&&L<s*1.2?.4:1);
+    d.v+=(targetV-d.v)*Math.min(1,dt*2.2);
+    d.x+=Math.cos(d.a)*d.v*dt;d.y+=Math.sin(d.a)*d.v*dt;
+    // eat
+    const hx=d.x+Math.cos(d.a)*s*1.05,hy=d.y+Math.sin(d.a)*s*1.05;
+    if(d.peck>0){d.peck-=dt;if(d.peck<=.17&&d.eating&&!d.eating.dead){const c=d.eating;c.dead=true;eaten++;setCount();ripple(c.x,c.y,18,.8,1.4);
+        if(R()<.3&&d.type!=='baby')quacks.push({x:d.x,y:d.y-s*1.4,age:0,text:R()<.5?'quack':'quack!'});
+        if(d.type==='baby'&&R()<.3)quacks.push({x:d.x,y:d.y-s*1.6,age:0,text:'peep',small:true});
+        d.eating=null}}
+    else if(best&&Math.hypot(best.x-hx,best.y-hy)<s*.55){d.peck=.34;d.eating=best}
+    // trail
+    if(d.v>4){d.trail.push({x:d.x-Math.cos(d.a)*s*.5,y:d.y-Math.sin(d.a)*s*.5,a:d.a,age:0,v:d.v})}
+    d.trail.forEach(p=>p.age+=dt);while(d.trail.length&&d.trail[0].age>1.3)d.trail.shift();
+    if(d.trail.length>60)d.trail.splice(0,d.trail.length-60);
+  }
+  crumbs=crumbs.filter(c=>!c.dead);
+  ripples.forEach(r=>{r.age+=dt;r.r=2+(r.max)*(1-Math.pow(1-r.age/r.life,2))});ripples=ripples.filter(r=>r.age<r.life);
+  drops.forEach(p=>{p.life-=dt;p.x+=p.vx*dt;p.z+=p.vz*dt;p.vz-=260*dt});drops=drops.filter(p=>p.life>0&&p.z>=0);
+  if(R()<dt*3)sparks.push({x:rand(80,W-140),y:rand(60,H-60),age:0,life:rand(.8,1.6),s:rand(3,6)});
+  sparks.forEach(p=>p.age+=dt);sparks=sparks.filter(p=>p.age<p.life);
+  quacks.forEach(q=>{q.age+=dt;q.y-=dt*14});quacks=quacks.filter(q=>q.age<1.2);
+}
+
+/* ---------- drawing ---------- */
+function drawWater(g,S,t){
+  const gr=g.createLinearGradient(0,0,W*.9,H);gr.addColorStop(0,S.water[0]);gr.addColorStop(.55,S.water[1]);gr.addColorStop(1,S.water[2]);
+  g.fillStyle=gr;g.fillRect(0,0,W,H);
+  const rg=g.createRadialGradient(W*.55,H*.45,20,W*.55,H*.45,W*.6);rg.addColorStop(0,'rgba(255,255,255,.14)');rg.addColorStop(1,'rgba(255,255,255,0)');g.fillStyle=rg;g.fillRect(0,0,W,H);
+}
+function drawClouds(g,si){const S=SCENES[si];g.globalAlpha=S.cloudA;clouds.forEach((c,i)=>{const sp=cloudSprite(si,i);g.drawImage(sp,c.x-260*c.s,c.y-180*c.s,520*c.s,360*c.s)});g.globalAlpha=1}
+function drawRipples(g,S){
+  ripples.forEach(r=>{const k=r.age/r.life;const a=(1-k)*.75;g.strokeStyle=`rgba(${S.ripple},${a})`;g.lineWidth=r.w;
+    g.beginPath();g.ellipse(r.x,r.y,r.r,r.r*.82,0,0,7);g.stroke();
+    if(r.r>10){g.strokeStyle=`rgba(${S.ripple},${a*.6})`;g.lineWidth=r.w*.8;g.beginPath();g.ellipse(r.x,r.y,r.r*.62,r.r*.62*.82,0,0,7);g.stroke()}
+    if(r.r>22){g.strokeStyle=`rgba(${S.ripple},${a*.35})`;g.beginPath();g.ellipse(r.x,r.y,r.r*.32,r.r*.32*.82,0,0,7);g.stroke()}});
+}
+function crumbPath(g,c,sc){g.beginPath();c.pts.forEach((p,i)=>{const x=p[0]*sc,y=p[1]*sc;i?g.lineTo(x,y):g.moveTo(x,y)});g.closePath()}
+function drawCrumbs(g,landedPass){
+  for(const c of crumbs){
+    if(landedPass!==c.landed)continue;
+    if(c.age<0)continue;
+    if(c.landed){const bob=Math.sin((performance.now()/1000)*2+c.rot*3)*.6;const a=1-c.sink;
+      g.save();g.translate(c.x,c.y+bob);g.rotate(c.rot);g.globalAlpha=a;
+      g.fillStyle='rgba(0,30,60,.22)';g.save();g.translate(1.5,2);crumbPath(g,c,1);g.fill();g.restore();
+      g.fillStyle='#c98a43';crumbPath(g,c,1);g.fill();g.fillStyle='#f3d9a4';crumbPath(g,c,.62);g.fill();
+      g.fillStyle='rgba(255,255,255,.5)';g.beginPath();g.arc(-c.s*.25,-c.s*.25,c.s*.18,0,7);g.fill();
+      g.restore();}
+    else{const p=clamp(c.age/c.fall,0,1);const z=1-p*p;
+      g.save();g.globalAlpha=.25*(1-z);g.fillStyle='rgba(0,30,60,1)';g.beginPath();g.ellipse(c.x,c.y,c.s*(1+z),c.s*.7*(1+z),0,0,7);g.fill();g.restore();
+      g.save();g.translate(c.x,c.y-z*110);g.rotate(c.rot+z*4);const sc=1+z*1.3;
+      g.fillStyle='#c98a43';crumbPath(g,c,sc);g.fill();g.fillStyle='#f3d9a4';crumbPath(g,c,sc*.62);g.fill();g.restore();}
+  }
+}
+function drawWakes(g,S){
+  for(const d of ducks){const tr=d.trail;if(tr.length<3)continue;
+    for(const side of[-1,1]){g.beginPath();let started=false;
+      for(let i=tr.length-1;i>=0;i-=2){const p=tr[i];const spread=d.size*.45+p.age*22*(p.v/60+.3);const x=p.x+Math.cos(p.a+1.57*side)*spread,y=p.y+Math.sin(p.a+1.57*side)*spread;started?g.lineTo(x,y):(g.moveTo(x,y),started=true)}
+      const grd=g.createLinearGradient(tr[tr.length-1].x,tr[tr.length-1].y,tr[0].x,tr[0].y);grd.addColorStop(0,`rgba(${S.ripple},.55)`);grd.addColorStop(1,`rgba(${S.ripple},0)`);
+      g.strokeStyle=grd;g.lineWidth=d.type==='baby'?1:1.6;g.lineCap='round';g.stroke();}
+  }
+}
+function ell(g,x,y,rx,ry,rot=0){g.beginPath();g.ellipse(x,y,rx,ry,rot,0,7)}
+const MIN={
+  drake:{body:'#ffffff',head:'#ffffff',bill:'#ff9a2e'},
+  hen:{body:'#c99c6c',head:'#bb8f62',bill:'#f08a30'},
+  white:{body:'#ffffff',head:'#ffffff',bill:'#ff9a2e'},
+  baby:{body:'#ffd84d',wing:null,head:'#ffd84d',bill:'#f08a30'},
+};
+function drawDuck(g,d,t){
+  const s=d.size,P=MIN[d.type],baby=d.type==='baby';
+  const pk=d.peck>0?Math.sin((1-d.peck/.34)*Math.PI):0;
+  g.save();g.translate(d.x,d.y);g.rotate(d.a);
+  const bob=1+(reduce?0:Math.sin(t*3+d.ph)*.02);g.scale(bob,bob);
+  // soft shadow on the water
+  g.fillStyle='rgba(5,30,70,.16)';g.beginPath();g.ellipse(3,4,s*1.0,s*.6,0,0,7);g.fill();
+  // body: one smooth teardrop
+  g.fillStyle=P.body;g.strokeStyle='rgba(20,50,90,.16)';g.lineWidth=1.2;g.beginPath();
+  if(baby){g.ellipse(-s*.05,0,s*.62,s*.52,0,0,7)}
+  else{g.moveTo(s*.62,0);
+    g.bezierCurveTo(s*.62,-s*.8,-s*.6,-s*.82,-s*.86,-s*.3);
+    g.quadraticCurveTo(-s*1.0,0,-s*.86,s*.3);
+    g.bezierCurveTo(-s*.6,s*.82,s*.62,s*.8,s*.62,0)}
+  g.fill();g.stroke();
+  // wing: one flat, slightly darker shape
+  if(P.wing){g.fillStyle=P.wing;g.beginPath();g.moveTo(s*.28,0);
+    g.bezierCurveTo(s*.24,-s*.46,-s*.55,-s*.46,-s*.84,0);
+    g.bezierCurveTo(-s*.55,s*.46,s*.24,s*.46,s*.28,0);g.fill()}
+  // head
+  const hx=s*(baby?.5:.66)+pk*s*.18,hr=s*(baby?.44:.32)*(1-pk*.12);
+  if(P.ring){g.strokeStyle='#ffffff';g.lineWidth=s*.07;g.beginPath();g.arc(hx,0,hr+s*.03,2.0,4.28);g.stroke()}
+  g.fillStyle=P.head;g.beginPath();g.arc(hx,0,hr,0,7);g.fill();g.stroke();
+  // bill
+  g.fillStyle=P.bill;g.beginPath();g.ellipse(hx+hr+s*.08,0,s*(baby?.14:.18),s*(baby?.09:.11),0,0,7);g.fill();
+  // eyes
+  g.fillStyle='#1a1a1e';for(const sd of[-1,1]){g.beginPath();g.arc(hx+hr*.35,sd*hr*.55,Math.max(1.2,s*.05),0,7);g.fill()}
+  g.restore();
+}
+function drawDrops(g,S){drops.forEach(p=>{g.fillStyle=`rgba(${S.ripple},${p.life*1.6})`;g.beginPath();g.arc(p.x,p.y-p.z*.6,1.8,0,7);g.fill()})}
+function drawSparks(g){sparks.forEach(p=>{const k=Math.sin(p.age/p.life*Math.PI);const s=p.s*k;g.fillStyle=`rgba(255,255,255,${.85*k})`;g.beginPath();g.moveTo(p.x,p.y-s);g.quadraticCurveTo(p.x,p.y,p.x+s,p.y);g.quadraticCurveTo(p.x,p.y,p.x,p.y+s);g.quadraticCurveTo(p.x,p.y,p.x-s,p.y);g.quadraticCurveTo(p.x,p.y,p.x,p.y-s);g.fill()})}
+function drawQuacks(g){quacks.forEach(q=>{const a=q.age<.15?q.age/.15:1-(q.age-.15)/1.05;g.globalAlpha=clamp(a,0,1);g.font=`700 ${q.small?11:13}px Geist, system-ui, sans-serif`;g.textAlign='center';
+  g.lineWidth=3;g.strokeStyle='rgba(20,50,90,.35)';g.strokeText(q.text,q.x,q.y);g.fillStyle='#fff';g.fillText(q.text,q.x,q.y);g.globalAlpha=1})}
+
+function renderScene(g,si,t,full=true){
+  const S=SCENES[si],L=layers(si);
+  drawWater(g,S,t);drawClouds(g,si);
+  g.drawImage(L.padC,0,0);
+  if(S.leaves)leaves.forEach(l=>drawLeaf(g,l));
+  if(full){drawRipples(g,S);drawCrumbs(g,true);drawWakes(g,S);ducks.forEach(d=>drawDuck(g,d,t));drawDrops(g,S)}
+  g.drawImage(L.rockC,0,0);
+  drawReeds(g,S,t);
+  if(full){drawSparks(g);drawCrumbs(g,false);drawQuacks(g)}
+  if(S.tint){g.fillStyle=S.tint;g.fillRect(0,0,W,H)}
+  if(!grainPat)grainPat=g.createPattern(grain,'repeat');
+  g.globalAlpha=.045;g.fillStyle=grainPat;g.fillRect(0,0,W,H);g.globalAlpha=1;
+}
+
+/* ---------- dither transition ---------- */
+const CELL=10, cols=Math.ceil(W/CELL), rows=Math.ceil(H/CELL);
+const cellR=new Float32Array(cols*rows).map(()=>R());
+function erase(g,p){ // p: 0 none erased, 1 all erased
+  if(p<=0)return;g.globalCompositeOperation='destination-out';g.fillStyle='#000';
+  for(let j=0;j<rows;j++)for(let i=0;i<cols;i++){const r=cellR[j*cols+i];
+    const bayer=((i&1)*2+(j&1)*3)%4/4*.25;
+    const k=clamp((p*1.5-(r*.75+bayer)) /.5,0,1);if(k<=0)continue;
+    if(k>=1){g.fillRect(i*CELL,j*CELL,CELL,CELL);continue}
+    const sz=CELL*k;g.fillRect(i*CELL,j*CELL,CELL,CELL);
+    g.globalCompositeOperation='source-over';g.fillStyle='rgba(120,150,190,.45)';g.fillRect(i*CELL+(CELL-2)/2,j*CELL+(CELL-2)/2,2*(1-k)+.6,2*(1-k)+.6);
+    g.globalCompositeOperation='destination-out';g.fillStyle='#000';
+  }
+  g.globalCompositeOperation='source-over';
+}
+
+/* ---------- loop ---------- */
+let scene=0,next=null,trans=0;const TRANS=1.3;
+let mask=null,maskW=0;
+let paused=false,last=performance.now(),T=0;
+function frame(now){
+  const dt=Math.min(.05,(now-last)/1000);last=now;
+  if(!paused){T+=dt;update(dt,T)}
+  if(next!==null){trans+=dt/TRANS;if(trans>=.5&&scene!==next){scene=next;showCaption()} if(trans>=1){next=null;trans=0}}
+  const w=cv.width,h=cv.height;
+  if(!mask||maskW!==w){mask=makeMask(w,h,4);maskW=w}
+  ctx.setTransform(1,0,0,1,0,0);ctx.clearRect(0,0,w,h);
+  ctx.setTransform(w/W,0,0,h/H,0,0);
+  renderScene(ctx,scene,T);
+  if(next!==null){const p=trans<.5?trans*2:(1-trans)*2;erase(ctx,p)}
+  ctx.setTransform(1,0,0,1,0,0);ctx.globalCompositeOperation='destination-in';ctx.drawImage(mask,0,0);ctx.globalCompositeOperation='source-over';
+  requestAnimationFrame(frame);
+}
+
+/* ---------- caption + controls ---------- */
+const cap={style:{}},nameEl={},subEl={};
+function showCaption(){const S=SCENES[scene];cap.style.opacity=0;setTimeout(()=>{nameEl.textContent=S.name;subEl.textContent=S.sub;cap.style.opacity=1},reduce?0:180)}
+const thumbs=[...document.querySelectorAll('.thumb')];
+thumbs.forEach(b=>{const i=+b.dataset.i;const c=b.querySelector('canvas'),g=c.getContext('2d');
+  g.setTransform(c.width/W,0,0,c.height/H,0,0);renderScene(g,i,0,false);g.setTransform(1,0,0,1,0,0);
+  g.globalCompositeOperation='destination-in';g.drawImage(makeMask(c.width,c.height,9+i),0,0);
+  b.addEventListener('click',()=>{if(i===scene&&next===null)return;thumbs.forEach(x=>x.setAttribute('aria-pressed',x===b));
+    if(reduce){scene=i;showCaption();return}next=i;trans=0});
+});
+const pauseBtn=document.getElementById('pause'),pIcon=document.getElementById('pIcon');
+function setPaused(v){paused=v;pauseBtn.setAttribute('aria-label',v?'Play':'Pause');
+  pIcon.innerHTML=v?'<path d="M2 1.2v11.6c0 .6.7 1 1.2.7l8.4-5.8c.5-.3.5-1 0-1.4L3.2.5C2.7.2 2 .6 2 1.2z"/>':'<rect x="1" y="1" width="3.2" height="12" rx="1"/><rect x="7.8" y="1" width="3.2" height="12" rx="1"/>'}
+pauseBtn.addEventListener('click',()=>setPaused(!paused));
+addEventListener('keydown',e=>{if(e.code==='Space'&&e.target===document.body){e.preventDefault();setPaused(!paused)}});
+
+/* ---------- pointer ---------- */
+let down=false,lastDrop=0;
+function toLocal(e){const r=cv.getBoundingClientRect();return[(e.clientX-r.left)/r.width*W,(e.clientY-r.top)/r.height*H]}
+cv.addEventListener('pointerdown',e=>{down=true;onFeed();cv.setPointerCapture(e.pointerId);const[x,y]=toLocal(e);if(paused)setPaused(false);toss(x,y,4+((R()*3)|0));lastDrop=performance.now()});
+cv.addEventListener('pointermove',e=>{if(!down)return;const n=performance.now();if(n-lastDrop>85){const[x,y]=toLocal(e);toss(x,y,1,8);lastDrop=n}});
+const up=()=>down=false;cv.addEventListener('pointerup',up);cv.addEventListener('pointercancel',up);
+
+/* opening state: a handful already on the water so the ducks are mid-rush */
+toss(470,300,5,30);crumbs.forEach(c=>{c.age=c.fall;c.landed=true;c.landT=-1});
+setTimeout(()=>toss(330,200,3,20),2600);
+requestAnimationFrame(frame);
+})();
+</script>
 </body>
 </html>
