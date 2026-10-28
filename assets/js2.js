@@ -1998,7 +1998,7 @@ const BOOKS = [
   const root=document.documentElement, btn=document.getElementById('theme-btn');
   const apply=t=>{ root.setAttribute('data-theme',t); btn.setAttribute('aria-label', t==='dark'?'Switch to light mode':'Switch to dark mode'); };
   let saved=null; try{ saved=localStorage.getItem('theme'); }catch(e){}
-  apply(saved==='dark'?'dark':'light');
+  apply(saved==='dark'||(saved===null&&window.__diwali)?'dark':'light');
   btn.addEventListener('click',()=>{
     const next=root.getAttribute('data-theme')==='dark'?'light':'dark';
     try{ localStorage.setItem('theme',next); }catch(err){}
