@@ -3313,3 +3313,13 @@ h2.lab{font-weight:400;margin:0;line-height:inherit}
  .vt-goal p{font-size:21px!important}
  .ci-saw2 .row{flex-direction:column;gap:4px}
 }
+
+/* X cards in dark mode (X's own dark "Lights out" colours) */
+:root[data-theme="dark"] .xpost{background:#16181C;color:#E7E9EA;border-color:#2F3336}
+:root[data-theme="dark"] .xhandle,:root[data-theme="dark"] .xfoot{color:#71767B}
+:root[data-theme="dark"] .xlogo path{fill:#E7E9EA}
+:root[data-theme="dark"] .xmedia{border-color:#2F3336}
+:root[data-theme="dark"] .xlink{background:#1E2124;border-color:#2F3336}
+:root[data-theme="dark"] .xlink b{color:#E7E9EA}
+:root[data-theme="dark"] .xlink span,:root[data-theme="dark"] .xlink em,:root[data-theme="dark"] .xquote span{color:#71767B}
+:root[data-theme="dark"] .xquote{border-color:#2F3336;color:#E7E9EA}
