@@ -18,7 +18,7 @@
   function build(){
     DPR=Math.min(2,devicePixelRatio||1); W=innerWidth; H=innerHeight; cv.width=W*DPR; cv.height=H*DPR;
     const g=gutter(); strands=[]; led=[]; maxY=0;
-    const gap=W<620?9:22, n=W<620?Math.max(1,Math.floor((g-4)/gap)):Math.max(1,Math.floor((g-4)/gap)-3);
+    const gap=W<620?9:22, n=W<620?1:Math.max(1,Math.floor((g-4)/gap)-3);
     for(const side of [-1,1]){
       for(let i=0;i<n;i++){
         const x0= side<0 ? 6+i*gap+rnd(-2,2) : W-6-i*gap+rnd(-2,2);
@@ -77,7 +77,7 @@
     ctx.setTransform(DPR,0,0,DPR,0,0); ctx.clearRect(0,0,W,H); const sy=scrollY; if(sy>maxY) return; ctx.setTransform(DPR,0,0,DPR,0,-sy*DPR);
     // soft warm spill in the gutters
     const g=gutter();
-    for(const side of [-1,1]){ const x=side<0?0:W; const gr=ctx.createRadialGradient(x,H*.3,0,x,H*.3,Math.max(120,g*1.6)); gr.addColorStop(0,'rgba(255,170,80,.10)'); gr.addColorStop(1,'rgba(255,170,80,0)'); ctx.fillStyle=gr; ctx.fillRect(side<0?0:W-g*2,0,g*2,H); }
+    for(const side of [-1,1]){ const x=side<0?0:W; const R0=Math.max(120,g*1.6); const gr=ctx.createRadialGradient(x,H*.3,0,x,H*.3,R0); gr.addColorStop(0,'rgba(255,170,80,.10)'); gr.addColorStop(1,'rgba(255,170,80,0)'); ctx.fillStyle=gr; ctx.fillRect(side<0?0:W-R0,H*.3-R0,R0,R0*2); }
     // wires
     ctx.lineWidth=1; ctx.strokeStyle='rgba(60,52,40,.85)';
     for(const s of strands){ ctx.beginPath(); s.pts.forEach((p,k)=>k?ctx.lineTo(p.x,p.y):ctx.moveTo(p.x,p.y)); ctx.stroke(); }
