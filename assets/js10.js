@@ -18,7 +18,7 @@
   function build(){
     DPR=Math.min(2,devicePixelRatio||1); W=innerWidth; H=innerHeight; cv.width=W*DPR; cv.height=H*DPR;
     const g=gutter(); strands=[]; led=[]; maxY=0;
-    const gap=W<620?9:22, n=W<620?1:Math.max(1,Math.floor((g-4)/gap)-3);
+    const n=W<1024?1:4, gap=n>1?Math.max(8,Math.min(22,(g-10)/(n-1))):0;
     for(const side of [-1,1]){
       for(let i=0;i<n;i++){
         const x0= side<0 ? 6+i*gap+rnd(-2,2) : W-6-i*gap+rnd(-2,2);
