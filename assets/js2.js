@@ -426,6 +426,10 @@ home: () => `
 </section>`,
 
 about: () => `
+<figure class="abpt" aria-label="Rupam working at an old computer in a field of flowers">
+  <img class="abpt-l" src="/img/ab-field-lav.webp" alt="" decoding="async"><img class="abpt-d" src="/img/ab-field-pop.webp" alt="" decoding="async">
+  
+</figure>
 <section class="ph ab-top"><h1 class="sr-only">About Rupam Gumber</h1>
   <div class="ab-open"><div class="ab-left">
     <div class="ab-motto" aria-label="How I work">
@@ -451,6 +455,17 @@ about: () => `
   <figure class="snap" style="--r:-1.5deg;--y:10px"><button class="zoom" type="button" data-zoom="abClearfeed" aria-label="Enlarge The ClearFeed team"><img loading="lazy" decoding="async" src="${IMG.abClearfeed.src}" width="${IMG.abClearfeed.w}" height="${IMG.abClearfeed.h}" alt="" loading="lazy"><figcaption>ClearFeed crew</figcaption></button></figure>
   <figure class="snap" style="--r:3deg;--y:0px"><button class="zoom" type="button" data-zoom="abXalts" aria-label="Enlarge The Xalts team"><img loading="lazy" decoding="async" src="${IMG.abXalts.src}" width="${IMG.abXalts.w}" height="${IMG.abXalts.h}" alt="" loading="lazy"><figcaption>Xalts team</figcaption></button></figure>
 </div></section>
+
+<section class="jr" data-jr aria-label="Roorkee, then Gurgaon, next San Francisco">
+  <div class="jr-stick">
+    <div class="jr-route" aria-hidden="true">
+      <svg viewBox="0 0 1000 60" preserveAspectRatio="none"><path class="jr-path" d="M40 44 Q270 2 500 30 T960 22"/><path class="jr-done" d="M40 44 Q270 2 500 30 T960 22"/></svg>
+      <span class="jr-pin first" style="left:4%">Roorkee<i>then</i></span><span class="jr-pin" style="left:50%">Gurgaon<i>now</i></span><span class="jr-pin last" style="left:96%">San Francisco<i>next</i></span>
+      <span class="jr-plane" data-jrplane>✈︎</span>
+    </div>
+    <canvas class="jr-cv" data-jrcv role="img" aria-label="Photos that form out of scattered dots as you scroll: IIT Roorkee at dawn, Golf Course Road in Gurgaon at sunset, and the Golden Gate Bridge in San Francisco"></canvas>
+  </div>
+</section>
 
 <section class="sec"><h2 class="lab">Recognition</h2><div class="ab-rec">
   <figure class="ab-award"><button class="zoom" type="button" data-zoom="abDesignathon" aria-label="Enlarge Rupam with the Adobe Designathon '24 award"><img loading="lazy" decoding="async" src="${IMG.abDesignathon.src}" width="${IMG.abDesignathon.w}" height="${IMG.abDesignathon.h}" alt="" loading="lazy"></button><figcaption>Adobe Designathon '24</figcaption></figure>

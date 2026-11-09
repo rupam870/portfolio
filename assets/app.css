@@ -3355,3 +3355,36 @@ h2.lab{font-weight:400;margin:0;line-height:inherit}
 .xplay{left:auto!important;top:auto!important;right:10px;bottom:10px;width:30px!important;height:30px!important;margin:0!important;background:rgba(15,20,25,.6)!important;box-shadow:none!important;backdrop-filter:blur(6px)}
 .xplay svg{width:13px!important;height:13px!important;margin-left:2px!important}
 @media (max-width:620px){.xh-track .xtext{-webkit-line-clamp:4;font-size:15px}.xh-track .xpost{flex-basis:80vw!important}}
+
+
+/* ===== Journey: ink scenes that draw themselves on scroll (About) ===== */
+.jr{position:relative;height:340vh}
+.jr-stick{position:sticky;top:0;height:100vh;display:flex;flex-direction:column;justify-content:center;gap:10px}
+.jr-cv{width:100%;aspect-ratio:1400/594;display:block;margin-top:0;filter:drop-shadow(0 10px 18px rgba(0,0,0,.12))}
+.jr-route{position:relative;height:74px;margin:0 2%}
+.jr-route svg{position:absolute;left:0;right:0;top:22px;width:100%;height:44px;overflow:visible}
+.jr-path{fill:none;stroke:var(--line);stroke-width:2;stroke-dasharray:2 7;stroke-linecap:round;vector-effect:non-scaling-stroke}
+.jr-done{fill:none;stroke:var(--jr,#2340C8);stroke-width:2;stroke-dasharray:2 7;stroke-linecap:round;vector-effect:non-scaling-stroke;transition:stroke .5s}
+.jr-pin{position:absolute;top:0;transform:translateX(-50%);font-size:14px;color:var(--mute);white-space:nowrap;display:flex;flex-direction:column;align-items:center;line-height:1.1;transition:color .4s}
+.jr-pin.first{transform:none;align-items:flex-start}.jr-pin.last{transform:translateX(-100%);align-items:flex-end}
+.jr-pin i{font:400 10.5px/1 'Geist Mono',ui-monospace,monospace;font-style:normal;opacity:.7;margin-top:3px}
+.jr-pin.on{color:var(--jr)}
+.jr-plane{position:absolute;top:0;left:0;font-size:18px;color:var(--jr);transform:translate(-50%,-50%);will-change:transform;transition:color .5s}
+@media (max-width:620px){.jr{height:300vh}.jr-cv{transform:scale(1.55);transform-origin:50% 60%;margin:14% 0 10%}.jr-pin{font-size:12px}.jr-stick{overflow:hidden}}
+
+
+/* ===== ASCII portrait (About) ===== */
+.ab-portrait .zoom{position:relative;display:block}
+.ab-asc{position:absolute;inset:0;width:100%;height:100%;border-radius:18px;transform:rotate(2.5deg);pointer-events:none;opacity:0;transition:opacity .6s ease,transform .45s cubic-bezier(.2,.8,.2,1)}
+.ab-asc.on{opacity:1}
+.ab-portrait .zoom:hover .ab-asc{transform:rotate(0deg) translateY(-4px)}
+
+
+/* ===== About: painting on top ===== */
+.abpt{margin:-40px 0 -64px}
+.abpt img{display:block;width:100%;height:auto;aspect-ratio:1800/764;object-fit:cover;filter:drop-shadow(0 10px 18px rgba(0,0,0,.12))}
+.abpt figcaption{margin-top:12px;text-align:right;font-family:var(--serif);font-style:italic;font-size:17px;color:var(--mute)}
+.abpt .abpt-d{display:none}
+:root[data-theme="dark"] .abpt .abpt-l{display:none}:root[data-theme="dark"] .abpt img.abpt-d{display:block}:root[data-theme="dark"] .abpt span.abpt-d{display:inline}
+:root[data-theme="dark"] .abpt img{filter:drop-shadow(0 18px 34px rgba(0,0,0,.6)) brightness(.92)}
+@media (max-width:620px){.abpt{margin:-32px -8px -48px}.abpt img{aspect-ratio:4/3;object-position:64% 50%}.abpt figcaption{font-size:15px;padding:0 8px}}
