@@ -3341,3 +3341,17 @@ h2.lab{font-weight:400;margin:0;line-height:inherit}
 .ab-top .ab-left{justify-content:center;align-self:center;gap:0}
 .ab-left .ab-motto .q{font-size:clamp(40px,5vw,64px)!important;line-height:1.08}
 .ab-left .ab-motto .me{margin-top:28px!important}
+
+/* X strip: no progress bar, small play badge, even card heights */
+.xh-prog{display:none!important}
+.xh-track{align-items:stretch!important}
+.xh-track .xpost{display:flex;flex-direction:column}
+.xh-track .xpost>*{flex-shrink:0}
+.xh-track .xtext{display:-webkit-box;-webkit-line-clamp:5;-webkit-box-orient:vertical;overflow:hidden;padding-bottom:0!important;margin-bottom:14px;white-space:normal}
+.xh-track .xtext br+br{display:none}
+.xh-track .xmedia{margin-top:auto}
+.xh-track .xmedia img,.xh-track .xmedia video{max-height:none!important;width:100%;height:auto;aspect-ratio:16/10;object-fit:cover}
+.xh-track .xfoot{margin-top:0}
+.xplay{left:auto!important;top:auto!important;right:10px;bottom:10px;width:30px!important;height:30px!important;margin:0!important;background:rgba(15,20,25,.6)!important;box-shadow:none!important;backdrop-filter:blur(6px)}
+.xplay svg{width:13px!important;height:13px!important;margin-left:2px!important}
+@media (max-width:620px){.xh-track .xtext{-webkit-line-clamp:4;font-size:15px}.xh-track .xpost{flex-basis:80vw!important}}
