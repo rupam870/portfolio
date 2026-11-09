@@ -3323,3 +3323,8 @@ h2.lab{font-weight:400;margin:0;line-height:inherit}
 :root[data-theme="dark"] .xlink b{color:#E7E9EA}
 :root[data-theme="dark"] .xlink span,:root[data-theme="dark"] .xlink em,:root[data-theme="dark"] .xquote span{color:#71767B}
 :root[data-theme="dark"] .xquote{border-color:#2F3336;color:#E7E9EA}
+
+/* "that's me" sits to the right of the circled words, on the same line */
+.ab-motto .note{left:calc(100% + 1.5em)!important;top:-4%!important;transform:rotate(-4deg)!important;align-items:center!important}
+.ab-motto .ring .note svg{margin-bottom:0!important}
+.ab-motto .me.strength{margin-top:40px!important}
