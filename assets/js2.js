@@ -427,14 +427,14 @@ home: () => `
 
 about: () => `
 <section class="ph"><a class="back" href="#/">Back to home</a><h1>About</h1>
-  <div class="ab-open"><p class="ab-lead">I’m the founding designer at Atlabs, making AI video creation easy for everyone.</p>
-  <figure class="ab-portrait"><button class="zoom" type="button" data-zoom="abPortrait" aria-label="Enlarge Rupam in front of a doodle wall"><img loading="lazy" decoding="async" src="${IMG.abPortrait.src}" width="${IMG.abPortrait.w}" height="${IMG.abPortrait.h}" alt=""></button><figcaption>Hi, that's me</figcaption></figure></div>
-</section>
-<section class="ab-motto" aria-label="How I work">
+  <div class="ab-open"><div class="ab-left"><p class="ab-lead">I’m the founding designer at Atlabs, making AI video creation easy for everyone.</p>
+    <div class="ab-motto" aria-label="How I work">
   <blockquote><p class="q">“Be the person who can <span class="ring">figure it out<svg viewBox="0 0 220 70" preserveAspectRatio="none" aria-hidden="true"><path d="M14 38C8 16 70 6 128 8s86 12 84 30-58 26-116 25S10 52 18 30c6-14 40-22 70-22"/></svg><span class="note" aria-hidden="true"><svg viewBox="0 0 80 60"><path d="M76 46C58 48 34 46 12 32"/><path d="M10 43 10 31 22 28"/></svg><span>that's me</span></span></span>.”</p>
 </blockquote>
   <p class="me strength"><b>My biggest strength:</b> carrying the vision, executing fast, and taking the team ahead together.</p>
   <p class="me">Hand me a problem with no playbook and I'll dig in, ask the questions that matter, and get it done. It's the part of the job I enjoy most.</p>
+  </div></div>
+  <figure class="ab-portrait"><button class="zoom" type="button" data-zoom="abPortrait" aria-label="Enlarge Rupam in front of a doodle wall"><img loading="lazy" decoding="async" src="${IMG.abPortrait.src}" width="${IMG.abPortrait.w}" height="${IMG.abPortrait.h}" alt=""></button><figcaption>Hi, that's me</figcaption></figure></div>
 </section>
 
 <section class="sec"><h2 class="lab">Where I've worked</h2><div class="ab-list">
